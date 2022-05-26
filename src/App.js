@@ -1,5 +1,5 @@
 import './App.css';
-import Carrousel from './components/Carrousel/Carrousel';
+import Carousel from './components/Carousel/Carousel';
 import Contacto from './components/Contacto/Contacto';
 import Footer from './components/Footer/Footer';
 import IntroStevia from './components/IntroStevia/IntroStevia';
@@ -9,15 +9,15 @@ import ProductosDestacados from './components/ProductosDestacados/ProductosDesta
 
 function App() {
   return (
-    <div>
+    <body>
       <Navbar />
-      <Carrousel />
+      <Carousel />
       <IntroStevia />
       <Marcas />
       <ProductosDestacados />
       <Contacto />
       <Footer />
-    </div>
+    </body>
   );
 }
 
