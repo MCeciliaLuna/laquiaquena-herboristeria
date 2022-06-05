@@ -2,7 +2,7 @@ import React from 'react';
 
 const Contacto = () => {
   return (
-    <>
+    <div className="py-3">
     <h2 className="text-center m-0">Contacto</h2>
     <div className="d-flex w-100">
     <div className="d-flex w-50 justify-content-center py-3">
@@ -15,7 +15,7 @@ const Contacto = () => {
      </div>
 
  </div>
- </>
+ </div>
   );
 };
 

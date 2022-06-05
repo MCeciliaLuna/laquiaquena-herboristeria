@@ -3,8 +3,8 @@ import './IntroStevia.css';
 
 const IntroStevia = () => {
   return (
-    <div className="card mb-3 d-flex align-items-center">
-  <div className="row g-0">
+    <div className="card mb-3 d-flex align-items-center py-3 border-0">
+  <div className="row g-0 pb-3">
       <div className="text-intro-stevia card-body text-center">
         <h2 className="title-stevia card-title">Intro Stevia</h2>
         <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
