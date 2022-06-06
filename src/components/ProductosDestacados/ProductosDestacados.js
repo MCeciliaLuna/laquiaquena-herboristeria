@@ -24,7 +24,7 @@ const ProductosDestacados = () => {
       <div className="card-body p-2">
         <h5 className="card-title">Card title</h5>
         <p className="card-text"></p>
-        <button type="button" class="btn btn-outline-success">Success</button>
+        <button type="button" class="boton-productos-destacados btn btn-outline-success">Success</button>
       </div>
     </div>
   </div>
@@ -34,7 +34,7 @@ const ProductosDestacados = () => {
       <div className="card-body p-2">
         <h5 className="card-title">Card title</h5>
         <p className="card-text"></p>
-        <button type="button" class="btn btn-outline-success">Success</button>
+        <button type="button" class="boton-productos-destacados btn btn-outline-success">Success</button>
       </div>
     </div>
   </div>
@@ -44,7 +44,7 @@ const ProductosDestacados = () => {
       <div className="card-body p-2">
         <h5 className="card-title">Card title</h5>
         <p className="card-text"></p>
-        <button type="button" class="btn btn-outline-success">Success</button>
+        <button type="button" class="boton-productos-destacados btn btn-outline-success">Success</button>
       </div>
     </div>
   </div>
@@ -54,7 +54,7 @@ const ProductosDestacados = () => {
       <div className="card-body p-2">
         <h5 className="card-title">Card title</h5>
         <p className="card-text"></p>
-        <button type="button" class="btn btn-outline-success">Success</button>
+        <button type="button" class="boton-productos-destacados btn btn-outline-success">Success</button>
       </div>
     </div>
   </div>

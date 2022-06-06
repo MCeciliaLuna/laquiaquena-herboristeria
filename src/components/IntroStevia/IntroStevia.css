@@ -9,3 +9,12 @@
 .link-stevia-page{
   font-size: small;
 }
+
+@media (max-width: 767.98px){
+  .title-stevia{
+    font-size: 35px;
+  }
+  .text-intro-stevia{
+    font-size: 20px;
+  }
+}

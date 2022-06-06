@@ -7,8 +7,8 @@ const Navbar = () => {
   <div className="container-fluid d-flex justify-content-around">
     <a className="navbar-brand" href="/#">LOGO</a>
     <form>
-      <input type="search" />
-      <button className="mx-1">Buscar</button>
+      <input className="p-1 border-1" type="search" />
+      <button className="mx-1 p-1 border-1">Buscar</button>
     </form>
     <div className="d-flex" id="navbarSupportedContent">
           <a className="nav-link" href="/#">Home</a>

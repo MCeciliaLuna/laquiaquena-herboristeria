@@ -2,3 +2,9 @@
   width: 25%;
   height: 25%;
 }
+
+@media (max-width: 767.98px){
+  .image-marcas{
+    width: 1000px;
+  }
+}
