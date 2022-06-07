@@ -1,5 +1,13 @@
-@media (min-width: 768px) and (max-width: 991.98px){
+@media (max-width: 767.98px){
+  .div-contacto{
+    flex-direction: column-reverse;
+    align-items: center;
+  }
   .iconos-redes{
-    display: inline;
+    justify-content: center !important;
+  }
+  .icono{
+    width: 100px !important;
+    height: 100px;
   }
 }

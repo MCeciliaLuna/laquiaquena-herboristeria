@@ -5,8 +5,8 @@ const ProductosDestacados = () => {
   return (
     <div className="border-top border-bottom">
     <h2 className="w-100 text-center pt-4">Productos Destacados</h2>
-    <div className="d-flex justify-content-evenly align-items-center my-5">
-      <div className="w-25">
+    <div className="productosdestacados-media d-flex justify-content-evenly align-items-center my-5">
+      <div className="div-categorias w-25">
       <ul className="list-group list-group-flush">
   <a href="/#" className="list-group-item">An item</a>
   <a href="/#" className="list-group-item">A second item</a>
@@ -16,7 +16,7 @@ const ProductosDestacados = () => {
 </ul>
 </div>
 
-<div className="w-50">
+<div className="div-productos w-50">
 <div className="row row-cols-1 row-cols-md-2 g-4">
   <div className="card-producto d-flex justify-content-center p-0 w-25">
     <div className="card w-75">
