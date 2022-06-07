@@ -8,11 +8,19 @@ const ProductosDestacados = () => {
     <div className="productosdestacados-media d-flex justify-content-evenly align-items-center my-5">
       <div className="div-categorias w-25">
       <ul className="list-group list-group-flush">
-  <a href="/#" className="list-group-item">An item</a>
-  <a href="/#" className="list-group-item">A second item</a>
-  <a href="/#" className="list-group-item">A third item</a>
-  <a href="/#" className="list-group-item">A fourth item</a>
-  <a href="/#" className="list-group-item">And a fifth one</a>
+  <a href="/#" className="list-group-item">Todos los productos</a>
+  <a href="/#" className="list-group-item">Stevia</a>
+  <a href="/#" className="list-group-item">Hierbas</a>
+  <a href="/#" className="list-group-item">Harinas</a>
+  <a href="/#" className="list-group-item">Maca</a>
+  <a href="/#" className="list-group-item">Nuez de la india</a>
+  <a href="/#" className="list-group-item">Pomadas</a>
+  <a href="/#" className="list-group-item">Jarabe</a>
+  <a href="/#" className="list-group-item">Jabones</a>
+  <a href="/#" className="list-group-item">Té</a>
+  <a href="/#" className="list-group-item">Aceites</a>
+  <a href="/#" className="list-group-item">Sahumerios</a>
+  <a href="/#" className="list-group-item">Indumentaria</a>
 </ul>
 </div>
 
