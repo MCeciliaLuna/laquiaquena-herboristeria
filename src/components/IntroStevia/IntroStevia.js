@@ -3,12 +3,12 @@ import './IntroStevia.css';
 
 const IntroStevia = () => {
   return (
-    <div className="card mb-3 d-flex align-items-center py-3 border-0">
+    <div className="intro-stevia card mb-3 d-flex align-items-center p-0 border-0">
   <div className="row g-0 pb-3">
-      <div className="text-intro-stevia card-body text-center">
-        <h2 className="title-stevia card-title">Representación STEVIA en el NOA</h2>
+      <div className="text-intro-stevia card-body text-center text-light">
+        <h2 className="title-stevia card-title pt-2">Representación STEVIA en el NOA</h2>
         <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        <button type="button" class="btn btn-outline-danger">Ver más</button>
+        <button type="button" class="btn btn-light">Ver más</button>
     </div>
   </div>
   <div className="d-flex justify-content-around">
