@@ -1,5 +1,5 @@
 .navbar{
-  background-color: #B00215;
+  background-color: #ba181b;
 }
 
 .boton-buscador{
@@ -7,7 +7,7 @@
 }
 
 .boton-buscador:hover{
-  background-color: #F89D13;
+  background-color: #bf0603;
   color: aliceblue;
 }
 

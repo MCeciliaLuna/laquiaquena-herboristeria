@@ -3,19 +3,21 @@ import Carousel from './components/Carousel/Carousel';
 import Contacto from './components/Contacto/Contacto';
 import Footer from './components/Footer/Footer';
 import IntroStevia from './components/IntroStevia/IntroStevia';
-import Marcas from './components/Marcas/Marcas';
+import Clientes from './components/Clientes/Clientes';
 import Navbar from './components/Navbar/Navbar';
 import ProductosDestacados from './components/ProductosDestacados/ProductosDestacados';
+import BotonWhatsapp from './components/BotonWhatsapp/BotonWhatsapp';
 
 function App() {
   return (
     <body>
+      <BotonWhatsapp />
       <Navbar />
       <Carousel />
       <IntroStevia />
-      <Marcas />
       <ProductosDestacados />
       <Contacto />
+      <Clientes />
       <Footer />
     </body>
   );

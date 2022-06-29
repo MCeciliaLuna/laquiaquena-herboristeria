@@ -1,3 +1,7 @@
+.barra-contacto{
+  background-color: #bf0603;
+}
+
 @media (max-width: 767.98px){
   .div-contacto{
     flex-direction: column-reverse;
