@@ -3,7 +3,7 @@ import './IntroStevia.css';
 
 const IntroStevia = () => {
   return (
-    <div>
+    <div className="intro-stevia">
     <div className="contenedor-stevia col-6">
       <img src="https://images.pexels.com/photos/66869/green-leaf-natural-wallpaper-royalty-free-66869.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" className="stevia-img" />
       <div className="stevia-text">

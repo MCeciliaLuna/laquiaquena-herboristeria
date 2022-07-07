@@ -1,0 +1,13 @@
+.buscador{
+  background-color: #bf0603;
+}
+
+.input-buscador{
+  width: 60vh;
+}
+
+@media (max-width: 767.98px){
+  .input-buscador{
+    width: 39vh;
+  }
+}

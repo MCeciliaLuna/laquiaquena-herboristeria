@@ -7,11 +7,13 @@ import Clientes from './components/Clientes/Clientes';
 import Navbar from './components/Navbar/Navbar';
 import ProductosDestacados from './components/ProductosDestacados/ProductosDestacados';
 import BotonWhatsapp from './components/BotonWhatsapp/BotonWhatsapp';
+import Buscador from './components/Buscador/Buscador';
 
 function App() {
   return (
     <body>
       <BotonWhatsapp />
+      <Buscador />
       <Navbar />
       <Carousel />
       <IntroStevia />

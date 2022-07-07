@@ -7,11 +7,16 @@
     flex-direction: column-reverse;
     align-items: center;
   }
-  .iconos-redes{
-    justify-content: center !important;
+  .contacto-items{
+    display: block !important;
   }
-  .icono{
-    width: 100px !important;
-    height: 100px;
+  .iconos-redes{
+    width: 100% !important;
+  }
+  .mapa{
+    width: 100%;
+    height: 40vh;
+    justify-content: center;
+    padding: 8px;
   }
 }
