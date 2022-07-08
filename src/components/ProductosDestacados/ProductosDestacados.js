@@ -10,7 +10,7 @@ const ProductosDestacados = () => {
   <button class="btn btn-secondary dropdown-toggle w-75" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
     Dropdown button
   </button>
-  <ul class="dropdown-menu w-75 show" aria-labelledby="dropdownMenuButton1">
+  <ul class="dropdown-menu w-75" aria-labelledby="dropdownMenuButton1">
   <a href="/#" className="list-group-item">Todos los productos</a>
   <a href="/#" className="list-group-item">Stevia</a>
   <a href="/#" className="list-group-item">Hierbas</a>
