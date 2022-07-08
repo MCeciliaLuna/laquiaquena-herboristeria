@@ -1,27 +1,24 @@
 import './App.css';
-import Carousel from './components/Carousel/Carousel';
-import Contacto from './components/Contacto/Contacto';
-import Footer from './components/Footer/Footer';
-import IntroStevia from './components/IntroStevia/IntroStevia';
-import Clientes from './components/Clientes/Clientes';
-import Navbar from './components/Navbar/Navbar';
-import ProductosDestacados from './components/ProductosDestacados/ProductosDestacados';
+import { Routes, Route, BrowserRouter } from "react-router-dom";
+import Home from './pages/Home/Home';
+import Error from './pages/Error/Error';
 import BotonWhatsapp from './components/BotonWhatsapp/BotonWhatsapp';
 import Buscador from './components/Buscador/Buscador';
+import Navbar from './components/Navbar/Navbar';
+import Footer from './components/Footer/Footer';
 
 function App() {
   return (
-    <body>
+      <BrowserRouter>
       <BotonWhatsapp />
       <Buscador />
       <Navbar />
-      <Carousel />
-      <IntroStevia />
-      <ProductosDestacados />
-      <Contacto />
-      <Clientes />
+    <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="about" element={<Error />} />
+      </Routes>
       <Footer />
-    </body>
+      </BrowserRouter>
   );
 }
 

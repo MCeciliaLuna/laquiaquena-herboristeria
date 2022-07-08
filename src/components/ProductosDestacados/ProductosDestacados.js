@@ -5,11 +5,12 @@ const ProductosDestacados = () => {
   return (
     <div className="border-bottom">
     <h2 className="w-100 text-center py-3">Productos Destacados</h2>
-    <div class="dropdown dropdown-moviles d-flex justify-content-center pb-4">
-  <button class="btn btn-secondary dropdown-toggle w-50" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+    <div className="dropdown dropdown-moviles px-5 pb-4">
+      <div className="d-flex justify-content-center">
+  <button class="btn btn-secondary dropdown-toggle w-75" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
     Dropdown button
   </button>
-  <ul class="dropdown-menu w-50" aria-labelledby="dropdownMenuButton1">
+  <ul class="dropdown-menu w-75 show" aria-labelledby="dropdownMenuButton1">
   <a href="/#" className="list-group-item">Todos los productos</a>
   <a href="/#" className="list-group-item">Stevia</a>
   <a href="/#" className="list-group-item">Hierbas</a>
@@ -24,6 +25,7 @@ const ProductosDestacados = () => {
   <a href="/#" className="list-group-item">Sahumerios</a>
   <a href="/#" className="list-group-item">Indumentaria</a>
   </ul>
+</div>
 </div>
     <div className="productosdestacados-media d-flex justify-content-evenly align-items-center my-3">
       <div className="div-categorias w-25">

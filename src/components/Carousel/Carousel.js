@@ -1,7 +1,7 @@
 import React from 'react';
 import './Carousel.css';
 
-const Carrousel = () => {
+const Carousel = () => {
   return (
     <div className="carousel">
     <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel">
@@ -29,4 +29,4 @@ const Carrousel = () => {
   );
 };
 
-export default Carrousel;
+export default Carousel;
