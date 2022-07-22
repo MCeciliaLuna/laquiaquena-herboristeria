@@ -4,7 +4,7 @@ import './ProductosDestacados.css';
 const ProductosDestacados = () => {
   return (
     <div className="border-bottom">
-    <h2 className="w-100 text-center py-3">Productos Destacados</h2>
+    <h2 className="title-productosdestacados w-100 text-center py-3">Productos Destacados</h2>
     <div className="dropdown dropdown-moviles px-5 pb-4">
       <div className="d-flex justify-content-center">
   <button class="btn btn-secondary dropdown-toggle w-75" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">

@@ -1,16 +1,15 @@
 import React from 'react';
-import './Navbar.css'
+import './Navbar.css';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   return (
       <div className="navbar-completo pt-5 d-block text-center">
     <nav className="navbar navbar-expand-lg">
     <div className="container-fluid d-flex justify-content-around">
-      <a className="navbar-brand text-light" href="/#">LA QUIAQUEÑA HERBORISTERÍA</a>
+      <a className="title-navbar navbar-brand text-light fs-4" href="/#">LA QUIAQUEÑA Herboristería</a>
       <div className="d-flex" id="navbarSupportedContent">
-            <a className="nav-link text-light" href="/#">Stevia NOA</a>
-            <a className="nav-link text-light" href="/#">Marcas</a>
-            <a className="nav-link text-light" href="/#" >Tienda</a>
+            <Link className="link-navbar nav-link text-light fs-5" to="/productos" >Productos</Link>
       </div>
       </div>
   </nav>

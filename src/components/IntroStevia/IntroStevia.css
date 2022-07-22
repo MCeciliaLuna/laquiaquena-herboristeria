@@ -17,6 +17,10 @@
   transition: .7s;
 }
 
+.title-cards{
+  font-family: Title;
+}
+
 .stevia-text{
   position: absolute;
     top: 50%;
