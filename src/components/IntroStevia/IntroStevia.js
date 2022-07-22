@@ -29,7 +29,7 @@ const IntroStevia = () => {
         <h5 class="modal-title text-light" id="exampleModalLabel">Stevia Original Peruana</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body text-light">
+      <div class="text-modal modal-body text-light">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa cumque voluptate tempora placeat nesciunt? Necessitatibus, autem? Fuga saepe soluta modi expedita aliquid vitae consequatur at itaque, sed, accusamus reiciendis quis.
       </div>
       <div class="modal-footer d-flex justify-content-center">
@@ -48,7 +48,7 @@ const IntroStevia = () => {
         <h5 class="modal-title text-light" id="exampleModalLabel">Cápsulas Natural Medix</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body text-light">
+      <div class="text-modal modal-body text-light">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa cumque voluptate tempora placeat nesciunt? Necessitatibus, autem? Fuga saepe soluta modi expedita aliquid vitae consequatur at itaque, sed, accusamus reiciendis quis.
       </div>
       <div class="modal-footer d-flex justify-content-center">

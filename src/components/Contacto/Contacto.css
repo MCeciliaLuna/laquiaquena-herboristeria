@@ -2,6 +2,10 @@
   background-color: #bf0603;
 }
 
+.title-contacto{
+  text-shadow: 2px 3px 9px #000000;
+}
+
 @media (max-width: 767.98px){
   .div-contacto{
     flex-direction: column-reverse;
