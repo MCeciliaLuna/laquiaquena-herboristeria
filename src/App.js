@@ -7,6 +7,7 @@ import Buscador from './components/Buscador/Buscador';
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
 import Productos from './pages/Productos/Productos';
+import Producto from './pages/Producto/Producto';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="*" element={<Error />} />
         <Route path="/productos" element={<Productos />} />
+        <Route path="/producto" element={<Producto />} />
       </Routes>
       <Footer />
       </BrowserRouter>

@@ -54,7 +54,9 @@ const ProductosDestacados = () => {
       <div className="card-body p-2">
         <h5 className="card-title m-0">Card title</h5>
         <p className="card-text m-0">Precio</p>
+        <a href="/producto">
         <button type="button" class="boton-productos-destacados btn btn-outline-success">Comprar</button>
+        </a>
       </div>
     </div>
   </div>
@@ -64,7 +66,9 @@ const ProductosDestacados = () => {
       <div className="card-body p-2">
         <h5 className="card-title m-0">Card title</h5>
         <p className="card-text m-0">Precio</p>
+        <a href="/producto">
         <button type="button" class="boton-productos-destacados btn btn-outline-success">Comprar</button>
+        </a>
       </div>
     </div>
   </div>
@@ -74,7 +78,9 @@ const ProductosDestacados = () => {
       <div className="card-body p-2">
         <h5 className="card-title m-0">Card title</h5>
         <p className="card-text m-0">Precio</p>
+        <a href="/producto">
         <button type="button" class="boton-productos-destacados btn btn-outline-success">Comprar</button>
+        </a>
       </div>
     </div>
   </div>
@@ -84,7 +90,9 @@ const ProductosDestacados = () => {
       <div className="card-body p-2">
         <h5 className="card-title m-0">Card title</h5>
         <p className="card-text m-0">Precio</p>
+        <a href="/producto">
         <button type="button" class="boton-productos-destacados btn btn-outline-success">Comprar</button>
+        </a>
       </div>
     </div>
   </div>
@@ -94,7 +102,9 @@ const ProductosDestacados = () => {
       <div className="card-body p-2">
         <h5 className="card-title m-0">Card title</h5>
         <p className="card-text m-0">Precio</p>
+        <a href="/producto">
         <button type="button" class="boton-productos-destacados btn btn-outline-success">Comprar</button>
+        </a>
       </div>
     </div>
   </div>
@@ -104,7 +114,9 @@ const ProductosDestacados = () => {
       <div className="card-body p-2">
         <h5 className="card-title m-0">Card title</h5>
         <p className="card-text m-0">Precio</p>
+        <a href="/producto">
         <button type="button" class="boton-productos-destacados btn btn-outline-success">Comprar</button>
+        </a>
       </div>
     </div>
   </div>

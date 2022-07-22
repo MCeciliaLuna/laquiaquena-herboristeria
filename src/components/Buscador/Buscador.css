@@ -1,9 +1,14 @@
 .buscador{
   background-color: #bf0603;
+  
 }
 
 .input-buscador{
   width: 60vh;
+}
+
+.boton-buscador{
+  box-shadow: 3px 2px 10px #000000;
 }
 
 @media (max-width: 767.98px){

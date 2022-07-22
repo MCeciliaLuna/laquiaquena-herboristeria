@@ -5,13 +5,21 @@
 
 @font-face {
   font-family: Body;
-  src: url(./assets/fonts/Cabin-VariableFont_wdth\,wght.ttf);
+  src: url(./assets/fonts/PatuaOne-Regular.ttf);
 }
 
 body{
   font-family: Body;
 }
 
-h1,h2,h3{
+h1,h2,h3,h5{
   font-family: Title;
+}
+
+.btn, input, textarea{
+  box-shadow: 3px 2px 10px #000000;
+}
+
+a:hover{
+  color: red;
 }

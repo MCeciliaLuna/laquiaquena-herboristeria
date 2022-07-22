@@ -21,6 +21,14 @@
   font-family: Title;
 }
 
+.fondo-modal{
+  background-image: url(https://images.pexels.com/photos/66869/green-leaf-natural-wallpaper-royalty-free-66869.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+}
+
+.modal-title{
+  text-shadow: 3px 2px 10px #000000;
+}
+
 .stevia-text{
   position: absolute;
     top: 50%;
