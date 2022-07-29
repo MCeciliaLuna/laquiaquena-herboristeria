@@ -1,9 +1,19 @@
+.productos-destacados{
+  background-color: white;
+}
+
 .dropdown-moviles{
   display: none !important;
 }
 
 .title-productosdestacados{
-  color: #161a1d;
+  color: #b00215;
+}
+
+.list-group-item:hover{
+  transition: all .1s;
+  background-color: #539719;
+  color: white;
 }
 
 @media (max-width: 767.98px) {

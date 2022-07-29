@@ -3,14 +3,14 @@ import './ProductosDestacados.css';
 
 const ProductosDestacados = () => {
   return (
-    <div className="border-bottom">
+    <div className="productos-destacados border-bottom">
     <h2 className="title-productosdestacados w-100 text-center py-3">Productos Destacados</h2>
     <div className="dropdown dropdown-moviles px-5 pb-4">
       <div className="d-flex justify-content-center">
-  <button class="btn btn-secondary dropdown-toggle w-75" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+  <button className="btn btn-secondary dropdown-toggle w-75" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
     Dropdown button
   </button>
-  <ul class="dropdown-menu w-75" aria-labelledby="dropdownMenuButton1">
+  <ul className="dropdown-menu w-75" aria-labelledby="dropdownMenuButton1">
   <a href="/#" className="list-group-item">Todos los productos</a>
   <a href="/#" className="list-group-item">Stevia</a>
   <a href="/#" className="list-group-item">Hierbas</a>
@@ -53,9 +53,9 @@ const ProductosDestacados = () => {
       <img src="https://picsum.photos/400/?random=6" className="card-img-top" alt="..." />
       <div className="card-body p-2">
         <h5 className="card-title m-0">Card title</h5>
-        <p className="card-text m-0">Precio</p>
+        <p className="card-text py-2 m-0">Precio</p>
         <a href="/producto">
-        <button type="button" class="boton-productos-destacados btn btn-outline-success">Comprar</button>
+        <button type="button" className="boton-productos-destacados btn text-light">Comprar</button>
         </a>
       </div>
     </div>
@@ -65,9 +65,9 @@ const ProductosDestacados = () => {
       <img src="https://picsum.photos/400/?random=7" className="card-img-top" alt="..." />
       <div className="card-body p-2">
         <h5 className="card-title m-0">Card title</h5>
-        <p className="card-text m-0">Precio</p>
+        <p className="card-text py-2 m-0">Precio</p>
         <a href="/producto">
-        <button type="button" class="boton-productos-destacados btn btn-outline-success">Comprar</button>
+        <button type="button" className="boton-productos-destacados btn text-light">Comprar</button>
         </a>
       </div>
     </div>
@@ -77,9 +77,9 @@ const ProductosDestacados = () => {
       <img src="https://picsum.photos/400/?random=8" className="card-img-top" alt="..." />
       <div className="card-body p-2">
         <h5 className="card-title m-0">Card title</h5>
-        <p className="card-text m-0">Precio</p>
+        <p className="card-text py-2 m-0">Precio</p>
         <a href="/producto">
-        <button type="button" class="boton-productos-destacados btn btn-outline-success">Comprar</button>
+        <button type="button" className="boton-productos-destacados btn text-light">Comprar</button>
         </a>
       </div>
     </div>
@@ -89,9 +89,9 @@ const ProductosDestacados = () => {
       <img src="https://picsum.photos/400/?random=12" className="card-img-top" alt="..." />
       <div className="card-body p-2">
         <h5 className="card-title m-0">Card title</h5>
-        <p className="card-text m-0">Precio</p>
+        <p className="card-text py-2 m-0">Precio</p>
         <a href="/producto">
-        <button type="button" class="boton-productos-destacados btn btn-outline-success">Comprar</button>
+        <button type="button" className="boton-productos-destacados btn text-light">Comprar</button>
         </a>
       </div>
     </div>
@@ -101,9 +101,9 @@ const ProductosDestacados = () => {
       <img src="https://picsum.photos/400/?random=13" className="card-img-top" alt="..." />
       <div className="card-body p-2">
         <h5 className="card-title m-0">Card title</h5>
-        <p className="card-text m-0">Precio</p>
+        <p className="card-text py-2 m-0">Precio</p>
         <a href="/producto">
-        <button type="button" class="boton-productos-destacados btn btn-outline-success">Comprar</button>
+        <button type="button" className="boton-productos-destacados btn text-light">Comprar</button>
         </a>
       </div>
     </div>
@@ -113,9 +113,9 @@ const ProductosDestacados = () => {
       <img src="https://picsum.photos/400/?random=14" className="card-img-top" alt="..." />
       <div className="card-body p-2">
         <h5 className="card-title m-0">Card title</h5>
-        <p className="card-text m-0">Precio</p>
+        <p className="card-text py-2 m-0">Precio</p>
         <a href="/producto">
-        <button type="button" class="boton-productos-destacados btn btn-outline-success">Comprar</button>
+        <button type="button" className="boton-productos-destacados btn text-light">Comprar</button>
         </a>
       </div>
     </div>
@@ -124,7 +124,7 @@ const ProductosDestacados = () => {
 </div>
 </div>
 <div className=" pb-4 px-5 d-flex aling-items-center">
-<button type="button" class="w-100 btn btn-success mb-0">Ver todos los productos</button>
+<button type="button" className="w-100 btn text-light mb-0">Ver todos los productos</button>
 </div>
     </div>
   );

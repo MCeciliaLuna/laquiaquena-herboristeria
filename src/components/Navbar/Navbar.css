@@ -1,5 +1,5 @@
-.navbar-completo{
-  background-color: #bf0603;
+.logo-navbar{
+  width: 9vh;
 }
 
 .boton-buscador{
@@ -7,13 +7,18 @@
 }
 
 .boton-buscador:hover{
-  background-color: #bf0603;
+  background-color: #b00215;
   color: aliceblue;
 }
 
 .title-navbar, .link-navbar{
   font-family: Title;
   text-shadow: 2px 3px 9px #000000;
+}
+
+.link-navbar:hover{
+  transition: all .1s;
+  transform: scale(1.04);
 }
 
 

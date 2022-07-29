@@ -1,3 +1,7 @@
+.intro-stevia{
+  height: 50vh;
+}
+
 .contenedor-stevia{
   position: relative;
   display: inline-block;
@@ -35,8 +39,9 @@
     left: 50%;
     transform: translate(-50%, -50%);
 }
-.button-stevia{
-  box-shadow: 3px 2px 10px #000000;
+.button-stevia, .boton-modal{
+    background-color: white;
+    text-shadow: none;
 }
 
 .text-modal{
