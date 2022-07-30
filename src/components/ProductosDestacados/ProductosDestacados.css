@@ -8,7 +8,7 @@
 
 .list-group-item:hover{
   transition: all .3s;
-  background-color: #539719;
+  background-color: #539719 !important;
   color: white;
 }
 
