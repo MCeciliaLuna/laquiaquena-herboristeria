@@ -3,8 +3,8 @@ import './Clientes.css';
 
 const Clientes = () => {
   return (
-    <div className="card-group pt-2 pb-5">
-      <h2 className="w-100 text-center py-4">Nuestros Clientes</h2>
+    <div className="clientes card-group pt-2 pb-5 bg-light">
+      <h2 className="w-100 text-center pt-4 mb-0 title-clientes fs-2">Nuestros Clientes</h2>
       <div className="w-100 d-flex justify-content-evenly d-inline-flex">
     <div className="image-marcas border-0">
     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCl76HSmvoqVc_8z5WHtfkFVGt6pHzeUWYVG4iUyuk2VBsV_aHl0lRL5ZZIiY69i9tp18&usqp=CAU" className="card-img-top rounded-circle" alt="..." />

@@ -16,7 +16,7 @@ const Contacto = () => {
       <label className="d-block text-light fs-5 pt-2" >Mensaje</label>
       <textarea className="input-contacto rounded-3 p-2 border-0 d-block w-100 fs-5" name="mensaje" rows="5" maxLength="500" required ></textarea>
       <div className="d-flex justify-content-center w-100">
-      <button className="btn my-2 px-5 btn-warning">Enviar</button>
+      <button className="btn my-2 px-5 text-light">Enviar</button>
       </div>
      </form>
      </div>

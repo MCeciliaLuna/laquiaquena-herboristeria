@@ -3,8 +3,8 @@ import './ProductosDestacados.css';
 
 const ProductosDestacados = () => {
   return (
-    <div className="productos-destacados border-bottom">
-    <h2 className="title-productosdestacados w-100 text-center py-3">Productos Destacados</h2>
+    <div className="productos-destacados border-bottom bg-light">
+    <h2 className="title-productosdestacados w-100 text-center fs-1 py-4">Productos Destacados</h2>
     <div className="dropdown dropdown-moviles px-5 pb-4">
       <div className="d-flex justify-content-center">
   <button className="btn btn-secondary dropdown-toggle w-75" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
