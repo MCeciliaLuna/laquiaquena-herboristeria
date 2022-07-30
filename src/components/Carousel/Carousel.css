@@ -2,6 +2,13 @@
 height: 80vh;
 }
 
+.banner-carousel{
+    position: absolute;
+    z-index: 1;
+    top: 20%;
+    left: 13%;
+  }
+
 @media (min-width: 768px) and (max-width: 991.98px){
 .carousel-padre{
   height: 40vh;
