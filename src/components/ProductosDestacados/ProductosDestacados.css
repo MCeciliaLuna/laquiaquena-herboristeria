@@ -1,19 +1,9 @@
-.dropdown-moviles{
-  display: none !important;
-}
-
 .title-productosdestacados{
   color: #b00215;
 }
 
-.list-group-item:hover{
-  transition: all .3s;
-  background-color: #539719 !important;
-  color: white;
-}
-
 @media (max-width: 767.98px) {
-  .productosdestacados-media{
+  /* .productosdestacados-media{
     flex-wrap: wrap;
     margin-top: 1px !important;
     margin-bottom: 5px !important;
@@ -24,35 +14,17 @@
   .div-productos{
     width: 100% !important;
     padding: 10px
-  }
+  }*/
   .card-producto{
     width: 35% !important;
   }
   .div-margin-moviles{
-    margin-right: 0px
-   }
-   .dropdown-moviles{
-    display: block !important;
+    flex-wrap: wrap;
    }
 }
 
 @media (min-width: 768px) and (max-width: 991.98px){
-      .card-producto{
-        width: 25% !important;
-      }
-      .div-productos{
-        width: 100% !important;
-      }
-      .div-categorias{
-        display: none;
-      }
-      .dropdown-moviles{
-        display: block !important;
-      }
-      .div-margin-moviles{
-       margin-right: 0px
-      }
-      .card-body{
-        padding: 15px !important;
-      }
+  .div-margin-moviles{
+    flex-wrap: wrap;
+  }
     }
