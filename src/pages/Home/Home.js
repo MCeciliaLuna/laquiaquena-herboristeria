@@ -1,5 +1,4 @@
 import Carousel from '../../components/Carousel/Carousel';
-import Clientes from '../../components/Clientes/Clientes';
 import Contacto from '../../components/Contacto/Contacto';
 import IntroStevia from '../../components/IntroStevia/IntroStevia';
 import ProductosDestacados from '../../components/ProductosDestacados/ProductosDestacados';
@@ -13,7 +12,6 @@ function Home() {
       <IntroStevia />
       <ProductosDestacados />
       <Contacto />
-      <Clientes />
     </body>
   );
 }

@@ -23,6 +23,29 @@ const Productos = () => {
 </ul>
 </div>
 
+<div class="dropdown d-flex justify-content-center pt-4 pb-2">
+  <button class="btn text-light dropdown-toggle fs-4 w-75" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Categorías 
+  </button>
+<div className="w-75 dropdown-menu fs-4">
+      <ul class="list-group list-group-flush w-100">
+      <Link to="/productos" className="list-group-item bg-light">Todos los productos</Link>
+  <Link to="/productos" className="categoria-visitada list-group-item bg-light">Stevia</Link>
+  <Link to="/productos" className="categoria-visitada list-group-item bg-light">Hierbas</Link>
+  <Link to="/productos" className="categoria-visitada list-group-item bg-light">Harinas</Link>
+  <Link to="/productos" className="categoria-visitada list-group-item bg-light">Maca</Link>
+  <Link to="/productos" className="categoria-visitada list-group-item bg-light">Nuez de la india</Link>
+  <Link to="/productos" className="categoria-visitada list-group-item bg-light">Pomadas</Link>
+  <Link to="/productos" className="categoria-visitada list-group-item bg-light">Jarabe</Link>
+  <Link to="/productos" className="categoria-visitada list-group-item bg-light">Jabones</Link>
+  <Link to="/productos" className="categoria-visitada list-group-item bg-light">Té</Link>
+  <Link to="/productos" className="categoria-visitada list-group-item bg-light">Aceites</Link>
+  <Link to="/productos" className="categoria-visitada list-group-item bg-light">Sahumerios</Link>
+  <Link to="/productos" className="categoria-visitada list-group-item bg-light">Indumentaria</Link>
+</ul>
+</div>
+</div>
+
 <div className="div-productos-page w-75 d-flex flex-wrap align-items-center justify-content-center">
   <div className="card-producto d-flex justify-content-center p-0 m-3 col-2">
     <div className="card">
