@@ -28,7 +28,24 @@
   font-family: Title;
 }
 
+@media (min-width: 768px) and (max-width: 991.98px){
+  .clientes{
+    height: auto;
+  }
+  .card-testimonio{
+      width: 21vh;
+      top: 350%;
+      left: 0%;
+  }
+  .title-clientes{
+    padding-bottom: 20px;
+  }
+}
+
 @media (max-width: 767.98px){
+  .clientes{
+    height: auto;
+  }
   .image-marcas{
     width: 120px;
     display: grid !important;
@@ -39,14 +56,9 @@
   left: 1%;
 }
 .texto-testimonio{
-  padding: 5px;
+  padding: 4px;
 }
+.nombre-cliente{
+  font-size: 2.5vh;
 }
-
-@media (min-width: 768px) and (max-width: 991.98px){
-  .card-testimonio{
-      width: 21vh;
-      top: 350%;
-    left: 0%;
-  }
 }

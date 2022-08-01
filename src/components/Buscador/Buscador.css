@@ -1,6 +1,5 @@
 .buscador{
   background-color: #b00215;
-  
 }
 
 .boton-buscador:hover{
@@ -14,8 +13,19 @@
   font-size: 3vh;
 }
 
+@media (min-width: 768px) and (max-width: 991.98px){
+  .input-buscador{
+    width: 50vh;
+    font-size: 2vh;
+    padding: 7px!important;
+  }
+  .buscador{
+    padding: 10px!important;
+  }
+}
+
 @media (max-width: 767.98px){
   .input-buscador{
-    width: 39vh;
+    width: 30vh;
   }
 }

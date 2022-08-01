@@ -43,7 +43,6 @@
       .div-productos{
         width: 100% !important;
       }
-
       .div-categorias{
         display: none;
       }
@@ -52,5 +51,8 @@
       }
       .div-margin-moviles{
        margin-right: 0px
+      }
+      .card-body{
+        padding: 15px !important;
       }
     }

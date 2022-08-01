@@ -11,12 +11,22 @@ height: 80vh;
 
 @media (min-width: 768px) and (max-width: 991.98px){
 .carousel-padre{
-  height: 40vh;
+  height: 35vh;
+}
+.banner-carousel{
+  width: 90%;
+  top: 20%;
+  left: 5%;
 }
 }
 
 @media (max-width: 767.98px) {
   .carousel-padre{
-    height: 32vh;
+    height: 30vh;
   }
+.banner-carousel{
+  width: 90%;
+  top: 20%;
+  left: 5%;
+}
 }
