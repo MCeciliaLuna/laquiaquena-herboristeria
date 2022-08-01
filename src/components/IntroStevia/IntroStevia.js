@@ -33,7 +33,7 @@ const IntroStevia = () => {
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa cumque voluptate tempora placeat nesciunt? Necessitatibus, autem? Fuga saepe soluta modi expedita aliquid vitae consequatur at itaque, sed, accusamus reiciendis quis.
       </div>
       <div class="modal-footer d-flex justify-content-center">
-        <a href="/producto">
+        <a href="/productos">
         <button type="button" class="boton-modal btn" data-bs-dismiss="modal">Ver todos los productos</button>
         </a>
       </div>
@@ -52,7 +52,7 @@ const IntroStevia = () => {
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa cumque voluptate tempora placeat nesciunt? Necessitatibus, autem? Fuga saepe soluta modi expedita aliquid vitae consequatur at itaque, sed, accusamus reiciendis quis.
       </div>
       <div class="modal-footer d-flex justify-content-center">
-        <a href="/producto">
+        <a href="/productos">
         <button type="button" class="boton-modal btn" data-bs-dismiss="modal">Ver todos los productos</button>
         </a>
       </div>
