@@ -34,4 +34,7 @@
     .card-producto{
       width: 35% !important;
     }
+    .dropdown{
+      display: flex !important;
+    }
   }
