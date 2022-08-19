@@ -4,7 +4,7 @@
 
 @media (max-width: 767.98px) {
   .card-producto{
-    width: 35% !important;
+    width: 35% !important
   }
   .div-margin-moviles{
     flex-wrap: wrap;
