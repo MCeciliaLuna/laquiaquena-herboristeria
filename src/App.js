@@ -9,6 +9,7 @@ import Footer from './components/Footer/Footer';
 import Productos from './pages/Productos/Productos';
 import Clientes from './components/Clientes/Clientes';
 import Login from './pages/Login/Login'
+import UsuarioLogueado from './pages/UsuarioLogueado/UsuarioLogueado';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="*" element={<Error />} />
         <Route path="/productos" element={<Productos />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/usuariologueado" element={<UsuarioLogueado />} />
       </Routes>
       <Clientes />
       <Footer />

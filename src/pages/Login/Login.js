@@ -9,7 +9,7 @@ const login = () => {
       <form className="mt-0 mx-5">
   <div className="mb-3">
     <label for="exampleInputEmail1" className="text-login fs-4 form-label w-100 text-light">Nombre de usuario</label>
-    <input type="text" className="w-100 m-2 text-center rounded-3 border-0 p-2" required/>
+    <input type="text" className="w-100 m-2 text-center rounded-3 border-0 p-2" placeholder="LaQuiaqueñaHerboristeria" required/>
   </div>
   <div className="mb-3">
     <label for="exampleInputPassword1" className="text-login fs-4 form-label w-100 text-light">Contraseña</label>
