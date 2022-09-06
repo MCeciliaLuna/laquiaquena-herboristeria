@@ -1,3 +1,19 @@
 .page-usuariologueado{
   height: auto;
 }
+
+.boton-logueado-editar{
+  background-color: #f89d13;
+}
+
+.boton-logueado-editar:hover{
+  background-color: #7fab1f;
+}
+
+.boton-logueado-eliminar{
+  background-color: #b00215;
+}
+
+.boton-logueado-eliminar:hover{
+  background-color: #7fab1f;
+}

@@ -38,8 +38,8 @@ const UsuarioLogueado = () => {
         <p className="card-text py-2 m-0">Descripción</p>
         <h5 className="card-text py-2 m-0">Precio</h5>
         <div className="text-center">
-        <button type="button" className="boton-productos-destacados btn bg-warning text-light mb-1" data-bs-toggle="modal" data-bs-target="#exampleModal1">Editar</button>
-        <button type="button" className="btn bg-danger text-light mt-1" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+        <button type="button" className="boton-logueado-editar btn  text-light mb-1" data-bs-toggle="modal" data-bs-target="#exampleModal1">Editar</button>
+        <button type="button" className="btn boton-logueado-eliminar text-light mt-1" data-bs-toggle="modal" data-bs-target="#exampleModal2">
           Eliminar
         </button>
         </div>
@@ -54,8 +54,8 @@ const UsuarioLogueado = () => {
         <p className="card-text py-2 m-0">Descripción</p>
         <h5 className="card-text py-2 m-0">Precio</h5>
         <div className="text-center">
-        <button type="button" className="boton-productos-destacados btn bg-warning text-light mb-1" data-bs-toggle="modal" data-bs-target="#exampleModal1">Editar</button>
-        <button type="button" className="btn bg-danger text-light mt-1" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+        <button type="button" className="boton-logueado-editar btn  text-light mb-1" data-bs-toggle="modal" data-bs-target="#exampleModal1">Editar</button>
+        <button type="button" className="btn boton-logueado-eliminar text-light mt-1" data-bs-toggle="modal" data-bs-target="#exampleModal2">
           Eliminar
         </button>
         </div>
@@ -70,8 +70,8 @@ const UsuarioLogueado = () => {
         <p className="card-text py-2 m-0">Descripción</p>
         <h5 className="card-text py-2 m-0">Precio</h5>
         <div className="text-center">
-        <button type="button" className="boton-productos-destacados btn bg-warning text-light mb-1" data-bs-toggle="modal" data-bs-target="#exampleModal1">Editar</button>
-        <button type="button" className="btn bg-danger text-light mt-1" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+        <button type="button" className="boton-logueado-editar btn  text-light mb-1" data-bs-toggle="modal" data-bs-target="#exampleModal1">Editar</button>
+        <button type="button" className="btn boton-logueado-eliminar text-light mt-1" data-bs-toggle="modal" data-bs-target="#exampleModal2">
           Eliminar
         </button>
         </div>
@@ -86,8 +86,8 @@ const UsuarioLogueado = () => {
         <p className="card-text py-2 m-0">Descripción</p>
         <h5 className="card-text py-2 m-0">Precio</h5>
         <div className="text-center">
-        <button type="button" className="boton-productos-destacados btn bg-warning text-light mb-1" data-bs-toggle="modal" data-bs-target="#exampleModal1">Editar</button>
-        <button type="button" className="btn bg-danger text-light mt-1" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+        <button type="button" className="boton-logueado-editar btn  text-light mb-1" data-bs-toggle="modal" data-bs-target="#exampleModal1">Editar</button>
+        <button type="button" className="btn boton-logueado-eliminar text-light mt-1" data-bs-toggle="modal" data-bs-target="#exampleModal2">
           Eliminar
         </button>
         </div>
@@ -102,8 +102,8 @@ const UsuarioLogueado = () => {
         <p className="card-text py-2 m-0">Descripción</p>
         <h5 className="card-text py-2 m-0">Precio</h5>
         <div className="text-center">
-        <button type="button" className="boton-productos-destacados btn bg-warning text-light mb-1" data-bs-toggle="modal" data-bs-target="#exampleModal1">Editar</button>
-        <button type="button" className="btn bg-danger text-light mt-1" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+        <button type="button" className="boton-logueado-editar btn  text-light mb-1" data-bs-toggle="modal" data-bs-target="#exampleModal1">Editar</button>
+        <button type="button" className="btn boton-logueado-eliminar text-light mt-1" data-bs-toggle="modal" data-bs-target="#exampleModal2">
           Eliminar
         </button>
         </div>
@@ -118,8 +118,8 @@ const UsuarioLogueado = () => {
         <p className="card-text py-2 m-0">Descripción</p>
         <h5 className="card-text py-2 m-0">Precio</h5>
         <div className="text-center">
-        <button type="button" className="boton-productos-destacados btn bg-warning text-light mb-1" data-bs-toggle="modal" data-bs-target="#exampleModal1">Editar</button>
-        <button type="button" className="btn bg-danger text-light mt-1" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+        <button type="button" className="boton-logueado-editar btn  text-light mb-1" data-bs-toggle="modal" data-bs-target="#exampleModal1">Editar</button>
+        <button type="button" className="btn boton-logueado-eliminar text-light mt-1" data-bs-toggle="modal" data-bs-target="#exampleModal2">
           Eliminar
         </button>
         </div>
@@ -134,8 +134,8 @@ const UsuarioLogueado = () => {
         <p className="card-text py-2 m-0">Descripción</p>
         <h5 className="card-text py-2 m-0">Precio</h5>
         <div className="text-center">
-        <button type="button" className="boton-productos-destacados btn bg-warning text-light mb-1" data-bs-toggle="modal" data-bs-target="#exampleModal1">Editar</button>
-        <button type="button" className="btn bg-danger text-light mt-1" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+        <button type="button" className="boton-logueado-editar btn  text-light mb-1" data-bs-toggle="modal" data-bs-target="#exampleModal1">Editar</button>
+        <button type="button" className="btn boton-logueado-eliminar text-light mt-1" data-bs-toggle="modal" data-bs-target="#exampleModal2">
           Eliminar
         </button>
         </div>
@@ -150,8 +150,8 @@ const UsuarioLogueado = () => {
         <p className="card-text py-2 m-0">Descripción</p>
         <h5 className="card-text py-2 m-0">Precio</h5>
         <div className="text-center">
-        <button type="button" className="boton-productos-destacados btn bg-warning text-light mb-1" data-bs-toggle="modal" data-bs-target="#exampleModal1">Editar</button>
-        <button type="button" className="btn bg-danger text-light mt-1" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+        <button type="button" className="boton-logueado-editar btn  text-light mb-1" data-bs-toggle="modal" data-bs-target="#exampleModal1">Editar</button>
+        <button type="button" className="btn boton-logueado-eliminar text-light mt-1" data-bs-toggle="modal" data-bs-target="#exampleModal2">
           Eliminar
         </button>
         </div>
@@ -258,7 +258,7 @@ const UsuarioLogueado = () => {
         <h4>¿Estás segur@ de eliminar <b className="text-danger">nombre del producto</b>?</h4>
       </div>
       <div className="modal-footer">
-        <button type="button" className="btn bg-danger text-light">Eliminar</button>
+        <button type="button" className="btn boton-logueado-eliminar text-light">Eliminar</button>
       </div>
     </div>
   </div>
