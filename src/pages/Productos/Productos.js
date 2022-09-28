@@ -1,52 +1,12 @@
 import React from 'react';
 import './Productos.css';
-import { Link } from 'react-router-dom';
 
 const Productos = () => {
+
   return (
     <div className="productos-page bg-light d-flex">
-      <div className="w-25 d-flex align-items-start bg-light py-5 ps-5 categorias-productos">
-      <ul class="list-group list-group-flush w-100">
-      <Link to="/productos" className="list-group-item bg-light">Todos los productos</Link>
-  <Link to="/productos" className="categoria-visitada list-group-item bg-light">Stevia</Link>
-  <Link to="/productos" className="categoria-visitada list-group-item bg-light">Hierbas</Link>
-  <Link to="/productos" className="categoria-visitada list-group-item bg-light">Harinas</Link>
-  <Link to="/productos" className="categoria-visitada list-group-item bg-light">Maca</Link>
-  <Link to="/productos" className="categoria-visitada list-group-item bg-light">Nuez de la india</Link>
-  <Link to="/productos" className="categoria-visitada list-group-item bg-light">Pomadas</Link>
-  <Link to="/productos" className="categoria-visitada list-group-item bg-light">Jarabe</Link>
-  <Link to="/productos" className="categoria-visitada list-group-item bg-light">Jabones</Link>
-  <Link to="/productos" className="categoria-visitada list-group-item bg-light">Té</Link>
-  <Link to="/productos" className="categoria-visitada list-group-item bg-light">Aceites</Link>
-  <Link to="/productos" className="categoria-visitada list-group-item bg-light">Sahumerios</Link>
-  <Link to="/productos" className="categoria-visitada list-group-item bg-light">Indumentaria</Link>
-</ul>
-</div>
 
-<div class="dropdown d-flex justify-content-center pt-4 pb-2">
-  <button class="btn text-light dropdown-toggle fs-4 w-75" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-    Categorías 
-  </button>
-<div className="w-75 dropdown-menu fs-4">
-      <ul class="list-group list-group-flush w-100">
-      <Link to="/productos" className="list-group-item bg-light">Todos los productos</Link>
-  <Link to="/productos" className="categoria-visitada list-group-item bg-light">Stevia</Link>
-  <Link to="/productos" className="categoria-visitada list-group-item bg-light">Hierbas</Link>
-  <Link to="/productos" className="categoria-visitada list-group-item bg-light">Harinas</Link>
-  <Link to="/productos" className="categoria-visitada list-group-item bg-light">Maca</Link>
-  <Link to="/productos" className="categoria-visitada list-group-item bg-light">Nuez de la india</Link>
-  <Link to="/productos" className="categoria-visitada list-group-item bg-light">Pomadas</Link>
-  <Link to="/productos" className="categoria-visitada list-group-item bg-light">Jarabe</Link>
-  <Link to="/productos" className="categoria-visitada list-group-item bg-light">Jabones</Link>
-  <Link to="/productos" className="categoria-visitada list-group-item bg-light">Té</Link>
-  <Link to="/productos" className="categoria-visitada list-group-item bg-light">Aceites</Link>
-  <Link to="/productos" className="categoria-visitada list-group-item bg-light">Sahumerios</Link>
-  <Link to="/productos" className="categoria-visitada list-group-item bg-light">Indumentaria</Link>
-</ul>
-</div>
-</div>
-
-<div className="div-productos-page w-75 d-flex flex-wrap align-items-center justify-content-center">
+<div className="div-productos-page d-flex flex-wrap align-items-center justify-content-center">
   <div className="card-producto d-flex justify-content-center p-0 m-3 col-2">
     <div className="card">
       <img src="https://picsum.photos/400/?random=6" className="card-img-top" alt="..." />
@@ -144,12 +104,12 @@ const Productos = () => {
     </div>
 
 
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h4 class="modal-title titulo-modal-producto" id="exampleModalLabel">Nombre Producto</h4>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div className="modal-dialog">
+    <div className="modal-content">
+      <div className="modal-header">
+        <h4 className="modal-title titulo-modal-producto" id="exampleModalLabel">Nombre Producto</h4>
+        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div className="text-center p-3">
       <img src="https://picsum.photos/400/?random=16" className="card-img" alt="..." />
