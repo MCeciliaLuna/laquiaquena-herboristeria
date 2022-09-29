@@ -1,7 +1,18 @@
 import "./UsuarioLogueado.css";
 import { useForm } from "react-hook-form";
+import axios from "axios";
 
 const UsuarioLogueado = () => {
+  const getProductos = async () => {
+    try {
+      const data = await axios.get('http://localhost:8000/traerproductos');
+      console.log(data.data)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+  getProductos()
+
   const { register, handleSubmit} = useForm();
 
   const onSubmit = async (data) => {
@@ -35,230 +46,6 @@ const UsuarioLogueado = () => {
             <div className="card text-center">
               <img
                 src="https://picsum.photos/400/?random=55"
-                className="card-img-top"
-                alt="..."
-              />
-              <div className="card-body p-2">
-                <h4 className="card-title py-1 m-0">Card title</h4>
-                <p className="card-text py-2 m-0">Descripción</p>
-                <h5 className="card-text py-2 m-0">Precio</h5>
-                <div className="text-center">
-                  <button
-                    type="button"
-                    className="boton-logueado-editar btn  text-light mb-1"
-                    data-bs-toggle="modal"
-                    data-bs-target="#exampleModal1"
-                  >
-                    Editar
-                  </button>
-                  <button
-                    type="button"
-                    className="btn boton-logueado-eliminar text-light mt-1"
-                    data-bs-toggle="modal"
-                    data-bs-target="#exampleModal2"
-                  >
-                    Eliminar
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="card-producto d-flex justify-content-center p-0 m-3 col-2">
-            <div className="card text-center">
-              <img
-                src="https://picsum.photos/400/?random=56"
-                className="card-img-top"
-                alt="..."
-              />
-              <div className="card-body p-2">
-                <h4 className="card-title py-1 m-0">Card title</h4>
-                <p className="card-text py-2 m-0">Descripción</p>
-                <h5 className="card-text py-2 m-0">Precio</h5>
-                <div className="text-center">
-                  <button
-                    type="button"
-                    className="boton-logueado-editar btn  text-light mb-1"
-                    data-bs-toggle="modal"
-                    data-bs-target="#exampleModal1"
-                  >
-                    Editar
-                  </button>
-                  <button
-                    type="button"
-                    className="btn boton-logueado-eliminar text-light mt-1"
-                    data-bs-toggle="modal"
-                    data-bs-target="#exampleModal2"
-                  >
-                    Eliminar
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="card-producto d-flex justify-content-center p-0 m-3 col-2">
-            <div className="card text-center">
-              <img
-                src="https://picsum.photos/400/?random=57"
-                className="card-img-top"
-                alt="..."
-              />
-              <div className="card-body p-2">
-                <h4 className="card-title py-1 m-0">Card title</h4>
-                <p className="card-text py-2 m-0">Descripción</p>
-                <h5 className="card-text py-2 m-0">Precio</h5>
-                <div className="text-center">
-                  <button
-                    type="button"
-                    className="boton-logueado-editar btn  text-light mb-1"
-                    data-bs-toggle="modal"
-                    data-bs-target="#exampleModal1"
-                  >
-                    Editar
-                  </button>
-                  <button
-                    type="button"
-                    className="btn boton-logueado-eliminar text-light mt-1"
-                    data-bs-toggle="modal"
-                    data-bs-target="#exampleModal2"
-                  >
-                    Eliminar
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="card-producto d-flex justify-content-center p-0 m-3 col-2">
-            <div className="card text-center">
-              <img
-                src="https://picsum.photos/400/?random=58"
-                className="card-img-top"
-                alt="..."
-              />
-              <div className="card-body p-2">
-                <h4 className="card-title py-1 m-0">Card title</h4>
-                <p className="card-text py-2 m-0">Descripción</p>
-                <h5 className="card-text py-2 m-0">Precio</h5>
-                <div className="text-center">
-                  <button
-                    type="button"
-                    className="boton-logueado-editar btn  text-light mb-1"
-                    data-bs-toggle="modal"
-                    data-bs-target="#exampleModal1"
-                  >
-                    Editar
-                  </button>
-                  <button
-                    type="button"
-                    className="btn boton-logueado-eliminar text-light mt-1"
-                    data-bs-toggle="modal"
-                    data-bs-target="#exampleModal2"
-                  >
-                    Eliminar
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="card-producto d-flex justify-content-center p-0 m-3 col-2">
-            <div className="card text-center">
-              <img
-                src="https://picsum.photos/400/?random=59"
-                className="card-img-top"
-                alt="..."
-              />
-              <div className="card-body p-2">
-                <h4 className="card-title py-1 m-0">Card title</h4>
-                <p className="card-text py-2 m-0">Descripción</p>
-                <h5 className="card-text py-2 m-0">Precio</h5>
-                <div className="text-center">
-                  <button
-                    type="button"
-                    className="boton-logueado-editar btn  text-light mb-1"
-                    data-bs-toggle="modal"
-                    data-bs-target="#exampleModal1"
-                  >
-                    Editar
-                  </button>
-                  <button
-                    type="button"
-                    className="btn boton-logueado-eliminar text-light mt-1"
-                    data-bs-toggle="modal"
-                    data-bs-target="#exampleModal2"
-                  >
-                    Eliminar
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="card-producto d-flex justify-content-center p-0 m-3 col-2">
-            <div className="card text-center">
-              <img
-                src="https://picsum.photos/400/?random=60"
-                className="card-img-top"
-                alt="..."
-              />
-              <div className="card-body p-2">
-                <h4 className="card-title py-1 m-0">Card title</h4>
-                <p className="card-text py-2 m-0">Descripción</p>
-                <h5 className="card-text py-2 m-0">Precio</h5>
-                <div className="text-center">
-                  <button
-                    type="button"
-                    className="boton-logueado-editar btn  text-light mb-1"
-                    data-bs-toggle="modal"
-                    data-bs-target="#exampleModal1"
-                  >
-                    Editar
-                  </button>
-                  <button
-                    type="button"
-                    className="btn boton-logueado-eliminar text-light mt-1"
-                    data-bs-toggle="modal"
-                    data-bs-target="#exampleModal2"
-                  >
-                    Eliminar
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="card-producto d-flex justify-content-center p-0 m-3 col-2">
-            <div className="card text-center">
-              <img
-                src="https://picsum.photos/400/?random=61"
-                className="card-img-top"
-                alt="..."
-              />
-              <div className="card-body p-2">
-                <h4 className="card-title py-1 m-0">Card title</h4>
-                <p className="card-text py-2 m-0">Descripción</p>
-                <h5 className="card-text py-2 m-0">Precio</h5>
-                <div className="text-center">
-                  <button
-                    type="button"
-                    className="boton-logueado-editar btn  text-light mb-1"
-                    data-bs-toggle="modal"
-                    data-bs-target="#exampleModal1"
-                  >
-                    Editar
-                  </button>
-                  <button
-                    type="button"
-                    className="btn boton-logueado-eliminar text-light mt-1"
-                    data-bs-toggle="modal"
-                    data-bs-target="#exampleModal2"
-                  >
-                    Eliminar
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="card-producto d-flex justify-content-center p-0 m-3 col-2">
-            <div className="card text-center">
-              <img
-                src="https://picsum.photos/400/?random=62"
                 className="card-img-top"
                 alt="..."
               />

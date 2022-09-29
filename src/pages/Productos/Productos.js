@@ -1,7 +1,17 @@
 import React from 'react';
 import './Productos.css';
+import axios from 'axios';
 
 const Productos = () => {
+  const getProductos = async () => {
+    try {
+      const data = await axios.get('http://localhost:8000/traerproductos');
+      console.log(data.data)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+  getProductos()
 
   return (
     <div className="productos-page bg-light d-flex">
