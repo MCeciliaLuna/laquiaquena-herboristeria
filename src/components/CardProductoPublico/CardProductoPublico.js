@@ -17,12 +17,13 @@ const CardProductoPublico = ({productos = []}) => {
                 <p className="card-text py-2 m-0">{item.descripcion}</p>
                 <h5 className="card-text py-2 m-0"> $ {item.precio}</h5>
                 <div className="text-center">
+                  <a href={`https://api.whatsapp.com/send?phone=543816427068&text=Informacion%20sobre%20${item.nombre}`} target="new" >
                   <button
                     type="button"
                     className="btn text-light mb-1"
-                  >
+                  > 
                     Comprar
-                  </button>
+                  </button> </a>
                 </div>
               </div>
             </div>

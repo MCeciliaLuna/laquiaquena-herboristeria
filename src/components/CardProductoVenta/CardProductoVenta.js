@@ -1,16 +1,13 @@
-import axios from 'axios';
+
 
 const CardProductoVenta = ({productos = []}) => {
-    const eliminarProducto = async(_id) => {
-        await axios.delete(`http://localhost:8000/eliminarproducto/${_id}`);
-    }
 
   return (
     <div className="d-flex flex-wrap align-items-center justify-content-center">
       {
         productos.map((item, index) => (
     <div className="card-producto d-flex justify-content-center p-0 m-3 col-2">
-            <div className="card text-center" key={item._id}>
+            <div className="card text-center">
               <img
                 src="https://picsum.photos/400/?random=55"
                 className="card-img-top"
@@ -34,7 +31,6 @@ const CardProductoVenta = ({productos = []}) => {
                     className="btn boton-logueado-eliminar text-light mt-1"
                     data-bs-toggle="modal"
                     data-bs-target="#exampleModal2"
-                    key={item._id}
                   >
                     Eliminar
                   </button>
@@ -120,13 +116,12 @@ const CardProductoVenta = ({productos = []}) => {
         </div>
       </div>
 
-      {productos.map((item) => (<div
+      <div
         className="modal fade"
         id="exampleModal2"
         tabindex="-1"
         aria-labelledby="exampleModalLabel"
         aria-hidden="true"
-        key={item._id}
       >
         <div className="modal-dialog">
           <div className="modal-content">
@@ -151,7 +146,6 @@ const CardProductoVenta = ({productos = []}) => {
               <button
                 type="button"
                 className="btn boton-logueado-eliminar text-light"
-                onSubmit={eliminarProducto()}
               >
                 Eliminar
               </button>
@@ -159,7 +153,6 @@ const CardProductoVenta = ({productos = []}) => {
           </div>
         </div>
       </div>
-      ))}
           </div>
         ))
       }
