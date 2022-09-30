@@ -30,6 +30,7 @@ const UsuarioLogueado = () => {
     })
     const json = await resp.json();
     console.log(json)
+    window.location.href = '/usuariologueado'
   }
 
   return (
