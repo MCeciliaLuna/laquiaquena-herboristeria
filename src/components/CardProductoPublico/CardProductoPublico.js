@@ -7,11 +7,13 @@ const CardProductoPublico = ({productos = []}) => {
         productos.map((item, index) => (
     <div className="card-producto d-flex justify-content-center p-0 m-3 col-2" key={index}>
             <div className="card text-center">
+              <div className="card-image-producto">
               <img
-                src="https://picsum.photos/400/?random=55"
+                src={item.image.secure_url}
                 className="card-img-top"
                 alt={item.nombre}
               />
+              </div>
               <div className="card-body p-2">
                 <h4 className="card-title py-1 m-0">{item.nombre}</h4>
                 <p className="card-text py-2 m-0">{item.descripcion}</p>

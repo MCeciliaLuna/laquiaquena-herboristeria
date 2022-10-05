@@ -9,7 +9,7 @@ const CardProductoVenta = ({productos = []}) => {
               <div className="card-producto d-flex justify-content-center p-0 m-3 col-2">
               <div className="card text-center">
               <img
-                src="https://picsum.photos/400/?random=55"
+                src={item.image.secure_url}
                 className="card-img-top"
                 alt="nombre"
               />
@@ -28,6 +28,7 @@ const CardProductoVenta = ({productos = []}) => {
                   </button>
                   <button
                     type="button"
+                    id="botonEliminar"
                     className="btn boton-logueado-eliminar text-light mt-1"
                     data-bs-toggle="modal"
                     data-bs-target="#exampleModal2"

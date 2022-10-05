@@ -5,7 +5,7 @@ const IntroStevia = () => {
   return (
     <div className="intro-stevia">
     <div className="contenedor-stevia col-6">
-      <img src="https://images.pexels.com/photos/66869/green-leaf-natural-wallpaper-royalty-free-66869.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" className="stevia-img" />
+      <img src="https://res.cloudinary.com/dypn4hzge/image/upload/v1664908629/LaQuiaquenaHerboristeria/estevia_z3gkcq.webp" alt="" className="stevia-img" />
       <div className="stevia-text">
       <h2 className="title-cards text-light">Stevia Original Peruana</h2>
       <h5 className="text-light">Encontrá en nuestros locales la Stevia Peruana Original</h5>
@@ -13,7 +13,7 @@ const IntroStevia = () => {
       </div>
     </div>
      <div className="contenedor-stevia col-6">
-     <img src="https://images.pexels.com/photos/66869/green-leaf-natural-wallpaper-royalty-free-66869.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" className="stevia-img" />
+     <img src="https://res.cloudinary.com/dypn4hzge/image/upload/v1664908635/LaQuiaquenaHerboristeria/medicinanatural_jpjwrb.jpg" alt="" className="stevia-img" />
      <div className="stevia-text">
       <h2 className="title-cards text-light">Cápsulas Natural Medix</h2>
       <h5 className="text-light">Trabajamos con la mejor medicina natural del mercado</h5>

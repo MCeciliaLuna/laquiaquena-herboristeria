@@ -3,6 +3,10 @@ import "./Productos.css";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import CardProductoPublico from "../../components/CardProductoPublico/CardProductoPublico";
+import BotonWhatsapp from "../../components/BotonWhatsapp/BotonWhatsapp";
+import Navbar from "../../components/Navbar/Navbar";
+import Buscador from "../../components/Buscador/Buscador";
+import Footer from "../../components/Footer/Footer";
 
 const Productos = () => {
   const [productos, setProductos] = useState([]);
@@ -19,10 +23,16 @@ const Productos = () => {
   }, []);
 
   return (
+    <div>
+      <Buscador />
+      <Navbar />
+      <BotonWhatsapp />
     <div className="productos-page bg-light d-flex">
       <div className="div-productos-page d-flex flex-wrap align-items-center justify-content-center">
         <CardProductoPublico productos={productos} />
         </div>
+    </div>
+    <Footer />
     </div>
   );
 };

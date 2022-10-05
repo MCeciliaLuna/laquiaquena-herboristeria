@@ -1,8 +1,22 @@
-import React from 'react';
+import {useState, useEffect} from 'react';
 import './ProductosDestacados.css';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 const ProductosDestacados = () => {
+  const [productos, setProductos] = useState([]);
+  const getProductos = async () => {
+    try {
+      const info = await axios.get("http://localhost:8000/traerproductos");
+      setProductos(info.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  useEffect(() => {
+    getProductos();
+  }, []);
+
   return (
     <div className="productos-destacados border-bottom bg-light">
     <h2 className="title-productosdestacados w-100 text-center fs-1 pt-4 pb-0">Productos Destacados</h2>

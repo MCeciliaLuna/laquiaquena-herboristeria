@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 const Login = () => {
   const { register, handleSubmit } = useForm();
 
-  const onSubmit = async (data) => {
+  const handleLogin = async (data) => {
     const resp = await fetch('http://localhost:8000/login', {
       method: 'POST',
       body: JSON.stringify(data),
@@ -13,24 +13,29 @@ const Login = () => {
         "Content-Type": "application/json"
       }
     })
-    const json = await resp.json();
-    console.log(json)
+    const json = resp.json();
+    
+    localStorage.setItem('access-token', json.token)
+
+    console.log(data, json.token)
+
+    // window.location.href = '/usuariologueado'
   }
 
   return (
     <div className="login-page bg-light text-center position-relative">
       <div className="position-absolute top-50 start-50 translate-middle">
       <h2 className="text-login fs-1 pt-0 pb-2 d-block text-light">Logueate</h2>
-      <form className="mt-0 mx-5" onSubmit={handleSubmit(onSubmit)}>
+      <form className="mt-0 mx-5" onSubmit={handleSubmit(handleLogin)}>
   <div className="mb-3">
     <label for="exampleInputEmail1" className="text-login fs-4 form-label w-100 text-light">Nombre de usuario</label>
-    <input type="text" className="w-100 m-2 text-center rounded-3 border-0 p-2" placeholder="LaQuiaqueñaHerboristeria" {...register("nombre")} required/>
+    <input type="text" className="input-logueo w-100 m-2 text-center rounded-3 border-0 p-2" placeholder="LaQuiaqueñaHerboristeria" {...register("nombre", { require: true })} required/>
   </div>
   <div className="mb-3">
     <label for="exampleInputPassword1" className="text-login fs-4 form-label w-100 text-light">Contraseña</label>
-    <input type="password" className="w-100 m-2 text-center rounded-3 border-0 p-2" {...register("contraseña")} required />
+    <input type="password" className="input-logueo w-100 m-2 text-center rounded-3 border-0 p-2" {...register("contraseña",  { require: true }) } required />
   </div>
-  <button type="submit" className="btn text-light">Entrar</button>
+  <button type="submit" className="buttonlogin btn text-light">Entrar</button>
 </form>
     </div>
     </div>

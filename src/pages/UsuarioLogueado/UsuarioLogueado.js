@@ -3,8 +3,14 @@ import { useForm } from "react-hook-form";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import CardProductoVenta from "../../components/CardProductoVenta/CardProductoVenta";
+import { Link } from "react-router-dom";
 
 const UsuarioLogueado = () => {
+  // const token = localStorage.getItem('access-token')
+  // if (!token) {
+  //   window.location.href = '/'
+  // }
+
   const [productos, setProductos] = useState([]);
   const getProductos = async () => {
     try {
@@ -28,14 +34,29 @@ const UsuarioLogueado = () => {
         "Content-Type": "application/json"
       }
     })
+
     const json = await resp.json();
     console.log(json)
-    window.location.href = '/usuariologueado'
+    // window.location.href = '/usuariologueado'
   }
 
+  
+
   return (
-    <div className="page-usuariologueado bg-light">
-      <h2 className="text-center p-3">Page UsuarioLogueado</h2>
+    <div className="page-usuariologueado bg-light pt-4">
+      <div className="w-100">
+      <h2 className="text-center pt-3 d-block">Page UsuarioLogueado</h2>
+      <div className="d-block text-center w-100 mb-5">
+      <a href="/">
+      <button
+          type="button"
+          className="btn text-light botonsalirsesion"
+        >
+          Salir
+        </button>
+        </a>
+        </div>
+        </div>
       <div className="d-flex justify-content-center">
         <button
           type="button"
@@ -112,12 +133,12 @@ const UsuarioLogueado = () => {
                 </div>
                 <div className="mb-3">
                   <label className="fs-5 mb-1">Subir foto</label>
-                  <button
+                  <input
+                    type="file"
                     className="btn p-1 d-block rounded-3 w-100"
-                    id="boton-foto"
-                  >
-                    Subir Foto
-                  </button>
+                    id="fotoproducto"
+                    {...register("image")}
+                   />
                 </div>
                 <div className="modal-footer">
                   <button type="submit" className="btn text-light">
