@@ -1,7 +1,7 @@
 import React from "react";
 
 const CardProductoVenta = ({productos = []}) => {
-
+  
   return (
     <div className="d-flex flex-wrap align-items-center justify-content-center">
             {
@@ -9,7 +9,7 @@ const CardProductoVenta = ({productos = []}) => {
               <div className="card-producto d-flex justify-content-center p-0 m-3 col-2">
               <div className="card text-center">
               <img
-                src={item.image.secure_url}
+                src="https://res.cloudinary.com/dypn4hzge/image/upload/v1664982484/LaQuiaquenaHerboristeria/b5h76wtcyinapoexjpuj.jpg"
                 className="card-img-top"
                 alt="nombre"
               />

@@ -5,7 +5,7 @@ import logo from '../assets/images/logo.png';
 
 const Navbar = () => {
   return (
-      <div className="navbar-completo pt-5 mt-1 d-block text-center">
+      <div className="navbar-completo d-block text-center">
     <nav className="navbar navbar-expand-lg">
       <div className="container-fluid d-flex justify-content-around">
     <div className="d-flex align-items-center">

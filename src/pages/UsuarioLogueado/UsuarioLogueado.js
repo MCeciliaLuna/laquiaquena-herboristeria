@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import CardProductoVenta from "../../components/CardProductoVenta/CardProductoVenta";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 const UsuarioLogueado = () => {
   // const token = localStorage.getItem('access-token')

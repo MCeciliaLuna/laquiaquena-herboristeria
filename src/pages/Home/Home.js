@@ -1,5 +1,5 @@
 import BotonWhatsapp from '../../components/BotonWhatsapp/BotonWhatsapp';
-import Buscador from '../../components/Buscador/Buscador';
+// import Buscador from '../../components/Buscador/Buscador';
 import Carousel from '../../components/Carousel/Carousel';
 import Clientes from '../../components/Clientes/Clientes';
 import Contacto from '../../components/Contacto/Contacto';
@@ -13,7 +13,7 @@ import './Home.css';
 function Home() {
   return (
     <body>
-      <Buscador />
+      {/* <Buscador /> */}
       <Navbar />
       <BotonWhatsapp />
       <Carousel />

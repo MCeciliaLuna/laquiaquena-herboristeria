@@ -13,13 +13,15 @@ const Login = () => {
         "Content-Type": "application/json"
       }
     })
-    const json = resp.json();
+    const json = await resp.json();
     
-    localStorage.setItem('access-token', json.token)
-
-    console.log(data, json.token)
-
-    // window.location.href = '/usuariologueado'
+    if (json.token) {
+    
+      localStorage.setItem('access-token', json.token)
+    window.location.href = '/usuariologueado'
+    } else {
+      window.location.href = '*'
+    }
   }
 
   return (
