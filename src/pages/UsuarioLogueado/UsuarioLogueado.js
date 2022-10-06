@@ -6,10 +6,11 @@ import CardProductoVenta from "../../components/CardProductoVenta/CardProductoVe
 // import { Link } from "react-router-dom";
 
 const UsuarioLogueado = () => {
-  // const token = localStorage.getItem('access-token')
-  // if (!token) {
-  //   window.location.href = '/'
-  // }
+  const token = localStorage.getItem('access-token')
+
+  if (!token) {
+     window.location.href = '/*'
+  }
 
   const [productos, setProductos] = useState([]);
   const getProductos = async () => {
@@ -40,6 +41,10 @@ const UsuarioLogueado = () => {
     // window.location.href = '/usuariologueado'
   }
 
+  const cerrarSesion = () => {
+    
+  }
+
   
 
   return (
@@ -51,6 +56,7 @@ const UsuarioLogueado = () => {
       <button
           type="button"
           className="btn text-light botonsalirsesion"
+          onClick={cerrarSesion()}
         >
           Salir
         </button>

@@ -1,6 +1,13 @@
+import axios from "axios";
 import React from "react";
 
 const CardProductoVenta = ({productos = []}) => {
+
+    const eliminarProducto = async (_id) => {
+      await axios.delete(`http://localhost:8000/eliminarproducto/${_id}`)
+      window.location.replace('/usuariologueado')
+    }
+
   
   return (
     <div className="d-flex flex-wrap align-items-center justify-content-center">
@@ -9,7 +16,7 @@ const CardProductoVenta = ({productos = []}) => {
               <div className="card-producto d-flex justify-content-center p-0 m-3 col-2">
               <div className="card text-center">
               <img
-                src="https://res.cloudinary.com/dypn4hzge/image/upload/v1664982484/LaQuiaquenaHerboristeria/b5h76wtcyinapoexjpuj.jpg"
+                src={item.image.secure_url}
                 className="card-img-top"
                 alt="nombre"
               />
@@ -17,10 +24,10 @@ const CardProductoVenta = ({productos = []}) => {
                 <h4 className="card-title py-1 m-0">{item.nombre}</h4>
                 <p className="card-text py-2 m-0">{item.descripcion}</p>
                 <h5 className="card-text py-2 m-0"> ${item.precio}</h5>
-                <div className="text-center">
+                <div className="text-center d-flex justify-content-around">
                   <button
                     type="button"
-                    className="boton-logueado-editar btn  text-light mb-1"
+                    className="boton-logueado-editar btn text-light"
                     data-bs-toggle="modal"
                     data-bs-target="#exampleModal1"
                   >
@@ -29,9 +36,10 @@ const CardProductoVenta = ({productos = []}) => {
                   <button
                     type="button"
                     id="botonEliminar"
-                    className="btn boton-logueado-eliminar text-light mt-1"
+                    className="btn boton-logueado-eliminar text-light"
                     data-bs-toggle="modal"
                     data-bs-target="#exampleModal2"
+                    onClick={() => eliminarProducto(item._id)}
                   >
                     Eliminar
                   </button>
@@ -120,7 +128,7 @@ const CardProductoVenta = ({productos = []}) => {
         </div>
       </div>
 
-      <div
+      {/* <div
         className="modal fade"
         id="exampleModal2"
         tabindex="-1"
@@ -156,7 +164,7 @@ const CardProductoVenta = ({productos = []}) => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
           </div>
   );
 };

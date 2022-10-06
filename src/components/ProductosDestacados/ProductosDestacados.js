@@ -1,7 +1,6 @@
 import {useState, useEffect} from 'react';
 import './ProductosDestacados.css';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
 
 const ProductosDestacados = () => {
   const [productos, setProductos] = useState([]);
@@ -36,7 +35,7 @@ const ProductosDestacados = () => {
             <div className="card text-center">
               <div className="card-image-producto">
               <img
-                src="https://res.cloudinary.com/dypn4hzge/image/upload/v1664982484/LaQuiaquenaHerboristeria/b5h76wtcyinapoexjpuj.jpg"
+                src={item.image.secure_url}
                 className="card-img-top"
                 alt={item.nombre}
               />
@@ -62,9 +61,9 @@ const ProductosDestacados = () => {
 
   </div>
   <div className="pt-3 pb-1 px-5 d-flex aling-items-center">
-  <Link to="/productos" className="w-100 btn text-light mb-0">
+  <a href="/productos" className="w-100 btn text-light mb-0">
 Ver todos los productos
-</Link>
+</a>
 </div>
 </div>
     </div>

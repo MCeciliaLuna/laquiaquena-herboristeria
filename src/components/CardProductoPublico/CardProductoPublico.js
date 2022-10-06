@@ -10,7 +10,7 @@ const CardProductoPublico = ({productos = []}) => {
             <div className="card text-center">
               <div className="card-image-producto">
               <img
-                src="https://res.cloudinary.com/dypn4hzge/image/upload/v1664982484/LaQuiaquenaHerboristeria/b5h76wtcyinapoexjpuj.jpg"
+                src={item.image.secure_url}
                 className="card-img-top"
                 alt={item.nombre}
               />
