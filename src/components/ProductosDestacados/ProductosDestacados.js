@@ -1,7 +1,7 @@
 import {useState, useEffect} from 'react';
 import './ProductosDestacados.css';
-import { Link } from 'react-router-dom';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 const ProductosDestacados = () => {
   const [productos, setProductos] = useState([]);
@@ -17,6 +17,11 @@ const ProductosDestacados = () => {
     getProductos();
   }, []);
 
+
+  const productosFiltrados = productos.filter(producto => productos.length = 5)
+
+  console.log(productosFiltrados)
+
   return (
     <div className="productos-destacados border-bottom bg-light">
     <h2 className="title-productosdestacados w-100 text-center fs-1 pt-4 pb-0">Productos Destacados</h2>
@@ -24,102 +29,45 @@ const ProductosDestacados = () => {
 
 <div className="div-productos">
 <div className="div-margin-moviles g-4 d-flex justify-content-center">
-  <div className="card-producto d-flex justify-content-center p-0 m-3 w-25">
-    <div className="card">
-      <img src="https://picsum.photos/400/?random=6" className="card-img-top" alt="..." />
-      <div className="card-body p-2">
-        <h5 className="card-title m-0">Card title</h5>
-        <p className="card-text py-2 m-0">Precio</p>
-        
-        <button type="button" className="boton-productos-destacados btn text-light" data-bs-toggle="modal" data-bs-target="#exampleModal">Comprar</button>
-      </div>
-    </div>
+  
+{ 
+   productosFiltrados.map((item, index) => (
+    <div className="card-producto d-flex justify-content-center p-0 m-3 col-2" key={index}>
+            <div className="card text-center">
+              <div className="card-image-producto">
+              <img
+                src="https://res.cloudinary.com/dypn4hzge/image/upload/v1664982484/LaQuiaquenaHerboristeria/b5h76wtcyinapoexjpuj.jpg"
+                className="card-img-top"
+                alt={item.nombre}
+              />
+              </div>
+              <div className="card-body p-2">
+                <h4 className="card-title py-1 m-0">{item.nombre}</h4>
+                <p className="card-text py-2 m-0">{item.descripcion}</p>
+                <h5 className="card-text py-2 m-0"> $ {item.precio}</h5>
+                <div className="text-center">
+                  <a href={`https://api.whatsapp.com/send?phone=5493816427068&text=%C2%A1Hola%20*La%20Quiaque%C3%B1a%20Herborister%C3%ADa*%20%F0%9F%91%8B%F0%9F%8C%BF%20!%20Visit%C3%A9%20su%20p%C3%A1gina%20web%20y%20quisiera%20informaci%C3%B3n%20del%20producto%20*${item.nombre}*.%20Muchas%20gracias!%20%E2%98%BA`} target="new" >
+                  <button
+                    type="button"
+                    className="btn text-light mb-1"
+                  > 
+                    Comprar
+                  </button> </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))
+  }
+
   </div>
-  <div className="card-producto d-flex justify-content-center p-0 m-3 w-25">
-    <div className="card ">
-      <img src="https://picsum.photos/400/?random=7" className="card-img-top" alt="..." />
-      <div className="card-body p-2">
-        <h5 className="card-title m-0">Card title</h5>
-        <p className="card-text py-2 m-0">Precio</p>
-        
-        <button type="button" className="boton-productos-destacados btn text-light" data-bs-toggle="modal" data-bs-target="#exampleModal">Comprar</button>
-      </div>
-    </div>
-  </div>
-  <div className="card-producto d-flex justify-content-center p-0 m-3 w-25">
-    <div className="card">
-      <img src="https://picsum.photos/400/?random=8" className="card-img-top" alt="..." />
-      <div className="card-body p-2">
-        <h5 className="card-title m-0">Card title</h5>
-        <p className="card-text py-2 m-0">Precio</p>
-        
-        <button type="button" className="boton-productos-destacados btn text-light" data-bs-toggle="modal" data-bs-target="#exampleModal">Comprar</button>
-      </div>
-    </div>
-  </div>
-  <div className="card-producto d-flex justify-content-center p-0 m-3 w-25">
-    <div className="card ">
-      <img src="https://picsum.photos/400/?random=12" className="card-img-top" alt="..." />
-      <div className="card-body p-2">
-        <h5 className="card-title m-0">Card title</h5>
-        <p className="card-text py-2 m-0">Precio</p>
-        
-        <button type="button" className="boton-productos-destacados btn text-light" data-bs-toggle="modal" data-bs-target="#exampleModal">Comprar</button>
-      </div>
-    </div>
-  </div>
-  <div className="card-producto d-flex justify-content-center p-0 m-3 w-25">
-    <div className="card ">
-      <img src="https://picsum.photos/400/?random=13" className="card-img-top" alt="..." />
-      <div className="card-body p-2">
-        <h5 className="card-title m-0">Card title</h5>
-        <p className="card-text py-2 m-0">Precio</p>
-        
-        <button type="button" className="boton-productos-destacados btn text-light" data-bs-toggle="modal" data-bs-target="#exampleModal">Comprar</button>
-      </div>
-    </div>
-  </div>
-  <div className="card-producto d-flex justify-content-center p-0 m-3 w-25">
-    <div className="card ">
-      <img src="https://picsum.photos/400/?random=14" className="card-img-top" alt="..." />
-      <div className="card-body p-2">
-        <h5 className="card-title m-0">Card title</h5>
-        <p className="card-text py-2 m-0">Precio</p>
-        
-        <button type="button" className="boton-productos-destacados btn text-light" data-bs-toggle="modal" data-bs-target="#exampleModal">Comprar</button>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
-</div>
-<div className=" pb-4 px-5 d-flex aling-items-center">
+  <div className="pt-3 pb-1 px-5 d-flex aling-items-center">
   <Link to="/productos" className="w-100 btn text-light mb-0">
 Ver todos los productos
 </Link>
 </div>
-
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h4 class="modal-title titulo-modal-producto" id="exampleModalLabel">Nombre Producto</h4>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div className="text-center p-3">
-      <img src="https://picsum.photos/400/?random=16" className="card-img" alt="..." />
-      <div className="card-body p-2">
-        <p className="card-title m-0 fs-6">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-        <h4 className="card-text py-2 m-0">Precio</h4>
-        <a href="https://wa.me/c/5493812183467" target="new">
-        <button type="button" className="boton-productos-destacados btn text-light p-3 w-50">Comprar</button>
-        </a>
-        
-        </div>
-  </div>
-    </div>
-  </div>
 </div>
+    </div>
     </div>
   );
 };
