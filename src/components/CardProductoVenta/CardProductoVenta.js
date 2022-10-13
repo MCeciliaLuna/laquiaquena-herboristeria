@@ -1,5 +1,6 @@
 import axios from "axios";
 import React from "react";
+import ModalEditar from "../ModalEditar/ModalEditar";
 
 const CardProductoVenta = ({productos = []}) => {
 
@@ -39,7 +40,7 @@ const CardProductoVenta = ({productos = []}) => {
                     className="btn boton-logueado-eliminar text-light"
                     data-bs-toggle="modal"
                     data-bs-target="#exampleModal2"
-                    onClick={() => eliminarProducto(item._id)}
+                    onClick={(_id) => eliminarProducto(item._id)}
                   >
                     Eliminar
                   </button>
@@ -49,122 +50,9 @@ const CardProductoVenta = ({productos = []}) => {
             </div>
               )
             }
-            
 
-            <div
-        className="modal fade"
-        id="exampleModal1"
-        tabindex="-1"
-        aria-labelledby="exampleModalLabel"
-        aria-hidden="true"
-      >
-        <div className="modal-dialog">
-          <div className="modal-content">
-            <div className="modal-header">
-              <h5 className="modal-title" id="exampleModalLabel1">
-                Editar
-              </h5>
-              <button
-                type="button"
-                className="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
-            </div>
-            <div className="modal-body">
-              <form>
-                <div className="mb-3">
-                  <label for="disabledTextInput" className="fs-5 form-label">
-                    Nombre
-                  </label>
-                  <input
-                    type="text"
-                    id="disabledTextInput"
-                    className="form-control"
-                    placeholder="nombre"
-                  />
-                </div>
-                <div className="mb-3">
-                  <label for="disabledTextInput" className="fs-5 form-label">
-                    Descripción
-                  </label>
-                  <input
-                    type="text"
-                    id="disabledTextInput"
-                    className="form-control"
-                    placeholder="descripcion"
-                  />
-                </div>
-                <div className="mb-3">
-                  <label for="disabledTextInput" className="fs-5 form-label">
-                    Precio
-                  </label>
-                  <div className="d-flex">
-                    <p className="fs-5 m-1 pe-2">$</p>
-                    <input
-                      type="number"
-                      id="disabledTextInput"
-                      className="form-control w-50"
-                      value="precio"
-                    />
-                  </div>
-                </div>
-                <div className="mb-3">
-                  <label className="fs-5 mb-1">Subir foto</label>
-                  <input
-                    type="file"
-                    className="p-1 d-block rounded-3 w-100"
-                    id=""
-                  />
-                </div>
-                <div className="modal-footer">
-                  <button type="button" className="btn text-light">
-                    Modificar producto
-                  </button>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
+            <ModalEditar />
 
-      {/* <div
-        className="modal fade"
-        id="exampleModal2"
-        tabindex="-1"
-        aria-labelledby="exampleModalLabel"
-        aria-hidden="true"
-      >
-        <div className="modal-dialog">
-          <div className="modal-content">
-            <div className="modal-header">
-              <h5 className="modal-title" id="exampleModalLabel">
-                Eliminar
-              </h5>
-              <button
-                type="button"
-                className="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
-            </div>
-            <div className="modal-body">
-              <h4>
-                ¿Estás segur@ de eliminar 
-                <b className="text-danger">nombre</b>?
-              </h4>
-            </div>
-            <div className="modal-footer">
-              <button
-                type="button"
-                className="btn boton-logueado-eliminar text-light"
-              >
-                Eliminar
-              </button>
-            </div>
-          </div>
-        </div>
-      </div> */}
           </div>
   );
 };

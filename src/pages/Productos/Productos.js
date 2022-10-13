@@ -10,17 +10,18 @@ import Footer from "../../components/Footer/Footer";
 import Clientes from "../../components/Clientes/Clientes";
 
 const Productos = () => {
+  localStorage.removeItem('access-token') 
   const [productos, setProductos] = useState([]);
   const getProductos = async () => {
     try {
       const info = await axios.get("http://localhost:8000/traerproductos");
-      setProductos(info.data);
+      setProductos((info.data))
     } catch (error) {
       console.log(error);
     }
   };
   useEffect(() => {
-    getProductos();
+   getProductos()
   }, []);
 
   return (

@@ -7,11 +7,11 @@ import CardProductoVenta from "../../components/CardProductoVenta/CardProductoVe
 
 const UsuarioLogueado = () => {
   const token = localStorage.getItem('access-token')
-
   if (!token) {
-     window.location.href = '/*'
+    window.location.href = '/'
   }
 
+  
   const [productos, setProductos] = useState([]);
   const getProductos = async () => {
     try {
@@ -24,9 +24,9 @@ const UsuarioLogueado = () => {
   useEffect(() => {
     getProductos()
   }, [])
-
+  
   const { register, handleSubmit} = useForm();
-
+  
   const onSubmit = async (data) => {
     const resp = await fetch('http://localhost:8000/crearproducto', {
       method: 'POST',
@@ -35,18 +35,11 @@ const UsuarioLogueado = () => {
         "Content-Type": "application/json"
       }
     })
-
     const json = await resp.json();
     console.log(json)
     // window.location.href = '/usuariologueado'
   }
-
-  const cerrarSesion = () => {
-    
-  }
-
   
-
   return (
     <div className="page-usuariologueado bg-light pt-4">
       <div className="w-100">
@@ -54,9 +47,9 @@ const UsuarioLogueado = () => {
       <div className="d-block text-center w-100 mb-5">
       <a href="/">
       <button
+          id="cerrarsesionbtn"
           type="button"
           className="btn text-light botonsalirsesion"
-          onClick={cerrarSesion()}
         >
           Salir
         </button>
@@ -137,7 +130,7 @@ const UsuarioLogueado = () => {
                     />
                   </div>
                 </div>
-                <div className="mb-3">
+                 <div className="mb-3">
                   <label className="fs-5 mb-1">Subir foto</label>
                   <input
                     type="file"
