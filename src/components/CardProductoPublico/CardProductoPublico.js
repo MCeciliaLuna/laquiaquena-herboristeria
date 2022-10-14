@@ -1,11 +1,28 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 const CardProductoPublico = ({productos = []}) => {
+  
+  const aux = productos.sort((a,b) =>{
+    
+    if (a.nombre > b.nombre) {
+    return 1;
+  }
+  if (a.nombre < b.nombre) {
+    return -1;
+  }
+  return 0 })
 
+  const [productosOrdenados, setProductosOrdenados] = useState([])
+
+  useEffect(() => {
+    setProductosOrdenados(aux)
+  }, [aux])
+
+  
   return (
     <div className="d-flex flex-wrap align-items-center justify-content-center">
       {
-        productos.map(producto => (
+        productosOrdenados.map(producto => (
     <div className="card-producto d-flex justify-content-center p-0 m-3 col-2" key={producto._id}>
             <div className="card text-center">
               <div className="card-image-producto">

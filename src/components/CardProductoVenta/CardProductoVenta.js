@@ -1,5 +1,5 @@
 import axios from "axios";
-import React from "react";
+import { useState, useEffect } from "react";
 import ModalEditar from "../ModalEditar/ModalEditar";
 
 const CardProductoVenta = ({productos = []}) => {
@@ -10,11 +10,27 @@ const CardProductoVenta = ({productos = []}) => {
       window.location.replace('/usuariologueado')
     }
 
+    const aux = productos.sort((a,b) =>{
+    
+      if (a.nombre > b.nombre) {
+      return 1;
+    }
+    if (a.nombre < b.nombre) {
+      return -1;
+    }
+    return 0 })
+  
+    const [productosOrdenados, setProductosOrdenados] = useState([])
+  
+    useEffect(() => {
+      setProductosOrdenados(aux)
+    }, [aux])
+
   
   return (
     <div className="d-flex flex-wrap align-items-center justify-content-center">
             {
-              productos.map((item, index)=>
+              productosOrdenados.map((item, index)=>
               <div className="card-producto d-flex justify-content-center p-0 m-3 col-2">
               <div className="card text-center">
               <img
