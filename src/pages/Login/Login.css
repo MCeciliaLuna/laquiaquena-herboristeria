@@ -8,6 +8,10 @@
   text-shadow: 3px 2px 5px rgb(0, 0, 0);
 }
 
+.buttonvolver{
+  background-color: #b00215;
+}
+
 @media (min-width: 768px) and (max-width: 991.98px){
   .text-login{
     font-size: 3vh !important;

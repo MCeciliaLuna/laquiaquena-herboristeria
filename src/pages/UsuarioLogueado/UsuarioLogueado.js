@@ -24,27 +24,40 @@ const UsuarioLogueado = () => {
   useEffect(() => {
     getProductos()
   }, [])
+
+  const [archivos, setArchivos] = useState(null)
+
+  const subirArchivos = e => {
+    setArchivos(e)
+  }
+
   
   const { register, handleSubmit} = useForm();
   
   const onSubmit = async (data) => {
+    const insertarImagen = async () => {
+      const i = new FormData()
+      i.append("files", archivos[i])
+    }
     const resp = await fetch('http://localhost:8000/crearproducto', {
       method: 'POST',
       body: JSON.stringify(data),
       headers: {
         "Content-Type": "application/json"
       }
-    })
+    }
+    )
     const json = await resp.json();
     console.log(json)
     // window.location.href = '/usuariologueado'
+    
   }
   
   return (
     <div className="page-usuariologueado bg-light pt-4">
       <div className="w-100">
-      <h2 className="text-center pt-3 d-block">Page UsuarioLogueado</h2>
-      <div className="d-block text-center w-100 mb-5">
+      <h2 className="text-center pt-3 d-block">¡Bienvenid@!</h2>
+      <div className="d-block text-center w-100 mb-3">
       <a href="/">
       <button
           id="cerrarsesionbtn"
@@ -135,7 +148,7 @@ const UsuarioLogueado = () => {
                   <input
                     type="file"
                     className="btn p-1 d-block rounded-3 w-100"
-                    id="fotoproducto"
+                    onChange={(e)=> subirArchivos(e.producto.image)}
                     {...register("image")}
                    />
                 </div>

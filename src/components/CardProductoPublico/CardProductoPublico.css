@@ -1,0 +1,33 @@
+.cardpublico-titulo{
+  font-size: 4vh;
+  height: 9vh;
+  word-wrap: break-word;
+}
+
+.cardpublico-descripcion{
+  font-size: 3vh;
+  height: 15vh;
+  word-wrap: break-word;
+}
+
+@media (max-width: 767.98px) {
+   .cardpublico-titulo{
+    font-size: 2.4vh;
+    height: 3vh;
+  }
+  .cardpublico-descripcion{
+    font-size: 1.8vh;
+    height: 12vh;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px){
+  .cardpublico-titulo{
+    font-size: 2.5vh;
+    height: 4vh;
+  }
+  .cardpublico-descripcion{
+    font-size: 2vh;
+    height: 11vh;
+  }
+    }

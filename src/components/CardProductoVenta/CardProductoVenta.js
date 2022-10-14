@@ -1,12 +1,13 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import ModalEditar from "../ModalEditar/ModalEditar";
+import '../CardProductoVenta/CardProductoVenta.css'
 
 const CardProductoVenta = ({productos = []}) => {
 
     const eliminarProducto = async (_id) => {
       await axios.delete(`http://localhost:8000/eliminarproducto/${_id}`)
-      alert('Producto eliminado exitosamente')
+      alert(`Producto eliminado exitosamente`)
       window.location.replace('/usuariologueado')
     }
 
@@ -39,22 +40,23 @@ const CardProductoVenta = ({productos = []}) => {
                 alt="nombre"
               />
               <div className="card-body p-2">
-                <h4 className="card-title py-1 m-0">{item.nombre}</h4>
-                <p className="card-text py-2 m-0">{item.descripcion}</p>
-                <h5 className="card-text py-2 m-0"> ${item.precio}</h5>
-                <div className="text-center d-flex justify-content-around">
-                  <button
+                <h4 className="cardventa-titulo d-flex justify-content-center align-items-center card-title mt-3 pt-1 mb-0">{item.nombre}</h4>
+                <p className="cardventa-descripcion d-flex justify-content-center align-items-center card-text m-0 p-1">{item.descripcion}</p>
+                {/* <h5 className="card-text py-2 m-0"> ${item.precio}</h5> */}
+                
+                  <div className="d-block">
+                  {/* <button
                     type="button"
-                    className="boton-logueado-editar btn text-light"
+                    className="boton-logueado-editar btn text-light m-1"
                     data-bs-toggle="modal"
                     data-bs-target="#exampleModal1"
                   >
                     Editar
-                  </button>
+                  </button> */}
                   <button
                     type="button"
                     id="botonEliminar"
-                    className="btn boton-logueado-eliminar text-light"
+                    className="btn boton-logueado-eliminar text-light mx-1"
                     data-bs-toggle="modal"
                     data-bs-target="#exampleModal2"
                     onClick={(_id) => eliminarProducto(item._id)}
@@ -62,9 +64,10 @@ const CardProductoVenta = ({productos = []}) => {
                     Eliminar
                   </button>
                 </div>
+                </div>
               </div>
             </div>
-            </div>
+            
               )
             }
 

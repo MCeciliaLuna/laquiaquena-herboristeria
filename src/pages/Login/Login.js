@@ -38,8 +38,11 @@ const Login = () => {
     <label for="exampleInputPassword1" className="text-login fs-4 form-label w-100 text-light">Contraseña</label>
     <input type="password" className="input-logueo w-100 m-2 text-center rounded-3 border-0 p-2" {...register("contraseña",  { require: true }) } required />
   </div>
-  <button type="submit" className="buttonlogin btn text-light">Entrar</button>
+  <button type="submit" className="buttonlogin btn text-light mb-3">Entrar</button>
 </form>
+<a href="/">
+<button className="buttonvolver btn text-light mt-4">Volver a Página principal</button>
+</a>
     </div>
     </div>
   );
