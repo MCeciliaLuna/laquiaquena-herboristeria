@@ -1,6 +1,6 @@
 .login-page{
   height: 100vh;
-  background-image: url(https://images.pexels.com/photos/2379652/pexels-photo-2379652.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+  background-image: url(../assets/images/carousel.jpg);
   background-size: cover;
 }
 

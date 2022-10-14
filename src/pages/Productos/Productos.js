@@ -29,7 +29,7 @@ const Productos = () => {
       {/* <Buscador /> */}
       <Navbar />
       <BotonWhatsapp />
-    <div className="productos-page bg-light d-flex">
+    <div className="productos-page d-flex">
       <div className="div-productos-page d-flex flex-wrap align-items-center justify-content-center">
         <CardProductoPublico productos={productos} />
         </div>

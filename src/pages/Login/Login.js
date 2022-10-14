@@ -1,6 +1,7 @@
 import React from 'react';
 import './Login.css';
 import { useForm } from "react-hook-form";
+import imagecarousel from '../assets/images/carousel.jpg';
 
 const Login = () => {
   localStorage.removeItem('access-token')
@@ -28,7 +29,7 @@ const Login = () => {
   return (
     <div className="login-page bg-light text-center position-relative">
       <div className="position-absolute top-50 start-50 translate-middle">
-      <h2 className="text-login fs-1 pt-0 pb-2 d-block text-light">Logueate</h2>
+      <h2 className="text-login fs-1 pt-0 pb-2 d-block text-light">Ingresá</h2>
       <form className="mt-0 mx-5" onSubmit={handleSubmit(handleLogin)}>
   <div className="mb-3">
     <label for="exampleInputEmail1" className="text-login fs-4 form-label w-100 text-light">Nombre de usuario</label>
