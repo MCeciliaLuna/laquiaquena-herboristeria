@@ -8,7 +8,7 @@ const Login = () => {
   const { register, handleSubmit } = useForm();
 
   const handleLogin = async (data) => {
-    const resp = await fetch('http://localhost:8000/login', {
+    const resp = await fetch('https://laquiaquenaherboristeriabe.onrender.com/login', {
       method: 'POST',
       body: JSON.stringify(data),
       headers: {

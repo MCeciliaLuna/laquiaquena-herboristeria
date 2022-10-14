@@ -15,7 +15,7 @@ const UsuarioLogueado = () => {
   const [productos, setProductos] = useState([]);
   const getProductos = async () => {
     try {
-      const info = await axios.get('http://localhost:8000/traerproductos');
+      const info = await axios.get('https://laquiaquenaherboristeriabe.onrender.com/traerproductos');
       setProductos(info.data)
     } catch (error) {
       console.log(error)
