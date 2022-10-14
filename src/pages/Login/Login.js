@@ -3,7 +3,7 @@ import './Login.css';
 import { useForm } from "react-hook-form";
 
 const Login = () => {
-  localStorage.removeItem('access-token') 
+  localStorage.removeItem('access-token')
   const { register, handleSubmit } = useForm();
 
   const handleLogin = async (data) => {
@@ -21,7 +21,7 @@ const Login = () => {
       localStorage.setItem('access-token', json.token)
     window.location.href = '/usuariologueado'
     } else {
-      window.location.href = '*'
+      alert('El usuario o la contraseña que ingresaste no es correcto')
     }
   }
 
