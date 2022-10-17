@@ -10,7 +10,7 @@ const Carousel = () => {
     <img src={banner} className="banner-carousel" alt="logo" />
   <div className="carousel-inner carousel-padre">
     <div className="carousel-item active">
-      <img src={imagecarousel} className="d-block w-100" alt="..." />
+      {/* <img src={imagecarousel} className="carousel-image d-block w-100" alt="imagecarousel" /> */}
     </div>
     </div>
   </div>
