@@ -26,7 +26,7 @@ const UsuarioLogueado = () => {
   }, [])
 
   
-  const { register, handleSubmit} = useForm();
+  const { register, handleSubmit} = useForm()
   
   const changeImage = () => {
     const formData = new FormData();
