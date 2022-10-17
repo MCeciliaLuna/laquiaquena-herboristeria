@@ -11,7 +11,7 @@ const ModalEditar = ({_id}) => {
     const [ id, setId ] = useState('')
 
     const getProductoById = async () => {
-      const res = await axios.get('http://localhost:8000/traerproductos')
+      const res = await axios.get('https://laquiaquenaherboristeriabe.onrender.com/traerproductos')
       setNombre(res.data.nombre)
       setDescripcion(res.data.descripcion)
       setPrecio(res.data.precio)
@@ -21,7 +21,7 @@ const ModalEditar = ({_id}) => {
 
   const editarProducto = async (e, _id) => {
     e.preventDefault()
-    await axios.put(`http://localhost:8000/eliminarproducto/${_id}`,{
+    await axios.put(`https://laquiaquenaherboristeriabe.onrender.com/eliminarproducto/${_id}`,{
       nombre: nombre,
       descripcion: descripcion,
       precio: precio

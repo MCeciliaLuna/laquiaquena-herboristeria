@@ -25,31 +25,28 @@ const UsuarioLogueado = () => {
     getProductos()
   }, [])
 
-  const [archivos, setArchivos] = useState(null)
-
-  const subirArchivos = e => {
-    setArchivos(e)
-  }
-
   
   const { register, handleSubmit} = useForm();
   
+  const changeImage = () => {
+    const formData = new FormData();
+    const image = document.getElementById("image")
+    formData.append("image", image.files[0])
+  }
+
   const onSubmit = async (data) => {
-    const insertarImagen = async () => {
-      const i = new FormData()
-      i.append("files", archivos[i])
-    }
-    const resp = await fetch('http://localhost:8000/crearproducto', {
+    const resp = await fetch('https://laquiaquenaherboristeriabe.onrender.com/crearproducto',
+    {
       method: 'POST',
       body: JSON.stringify(data),
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "multipart/form-data"
       }
     }
     )
-    const json = await resp.json();
+   const json = await resp.json();
     console.log(json)
-    // window.location.href = '/usuariologueado'
+    //window.location.href = '/usuariologueado'
     
   }
   
@@ -148,7 +145,9 @@ const UsuarioLogueado = () => {
                   <input
                     type="file"
                     className="btn p-1 d-block rounded-3 w-100"
-                    onChange={(e)=> subirArchivos(e.producto.image)}
+                    id="image"
+                    name="image"
+                    onChange={changeImage}
                     {...register("image")}
                    />
                 </div>
