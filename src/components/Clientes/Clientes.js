@@ -11,7 +11,7 @@ const Clientes = () => {
     <div class="card-testimonio card">
     <div class="texto-testimonio card-body">
     <h5 className="nombre-cliente">Alejandro</h5>
-    <h6>"Tengo diabetes y siempre encuentro en La Quiaqueña Herboristería un producto que me ayuda a estar mejor"</h6>
+    <h6 className="testimonio">Tengo diabetes y siempre encuentro en La Quiaqueña Herboristería un producto que me ayuda a estar mejor"</h6>
   </div>
 </div>
   </div>
@@ -20,7 +20,7 @@ const Clientes = () => {
     <div class="card-testimonio card">
     <div class="texto-testimonio card-body">
     <h5 className="nombre-cliente">Lucía</h5>
-    <h6>"Los productos de La Quiaqueña Herboristería son, sin dudas, los mejores; además, muy buena la atención"</h6>
+    <h6 className="testimonio">Los productos de La Quiaqueña Herboristería son, sin dudas, los mejores; además, muy buena la atención"</h6>
   </div>
 </div>
   </div>
@@ -29,7 +29,7 @@ const Clientes = () => {
     <div class="card-testimonio card">
   <div class="texto-testimonio card-body">
     <h5 className="nombre-cliente">Eduardo</h5>
-    <h6>"Los productos de La Quiaqueña Herboristería han mejorado notablemente mi salud"</h6>
+    <h6 className="testimonio">Los productos de La Quiaqueña Herboristería han mejorado notablemente mi salud"</h6>
   </div>
 </div>
 </div>
