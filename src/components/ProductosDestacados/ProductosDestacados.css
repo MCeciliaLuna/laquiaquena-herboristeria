@@ -1,5 +1,6 @@
 .title-productosdestacados{
   color: #b00215;
+  text-shadow: 2px 3px 9px #000000;
 }
 
 .titulo-destacados{
@@ -34,7 +35,7 @@
 
 @media (min-width: 768px) and (max-width: 991.98px){
   .card-producto{
-    width: 25% !important;
+    width: 35% !important;
   }
   .div-margin-moviles{
     flex-wrap: wrap;

@@ -51,9 +51,9 @@ const UsuarioLogueado = () => {
   }
   
   return (
-    <div className="page-usuariologueado bg-light pt-4">
+    <div className="page-usuariologueado pt-4">
       <div className="w-100">
-      <h2 className="text-center pt-3 d-block">¡Bienvenid@!</h2>
+      <h2 className="title-logueado text-center pt-3 d-block text-light">¡Bienvenid@!</h2>
       <div className="d-block text-center w-100 mb-3">
       <a href="/">
       <button
@@ -111,7 +111,9 @@ const UsuarioLogueado = () => {
                   <input
                     type="text"
                     id="disabledTextInput"
-                    className="form-control"
+                    className="form-control input-nombreproducto"
+                    maxLength="35"
+                    placeholder="ingresá tipo + nombre + marca"
                     {...register("nombre")}
                   />
                 </div>
@@ -123,6 +125,8 @@ const UsuarioLogueado = () => {
                     type="text"
                     id="disabledTextInput"
                     className="form-control"
+                    maxLength="50"
+                    placeholder="describí brevemente las propiedades"
                     {...register("descripcion")}
                   />
                 </div>

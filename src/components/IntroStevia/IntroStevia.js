@@ -5,7 +5,7 @@ import imagesnaturalmedix from '../assets/images/naturalmedix.jpg'
 
 const IntroStevia = () => {
   return (
-    <div className="intro-stevia">
+    <div className="intro-stevia h-auto">
     <div className="contenedor-stevia col-6">
       <img src={imagestevia} alt="stevia" className="stevia-img" />
       <div className="stevia-text">

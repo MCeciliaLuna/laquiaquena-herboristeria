@@ -21,8 +21,8 @@ const ProductosDestacados = () => {
   const productosFiltrados = productosAleatorios.filter(producto => productos.length = 4)
 
   return (
-    <div className="productos-destacados border-bottom bg-light">
-    <h2 className="title-productosdestacados w-100 text-center fs-1 pt-4 pb-0">Productos Destacados</h2>
+    <div className="productos-destacados border-bottom">
+    <h2 className="title-productosdestacados w-100 text-center text-light fs-1 pt-4 pb-0">Productos Destacados</h2>
     <div className="productosdestacados-media d-flex align-items-center my-3">
 
 <div className="div-productos">

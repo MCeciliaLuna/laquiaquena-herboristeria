@@ -2,6 +2,10 @@
   height: auto;
 }
 
+.title-logueado{
+  text-shadow: 2px 3px 9px #000000; 
+}
+
 .botonsalirsesion{
   background-color: #b00215 !important; 
 }
@@ -24,6 +28,14 @@
 
 .boton-logueado-eliminar:hover{
   background-color: #7fab1f;
+}
+
+.input-nombreproducto{
+  text-transform: uppercase;
+}
+
+::placeholder{
+  text-transform: lowercase;
 }
 
 @media (min-width: 768px) and (max-width: 991.98px){
