@@ -26,23 +26,19 @@ const UsuarioLogueado = () => {
 
   
   const { register, handleSubmit} = useForm()
-
+  
   const onSubmit = async (data) => {
-    console.log(data.image)
-  //   const formData = new FormData();
-  //       formData.append("image", data.image[0], "imageproducto");
-
-  // const resp = await fetch('http://localhost:8000/crearproducto',
-  // {
-  // method: 'POST',
-  // body: JSON.stringify(data),
-  // headers: {
-  //   "Content-Type": "multipart/form-data"
-  // }
-  // }
-  // )
-  // const json = await resp.json();
-  //    console.log(json)
+  const resp = await fetch('http://localhost:8000/crearproducto',
+  {
+  method: 'POST',
+  body: JSON.stringify(data),
+  headers: {
+    "Content-Type": "multipart/form-data"
+  }
+  }
+  )
+  const json = await resp.json();
+     console.log(json)
   //   //window.location.href = '/usuariologueado'
   //   // console.log(data)
   // }
@@ -100,7 +96,7 @@ const UsuarioLogueado = () => {
               ></button>
             </div>
             <div className="modal-body">
-              <form onSubmit={handleSubmit(onSubmit)}>
+              <form onSubmit={handleSubmit(onSubmit)} id="form">
                 <div className="mb-3">
                   <label for="disabledTextInput" className="fs-5 form-label text-light">
                     Nombre
@@ -146,8 +142,6 @@ const UsuarioLogueado = () => {
                   <input
                     type="file"
                     className="btn p-1 d-block rounded-3 w-100"
-                    id="image"
-                    name="image"
                     {...register("image")}
                    />
                 </div>
