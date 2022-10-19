@@ -87,9 +87,9 @@ const UsuarioLogueado = () => {
         aria-hidden="true"
       >
         <div className="modal-dialog">
-          <div className="modal-content">
+          <div className="modal-content fondo-modal-logueado">
             <div className="modal-header">
-              <h5 className="modal-title" id="exampleModalLabel">
+              <h5 className="modal-title text-light" id="exampleModalLabel">
                 Nuevo producto
               </h5>
               <button
@@ -102,7 +102,7 @@ const UsuarioLogueado = () => {
             <div className="modal-body">
               <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="mb-3">
-                  <label for="disabledTextInput" className="fs-5 form-label">
+                  <label for="disabledTextInput" className="fs-5 form-label text-light">
                     Nombre
                   </label>
                   <input
@@ -115,7 +115,7 @@ const UsuarioLogueado = () => {
                   />
                 </div>
                 <div className="mb-3">
-                  <label for="disabledTextInput" className="fs-5 form-label">
+                  <label for="disabledTextInput" className="fs-5 form-label text-light">
                     Descripción
                   </label>
                   <input
@@ -128,7 +128,7 @@ const UsuarioLogueado = () => {
                   />
                 </div>
                 <div className="mb-3">
-                  <label for="disabledTextInput" className="fs-5 form-label">
+                  <label for="disabledTextInput" className="fs-5 form-label text-light">
                     Precio
                   </label>
                   <div className="d-flex">
@@ -142,7 +142,7 @@ const UsuarioLogueado = () => {
                   </div>
                 </div>
                  <div className="mb-3">
-                  <label className="fs-5 mb-1">Subir foto</label>
+                  <label className="fs-5 mb-1 text-light">Subir foto</label>
                   <input
                     type="file"
                     className="btn p-1 d-block rounded-3 w-100"

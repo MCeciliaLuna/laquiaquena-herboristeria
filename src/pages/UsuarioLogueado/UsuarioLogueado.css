@@ -2,6 +2,16 @@
   height: auto;
 }
 
+.fondo-modal-logueado{
+  background-image: url(/src/assets/images/cover3.png);
+  background-repeat: repeat;
+  background-size: cover;
+}
+
+.text-light{
+  text-shadow: 2px 3px 9px #000000; 
+}
+
 .title-logueado{
   text-shadow: 2px 3px 9px #000000; 
 }

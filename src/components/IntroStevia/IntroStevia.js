@@ -28,11 +28,11 @@ const IntroStevia = () => {
   <div class="modal-dialog">
     <div class="modal-content fondo-modal">
       <div class="modal-header">
-        <h4 class="modal-title text-light" id="exampleModalLabel">Stevia Original Peruana</h4>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="text-modal text-center modal-body text-light">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa cumque voluptate tempora placeat nesciunt? Necessitatibus, autem? Fuga saepe soluta modi expedita aliquid vitae consequatur at itaque, sed, accusamus reiciendis quis.
+      Este endulzante natural ofrece múltiples beneficios: es un buen reemplazo del azúcar, tiene aporte calórico casi nulo, regula la presión arterial, posee antioxidantes, reduce el colesterol, beneficia la salud bucal y la piel, ayuda a prevenir la osteoporosis y posee propiedades anti diarreicas, anti hiperglucémicas, antihipertensivas, diuréticas, antiinflamatoria e inmunomoduladoras.<br />
+      <h2 className="fs-4 mt-2">¡Nosotros tenemos la Stevia Peruana Original!</h2>
       </div>
       <div class="modal-footer d-flex justify-content-center">
         <a href="/productos">
@@ -47,11 +47,12 @@ const IntroStevia = () => {
   <div class="modal-dialog">
     <div class="modal-content fondo-modal">
       <div class="modal-header">
-        <h4 class="modal-title text-light" id="exampleModalLabel">Cápsulas Natural Medix</h4>
+        {/* <h4 class="modal-title text-light" id="exampleModalLabel">Cápsulas Natural Medix</h4> */}
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="text-modal text-center modal-body text-light">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa cumque voluptate tempora placeat nesciunt? Necessitatibus, autem? Fuga saepe soluta modi expedita aliquid vitae consequatur at itaque, sed, accusamus reiciendis quis.
+      <div class="text-modal text-center modal-body text-light fs-5">
+      Natural medix ofrece suplementos que benefician al sistema inmunológico, ayudan a la transformación del cuerpo y proveen el bienestar general.<br />
+      <h2 className="fs-4 mt-2">¡En nuestros locales encontrás sus mejores productos!</h2>
       </div>
       <div class="modal-footer d-flex justify-content-center">
         <a href="/productos">
