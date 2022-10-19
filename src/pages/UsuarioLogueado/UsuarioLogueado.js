@@ -3,7 +3,6 @@ import { useForm } from "react-hook-form";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import CardProductoVenta from "../../components/CardProductoVenta/CardProductoVenta";
-// import { Link } from "react-router-dom";
 
 const UsuarioLogueado = () => {
   const token = localStorage.getItem('access-token')
@@ -27,29 +26,27 @@ const UsuarioLogueado = () => {
 
   
   const { register, handleSubmit} = useForm()
-  
-  const changeImage = () => {
-    const formData = new FormData();
-    const image = document.getElementById("image")
-    formData.append("image", image.files[0])
-  }
 
   const onSubmit = async (data) => {
-    const resp = await fetch('https://laquiaquenaherboristeriabe.onrender.com/crearproducto',
-    {
-      method: 'POST',
-      body: JSON.stringify(data),
-      headers: {
-        "Content-Type": "multipart/form-data"
-      }
-    }
-    )
-   const json = await resp.json();
-    console.log(json)
-    //window.location.href = '/usuariologueado'
-    
+    console.log(data.image)
+  //   const formData = new FormData();
+  //       formData.append("image", data.image[0], "imageproducto");
+
+  // const resp = await fetch('http://localhost:8000/crearproducto',
+  // {
+  // method: 'POST',
+  // body: JSON.stringify(data),
+  // headers: {
+  //   "Content-Type": "multipart/form-data"
+  // }
+  // }
+  // )
+  // const json = await resp.json();
+  //    console.log(json)
+  //   //window.location.href = '/usuariologueado'
+  //   // console.log(data)
+  // }
   }
-  
   return (
     <div className="page-usuariologueado pt-4">
       <div className="w-100">
@@ -151,7 +148,6 @@ const UsuarioLogueado = () => {
                     className="btn p-1 d-block rounded-3 w-100"
                     id="image"
                     name="image"
-                    onChange={changeImage}
                     {...register("image")}
                    />
                 </div>
