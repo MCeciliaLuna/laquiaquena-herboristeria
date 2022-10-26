@@ -24,24 +24,28 @@ const UsuarioLogueado = () => {
     getProductos()
   }, [])
 
-  
+
   const { register, handleSubmit} = useForm()
-  
   const onSubmit = async (data) => {
-  const resp = await fetch('http://localhost:8000/crearproducto',
-  {
-  method: 'POST',
-  body: JSON.stringify(data),
-  headers: {
-    "Content-Type": "multipart/form-data"
-  }
-  }
-  )
-  const json = await resp.json();
-     console.log(json)
-  //   //window.location.href = '/usuariologueado'
-  //   // console.log(data)
-  // }
+    const formData = new FormData()
+  
+    for(const name in data) {
+      if (name === 'image') {
+        formData.append(name, data[name][0])
+      } else {
+        formData.append(name, data[name])
+      }
+    }
+
+    const resp = await fetch('https://laquiaquenaherboristeriabe.onrender.com/crearproducto',
+    {
+    method: 'POST',
+    body: formData
+    }
+    )
+    const json = await resp.json();
+      alert(`¡Producto agregado exitosamente!`)
+      window.location.href = '/usuariologueado'
   }
   return (
     <div className="page-usuariologueado pt-4">
@@ -105,9 +109,9 @@ const UsuarioLogueado = () => {
                     type="text"
                     id="disabledTextInput"
                     className="form-control input-nombreproducto"
-                    maxLength="35"
-                    placeholder="ingresá tipo + nombre + marca"
-                    {...register("nombre")}
+                    maxLength="25"
+                    placeholder="ingresá tipo + nombre"
+                    {...register("nombre", { required: true })} required
                   />
                 </div>
                 <div className="mb-3">
@@ -118,31 +122,17 @@ const UsuarioLogueado = () => {
                     type="text"
                     id="disabledTextInput"
                     className="form-control"
-                    maxLength="50"
+                    maxLength="40"
                     placeholder="describí brevemente las propiedades"
-                    {...register("descripcion")}
+                    {...register("descripcion", { required: true })} required
                   />
                 </div>
-                <div className="mb-3">
-                  <label for="disabledTextInput" className="fs-5 form-label text-light">
-                    Precio
-                  </label>
-                  <div className="d-flex">
-                    <p className="fs-5 m-1 pe-2">$</p>
-                    <input
-                      type="number"
-                      id="disabledTextInput"
-                      className="form-control w-50"
-                      {...register("precio")}
-                    />
-                  </div>
-                </div>
                  <div className="mb-3">
-                  <label className="fs-5 mb-1 text-light">Subir foto</label>
+                  <label className="fs-5 mb-1 text-light">Subir foto (debe ser cuadrada)</label>
                   <input
                     type="file"
                     className="btn p-1 d-block rounded-3 w-100"
-                    {...register("image")}
+                    {...register("image", { required: true })} required
                    />
                 </div>
                 <div className="modal-footer">

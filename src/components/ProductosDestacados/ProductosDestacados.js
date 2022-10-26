@@ -27,8 +27,7 @@ const ProductosDestacados = () => {
 
 <div className="div-productos">
 <div className="div-margin-moviles g-4 d-flex justify-content-center">
-  
-{ 
+{
    productosFiltrados.map(producto => (
     <div className="card-producto d-flex justify-content-center p-0 m-3 col-2" key={producto._id}>
             <div className="card text-center">

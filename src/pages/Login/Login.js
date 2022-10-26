@@ -1,11 +1,12 @@
 import React from 'react';
 import './Login.css';
 import { useForm } from "react-hook-form";
-import imagecarousel from '../assets/images/carousel.jpg';
+import Loader from '../../components/Loader/Loader';
 
 const Login = () => {
   localStorage.removeItem('access-token')
   const { register, handleSubmit } = useForm();
+
 
   const handleLogin = async (data) => {
     const resp = await fetch('https://laquiaquenaherboristeriabe.onrender.com/login', {
@@ -18,7 +19,6 @@ const Login = () => {
     const json = await resp.json();
     
     if (json.token) {
-    
       localStorage.setItem('access-token', json.token)
     window.location.href = '/usuariologueado'
     } else {
