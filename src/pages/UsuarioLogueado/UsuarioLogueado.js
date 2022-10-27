@@ -118,7 +118,7 @@ const UsuarioLogueado = () => {
                   <label for="disabledTextInput" className="fs-5 form-label text-light">
                     Descripción
                   </label>
-                  <input
+                  <textarea
                     type="text"
                     id="disabledTextInput"
                     className="form-control"
