@@ -122,8 +122,8 @@ const UsuarioLogueado = () => {
                     type="text"
                     id="disabledTextInput"
                     className="form-control"
-                    maxLength="50"
-                    placeholder="describí brevemente las propiedades"
+                    maxLength="60"
+                    placeholder="agregá tipo + propiedades brevemente"
                     {...register("descripcion", { required: true })} required
                   />
                 </div>
