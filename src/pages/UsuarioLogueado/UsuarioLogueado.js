@@ -109,7 +109,7 @@ const UsuarioLogueado = () => {
                     type="text"
                     id="disabledTextInput"
                     className="form-control input-nombreproducto"
-                    maxLength="25"
+                    maxLength="30"
                     placeholder="ingresá tipo + nombre"
                     {...register("nombre", { required: true })} required
                   />
@@ -122,7 +122,7 @@ const UsuarioLogueado = () => {
                     type="text"
                     id="disabledTextInput"
                     className="form-control"
-                    maxLength="40"
+                    maxLength="50"
                     placeholder="describí brevemente las propiedades"
                     {...register("descripcion", { required: true })} required
                   />
