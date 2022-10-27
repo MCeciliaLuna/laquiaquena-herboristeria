@@ -1,33 +1,46 @@
 .cardpublico-titulo{
-  font-size: 4vh;
+  font-size: 3.3vh;
   height: 9vh;
   word-wrap: break-word;
 }
 
 .cardpublico-descripcion{
-  font-size: 3vh;
-  height: 15vh;
+  font-size: 2.7vh;
   word-wrap: break-word;
+  height: 55%;
+}
+
+.card-productopublico{
+  height: 85vh;
 }
 
 @media (max-width: 767.98px) {
    .cardpublico-titulo{
-    font-size: 2.4vh;
-    height: 3vh;
+    margin: 1px !important;
+    font-size: 2.2vh;
+    margin: 1px 0px !important;
   }
   .cardpublico-descripcion{
     font-size: 1.8vh;
-    height: 12vh;
+  word-wrap: break-word;
+  height: 45%;
+  }
+  .card-productopublico{
+    height: auto;
+    padding: 0.5px!important;
   }
 }
 
 @media (min-width: 768px) and (max-width: 991.98px){
   .cardpublico-titulo{
-    font-size: 2.5vh;
+    font-size: 2.4vh;
     height: 4vh;
   }
   .cardpublico-descripcion{
     font-size: 2vh;
-    height: 11vh;
+    height: 12vh;
+  }
+  .card-productopublico{
+    height: 53vh;
   }
     }
