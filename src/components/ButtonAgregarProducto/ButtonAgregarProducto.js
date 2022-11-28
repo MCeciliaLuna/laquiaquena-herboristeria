@@ -71,6 +71,25 @@ const ButtonAgregarProducto = () => {
               {...register("nombre", { required: true })} required
             />
           </div>
+          <div className="mt-4 mb-3">
+          <select className="form-select" aria-label="Default select example" {...register("categoria", { required: true })}required>
+  <option selected>Seleccioná una categoría</option>
+  <option value="Stevia">Stevia</option>
+  <option value="Hierbas">Hierbas</option>
+  <option value="Maca">Maca</option>
+  <option value="Cápsulas">Cápsulas</option>
+  <option value="Frascos de vidrio">Frascos de vidrio</option>
+  <option value="Nuez de la india">Nuez de la india</option>
+  <option value="En sobre">En sobre</option>
+  <option value="Pomadas">Pomadas</option>
+  <option value="Jarabe">Jarabe</option>
+  <option value="Jabones">Jabones</option>
+  <option value="Té">Té</option>
+  <option value="Aceites">Aceites</option>
+  <option value="Sahumerios">Sahumerios</option>
+  <option value="Otros">Otros</option>
+</select>
+</div>
           <div className="mb-3">
             <label for="disabledTextInput" className="fs-5 form-label text-light">
               Descripción
@@ -84,6 +103,24 @@ const ButtonAgregarProducto = () => {
               rows="3"
               {...register("descripcion", { required: true })} required
             />
+          </div>
+          <div className="mb-3">
+            <label for="disabledTextInput" className="fs-5 form-label text-light">
+              Precio
+            </label>
+            <div className="d-flex">
+          <div className="d-flex align-items-center">
+            <p className="text-light fs-5 m-2">$</p>
+          <input
+              type="number"
+              id="disabledTextInput"
+              className="form-control input-nombreproducto"
+              maxLength="10"
+              placeholder="ingresá el precio"
+              {...register("precio", { required: true })} required
+            />
+            </div>  
+            </div>
           </div>
            <div className="mb-3">
             <label className="fs-5 mb-1 text-light">Subir foto (debe ser cuadrada)</label>

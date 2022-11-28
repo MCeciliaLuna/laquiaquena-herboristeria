@@ -32,16 +32,18 @@ const CardProductoVenta = ({productos = []}) => {
     <div className="d-flex flex-wrap align-items-center justify-content-center">
             {
               productosOrdenados.map((item, index)=>
-              <div className="card-producto d-flex justify-content-center p-0 m-3 col-2 align-items-around">
-              <div className="card text-center card-productoventa">
+              <div className="card-producto d-flex justify-content-center col-2 align-items-around m-3">
+              <div className="card text-center card-productoventa h-auto">
               <img
                 src={item.image.secure_url}
                 className="card-img-top"
                 alt="nombre"
               />
               <div className="card-body p-2">
-                <h4 className="cardventa-titulo d-flex justify-content-center align-items-center card-title my-2 mb-0">{item.nombre}</h4>
-                <p className="cardventa-descripcion d-flex justify-content-center align-items-center card-text m-0 p-0">{item.descripcion}</p>
+                <h4 className="cardventa-titulo d-flex justify-content-center align-items-center card-title">{item.nombre}</h4>
+                <p><i>{item.categoria}</i></p>
+                <p className="cardventa-descripcion fs-6 d-flex justify-content-center align-items-center card-text">{item.descripcion}</p>
+                <h5>$ {item.precio}</h5>
                 
                   <div className="d-block">
                   <button

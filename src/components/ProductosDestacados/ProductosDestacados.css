@@ -4,19 +4,15 @@
 }
 
 .titulo-destacados{
-  font-size: 4vh;
-  height: 9vh;
+  font-size: 3vh;
+  height: 10vh;
   word-wrap: break-word;
 }
 
 .descripcion-destacados{
-  font-size: 3vh;
+  font-size: 2vh;
   word-wrap: break-word;
-  height: 55%;
-}
-
-.card-productodestacado{
-  height: auto;
+  height: 15vh;
 }
 
 

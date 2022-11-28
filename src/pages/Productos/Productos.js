@@ -7,7 +7,8 @@ import BotonWhatsapp from "../../components/BotonWhatsapp/BotonWhatsapp";
 import Navbar from "../../components/Navbar/Navbar";
 // import Buscador from "../../components/Buscador/Buscador";
 import Footer from "../../components/Footer/Footer";
-import Clientes from "../../components/Clientes/Clientes";
+// import Clientes from "../../components/Clientes/Clientes";
+import SelectCategorias from "../../components/SelectCategorias/SelectCategorias";
 
 const Productos = () => {
   localStorage.removeItem('access-token') 
@@ -26,15 +27,15 @@ const Productos = () => {
 
   return (
     <div>
-      {/* <Buscador /> */}
       <Navbar />
+      <div className="div-productos-page d-flex flex-wrap align-items-center justify-content-center">
+      <SelectCategorias/>
       <BotonWhatsapp />
     <div className="productos-page d-flex">
-      <div className="div-productos-page d-flex flex-wrap align-items-center justify-content-center">
         <CardProductoPublico productos={productos} />
         </div>
     </div>
-    <Clientes />
+    {/* <Clientes /> */}
     <Footer />
     </div>
   );
