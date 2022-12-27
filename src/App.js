@@ -7,6 +7,9 @@ import LoginPage from './pages/LoginPage/LoginPage'
 import UsuarioLogueado from './pages/UsuarioLogueado/UsuarioLogueado';
 import LoginInicial from './pages/LoginInicial/LoginInicial';
 import PedidoPage from './pages/PedidoPage/PedidoPage';
+import Usuarios from './pages/Usuarios/Usuarios';
+import ProductosAdmin from './pages/ProductosAdmin/ProductosAdmin';
+import Pedidos from './pages/Pedidos/Pedidos';
 
 function App() {
   return (
@@ -19,6 +22,9 @@ function App() {
         <Route path="*" element={<Error />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/usuariologueado" element={<UsuarioLogueado />} />
+        <Route path="/usuariosadmin" element={<Usuarios />} />
+        <Route path="/productosadmin" element={<ProductosAdmin />} />
+        <Route path="/pedidosadmin" element={<Pedidos />} />
       </Routes>
       </BrowserRouter>
   );

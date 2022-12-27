@@ -22,14 +22,14 @@ const ButtonAgregarProducto = () => {
     )
     const json = await resp.json();
       alert(`¡Producto agregado exitosamente!`)
-      window.location.href = '/usuariologueado'
+      window.location.href = '/productosadmin'
   }
   return (
     <div>
     <div className="d-flex justify-content-center">
     <button
       type="button"
-      className="text-center btn text-light p-3 mb-4"
+      className="text-center btn text-light p-3 my-4"
       data-bs-toggle="modal"
       data-bs-target="#exampleModal"
     >

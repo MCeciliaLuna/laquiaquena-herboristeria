@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import ModalEditar from "../ModalEditar/ModalEditar";
-import '../CardProductoVenta/CardProductoVenta.css'
+import '../CardProductoVenta/CardProductoVenta.css';
 
 const CardProductoVenta = ({productos = []}) => {
 
