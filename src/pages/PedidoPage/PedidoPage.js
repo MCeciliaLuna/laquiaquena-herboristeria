@@ -1,9 +1,14 @@
 import React from 'react';
+import Footer from '../../components/Footer/Footer';
+import Navbar from '../../components/Navbar/Navbar';
+import TablePedido from '../../components/TablePedido/TablePedido';
 
 const PedidoPage = () => {
   return (
     <>
-      <h1>PedidoPage</h1>
+    <Navbar />
+      <TablePedido />
+      <Footer />
     </>
   );
 };
