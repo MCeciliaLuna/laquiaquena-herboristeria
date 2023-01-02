@@ -1,41 +1,56 @@
 import React from 'react';
-import { useForm } from "react-hook-form";
-// import Loader from '../../components/Loader/Loader';
+import { useForm } from 'react-hook-form';
+import ModalRegistro from '../ModalRegistro/ModalRegistro';
 
 const Login = () => {
-  localStorage.removeItem('access-token')
   const { register, handleSubmit } = useForm();
 
-
   const handleLogin = async (data) => {
-    const resp = await fetch('https://laquiaquenaherboristeriabe.onrender.com/login', {
-      method: 'POST',
+    const resp = await fetch("http://localhost:8000/login", {
+      method: "POST",
       body: JSON.stringify(data),
       headers: {
-        "Content-Type": "application/json"
-      }
-    })
+        "Content-Type": "application/json",
+      },
+    });
     const json = await resp.json();
-    
-    if (json.token) {
-      localStorage.setItem('access-token', json.token)
-    window.location.href = '/usuariologueado'
-    } else {
-      alert('El usuario o la contraseña que ingresaste no es correcto')
+
+    try {
+      if (json.usuario.role === "ADMIN") {
+        localStorage.setItem("access-token", json.token);
+        localStorage.setItem("role", json.usuario.role);
+        window.location.href = "/adminpage";
+      } else if (json.usuario.role === "USER") {
+        localStorage.setItem("access-token", json.token);
+        localStorage.setItem("role", json.usuario.role);
+        localStorage.setItem("usuario", JSON.stringify(json.usuario));
+        window.location.href = "/home";
+      }
+    } catch (error) {
+      alert("El usuario o la contraseña que ingresaste no es correcto");
     }
-  }
+  };
+
   return (
-    <form className="mt-0 mx-5" onSubmit={handleSubmit(handleLogin)}>
-  <div className="mb-3">
-    <label for="exampleInputEmail1" className="text-login fs-4 form-label w-100 text-light">Nombre de usuario</label>
-    <input type="text" className="input-logueo w-100 m-2 text-center rounded-3 border-0 p-2" placeholder="LaQuiaqueñaHerboristeria" {...register("nombre", { require: true })} required/>
+    <div className="d-flex justify-content-center align-items-center text-center w-100 h-100">
+      <div className="mb-0 pb-0">
+      <form className="pb-0 mt-5 mb-0" onSubmit={handleSubmit(handleLogin)}>
+        <div className="pb-4">
+    <h3 className="text-light">Bienvenid@ a</h3>
+    <h1 className="text-light pb-2">🌿LA QUIAQUEÑA HERBORISTERÍA🌿</h1>
+    <h4 className="text-light">Registrate para continuar</h4>
+    </div>
+  <div className="mb-3 w-100">
+    <input type="email" className="form-control text-center" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="EMAIL" {...register("email", { require: true })} required />
   </div>
-  <div className="mb-3">
-    <label for="exampleInputPassword1" className="text-login fs-4 form-label w-100 text-light">Contraseña</label>
-    <input type="password" className="input-logueo w-100 m-2 text-center rounded-3 border-0 p-2" {...register("contraseña",  { require: true }) } required />
+  <div className="mb-3 w-100">
+    <input type="password" className="form-control text-center" id="exampleInputEmail2" aria-describedby="emailHelp" placeholder="CONTRASEÑA" {...register("contraseña", { require: true })} required />
   </div>
-  <button type="submit" className="buttonlogin btn text-light mb-3">Entrar</button>
+  <button type="submit" className="btn border-0 text-light m-0">INGRESAR</button>
 </form>
+<ModalRegistro />
+</div>
+    </div>
   );
 };
 

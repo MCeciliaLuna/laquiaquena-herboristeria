@@ -5,13 +5,10 @@ import { useState, useEffect } from "react";
 import CardProductoPublico from "../../components/CardProductoPublico/CardProductoPublico";
 import BotonWhatsapp from "../../components/BotonWhatsapp/BotonWhatsapp";
 import Navbar from "../../components/Navbar/Navbar";
-// import Buscador from "../../components/Buscador/Buscador";
 import Footer from "../../components/Footer/Footer";
-// import Clientes from "../../components/Clientes/Clientes";
 import SelectCategorias from "../../components/SelectCategorias/SelectCategorias";
 
 const Productos = () => {
-  localStorage.removeItem('access-token') 
   const [productos, setProductos] = useState([]);
   const getProductos = async () => {
     try {

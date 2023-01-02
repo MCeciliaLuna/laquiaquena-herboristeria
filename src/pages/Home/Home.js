@@ -8,7 +8,6 @@ import './Home.css';
 
 
 function Home() {
-  localStorage.removeItem('access-token') 
   return (
     <body>
       <Navbar />
