@@ -43,7 +43,7 @@ const Login = () => {
   <div className="mb-3 w-100">
     <input type="email" className="form-control text-center" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="EMAIL" {...register("email", { require: true })} required />
   </div>
-  <div className="mb-3 w-100">
+  <div className="mb-2 w-100">
     <input type="password" className="form-control text-center" id="exampleInputEmail2" aria-describedby="emailHelp" placeholder="CONTRASEÑA" {...register("contraseña", { require: true })} required />
   </div>
   <button type="submit" className="btn border-0 text-light m-0">INGRESAR</button>

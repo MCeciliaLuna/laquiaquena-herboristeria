@@ -4,7 +4,11 @@ import Navbar from "../../components/Navbar/Navbar";
 import "./UsuarioLogueado.css";
 
 const UsuarioLogueado = () => {
-  
+  const localStorageRole = localStorage.getItem("role");
+  if (localStorageRole === "USER" || !localStorage.getItem("role") || !localStorage.getItem("access-token")) {
+    alert("No tenés autorización para ingresar a esta página");
+    window.location.href = "/";
+  }
   return (
     <>
     <Navbar />

@@ -1,6 +1,13 @@
 import React from 'react';
 
 const TablePedido = () => {
+  const usuario = JSON.parse(localStorage.getItem("usuario"));
+  const usuarioNombre = JSON.stringify(`${usuario.nombre} ${usuario.apellido}`).replace(
+    /['"]+/g,
+    ""
+  );
+  const usuarioDireccion = JSON.stringify(`${usuario.direccion}`).replace(/['"]+/g, "");
+  const usuarioTelefono = JSON.stringify(`${usuario.telefono}`).replace(/['"]+/g, "");
   return (
     <div className="m-5">
       <table className="table table-striped bg-light rounded-3 border-0">
@@ -23,27 +30,15 @@ const TablePedido = () => {
 </table>
 <h4 className="text-center text-light mb-4">Total:$1234</h4>
 <div className="d-flex justify-content-center">
-<form className="">
+<form className="w-50">
 
-  <input type="text" className="text-center form-control d-block mb-1" value="Nombre" />
-  <input type="text" className="text-center form-control d-block mb-1" value="Dirección" />
-  <input type="number" className="text-center form-control d-block mb-1" value="3814555666" />
-  <input type="text" className="text-center form-control d-block mb-1" value="Drugstore más cercano" />
-  <input type="text" className="text-center form-control d-block mb-1" value="Teléfono" />
-  <div className="m-3">
-  <div className="form-check mb-2">
-  <input className="form-check-input" name="checkbox" type="radio" value="Retiro del local" id="flexCheckDefault" />
-  <label className="form-check-label text-light" for="flexCheckDefault">
-    Retiro del local
-  </label>
-</div>
-<div className="form-check">
-  <input className="form-check-input" name="checkbox" type="radio" value="Envío" id="flexCheckChecked" />
-  <label className="form-check-label text-light" for="flexCheckChecked">
-    Envío
-  </label>
-</div>
-</div>
+  <input type="text" className="text-center form-control d-block mb-1" defaultValue={usuarioNombre} required />
+  <input type="text" className="text-center form-control d-block mb-1" defaultValue={usuarioDireccion} required />
+  <input type="number" className="text-center form-control d-block mb-1" defaultValue={usuarioTelefono} required />
+  <select className="form-select text-center mb-1" aria-label="Default select example" required>
+  <option value="Retiro del local">Retiro del local</option>
+  <option value="Envío">Envío</option>
+</select>
 <div className="w-100 text-center">
 <button className="btn text-light">Enviar</button>
 </div>

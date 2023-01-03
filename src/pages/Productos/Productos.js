@@ -9,6 +9,11 @@ import Footer from "../../components/Footer/Footer";
 import SelectCategorias from "../../components/SelectCategorias/SelectCategorias";
 
 const Productos = () => {
+  const localStorageRole = localStorage.getItem("role");
+  if (localStorageRole === "ADMIN" || !localStorage.getItem("role") || !localStorage.getItem("access-token")) {
+    alert("No tenés autorización para ingresar a esta página");
+    window.location.href = "/";
+  }
   const [productos, setProductos] = useState([]);
   const getProductos = async () => {
     try {

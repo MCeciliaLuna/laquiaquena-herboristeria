@@ -23,7 +23,7 @@ const ModalRegistro = () => {
 
   return (
     <>
-  <button type="button" className="btn mt-1 mx-5 text-light" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  <button type="button" className="btn mt-3 p-2 mx-5 text-light bg-warning" data-bs-toggle="modal" data-bs-target="#exampleModal">
   CREAR USUARIO
 </button>
 

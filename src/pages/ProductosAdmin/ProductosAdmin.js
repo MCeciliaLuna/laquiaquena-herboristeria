@@ -6,6 +6,11 @@ import Navbar from '../../components/Navbar/Navbar';
 import Footer from '../../components/Footer/Footer';
 
 const ProductosAdmin = () => {
+  const localStorageRole = localStorage.getItem("role");
+  if (localStorageRole === "USER" || !localStorage.getItem("role") || !localStorage.getItem("access-token")) {
+    alert("No tenés autorización para ingresar a esta página");
+    window.location.href = "/";
+  }
   
   const [productos, setProductos] = useState([]);
   const getProductos = async () => {
