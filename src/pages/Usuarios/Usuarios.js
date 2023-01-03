@@ -12,7 +12,9 @@ const Usuarios = () => {
   return (
     <>
     <Navbar />
+    <div className="">
     <UsuariosTable />
+    </div>
 <Footer />
 </>
   );

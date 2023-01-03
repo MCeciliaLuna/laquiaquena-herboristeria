@@ -3,7 +3,7 @@ import "./Productos.css";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import CardProductoPublico from "../../components/CardProductoPublico/CardProductoPublico";
-import BotonWhatsapp from "../../components/BotonWhatsapp/BotonWhatsapp";
+import ButtonPedidos from "../../components/ButtonPedidos/ButtonPedidos";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
 import SelectCategorias from "../../components/SelectCategorias/SelectCategorias";
@@ -32,12 +32,11 @@ const Productos = () => {
       <Navbar />
       <div className="div-productos-page d-flex flex-wrap align-items-center justify-content-center">
       <SelectCategorias/>
-      <BotonWhatsapp />
+      <ButtonPedidos />
     <div className="productos-page d-flex">
         <CardProductoPublico productos={productos} />
         </div>
     </div>
-    {/* <Clientes /> */}
     <Footer />
     </div>
   );

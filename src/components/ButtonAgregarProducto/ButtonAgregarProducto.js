@@ -72,9 +72,22 @@ const ButtonAgregarProducto = () => {
             />
           </div>
           <div className="mt-4 mb-3">
-          <select className="form-select" aria-label="Default select example" required>
-  <option value="Retiro del local">Retiro del local</option>
-  <option value="Envío">Envío</option>
+          <select className="form-select" aria-label="Default select example" {...register("categoria", { required: true })} required >
+  <option selected>Todos los productos</option>
+  <option value="Stevia">Stevia</option>
+  <option value="Hierbas">Hierbas</option>
+  <option value="Maca">Maca</option>
+  <option value="Cápsulas">Cápsulas</option>
+  <option value="Frascos de vidrio">Frascos de vidrio</option>
+  <option value="Nuez de la india">Nuez de la india</option>
+  <option value="En sobre">En sobre</option>
+  <option value="Pomadas">Pomadas</option>
+  <option value="Jarabe">Jarabe</option>
+  <option value="Jabones">Jabones</option>
+  <option value="Té">Té</option>
+  <option value="Aceites">Aceites</option>
+  <option value="Sahumerios">Sahumerios</option>
+  <option value="Otros">Otros</option>
 </select>
 </div>
           <div className="mb-3">
