@@ -27,10 +27,10 @@ const UsuariosTable = () => {
 
   const usuariosFiltrados = usuarios.filter((usuario) => usuario.role === "USER");
   const aux = usuariosFiltrados.sort((a, b) => {
-    if (a.lastname > b.lastname) {
+    if (a.apellido > b.apellido) {
       return 1;
     }
-    if (a.lastname < b.lastname) {
+    if (a.apellido < b.apellido) {
       return -1;
     }
     return 0;
@@ -46,7 +46,7 @@ const UsuariosTable = () => {
       {usuariosOrganizados.map((usuario) => (
       <div className="card col-3 text-center p-2 m-1">
   <div className="card-body">
-    <h4 className="card-title">{usuario.nombre} {usuario.apellido}</h4>
+    <h4 className="card-title">{usuario.apellido} {usuario.nombre}</h4>
     <p className="card-text text-muted"></p>
     <h6 className="mb-2">{usuario.email}</h6> <hr />
     <p className="card-link m-0 p-0">📍 {usuario.direccion}</p> <br />

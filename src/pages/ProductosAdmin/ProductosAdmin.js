@@ -13,27 +13,47 @@ const ProductosAdmin = () => {
   }
   
   const [productos, setProductos] = useState([]);
+  
   const getProductos = async () => {
     try {
-      const info = await axios.get('http://localhosto:8000/traerproductos');
+      const info = await axios.get('http://localhost:8000/traerproductos');
       setProductos(info.data)
     } catch (error) {
-      console.log(error)
+      alert('No pudieron cargarse los productos; intentá nuevamente')
     }
   }
   useEffect(() => {
     getProductos()
   }, [])
+
+  const aux = productos.sort((a,b) =>{
+    
+    if (a.nombre > b.nombre) {
+    return 1;
+  }
+  if (a.nombre < b.nombre) {
+    return -1;
+  }
+  return 0 })
+
+  const [productosOrdenados, setProductosOrdenados] = useState([])
+
+  useEffect(() => {
+    setProductosOrdenados(aux)
+  }, [aux])
+
   return (
     <>
     <Navbar />
      <ButtonAgregarProducto />
-      <div className="d-flex">
-        <div className="div-productos-page">
+      <div className="d-flex justify-content-center">
+        <div className="div-productos-page d-flex flex-wrap align-items-center justify-content-center">
+        {productosOrdenados.map((producto, index) => (
           <CardProductoVenta 
-          productos={productos}
+          producto={producto} index={index}
           />
-        </div>
+        ))}
+      </div>
       </div>
       <Footer />
     </>
