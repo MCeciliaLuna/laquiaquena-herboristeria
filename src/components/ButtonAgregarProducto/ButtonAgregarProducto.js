@@ -14,7 +14,7 @@ const ButtonAgregarProducto = () => {
       }
     }
 
-    const resp = await fetch('https://laquiaquenaherboristeriabe.onrender.com/crearproducto',
+    const resp = await fetch('http://localhost:8000/crearproducto',
     {
     method: 'POST',
     body: formData

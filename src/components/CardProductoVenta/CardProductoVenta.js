@@ -14,8 +14,8 @@ const CardProductoVenta = ({producto, index}) => {
 
   
   return (
-              <div className="card-producto d-flex justify-content-center col-2 align-items-around m-3">
-              <div className="card text-center card-productoventa h-auto">
+              <div className="card-producto d-flex justify-content-center col-2 align-items-around m-3 rounded-3">
+              <div className="bg-light text-center card-productoventa h-auto p-2 rounded-3">
               <img
                 src={producto.image.secure_url}
                 className="card-img-top"
@@ -30,7 +30,6 @@ const CardProductoVenta = ({producto, index}) => {
                   <button
                     type="button"
                     className="btn boton-logueado-eliminar text-light"
-                    key={producto._id}
                     onClick={(_id) => eliminarProducto(producto._id)}
                   >
                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">

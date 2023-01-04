@@ -14,7 +14,7 @@ const ModalEditar = ({ producto, id }) => {
     if (
       window.confirm(`¿Estás seguro de la modificación de ${producto.nombre}?`)
     ) {
-      await axios.put("http://localhost:8000/editarproducto", data);
+      await axios.put("http://localhost:8000/modificarproducto", data);
       setEditarProducto(data);
       alert(`Menú ${producto.nombre} modificado exitosamente`);
       window.location.reload();
@@ -24,10 +24,7 @@ const ModalEditar = ({ producto, id }) => {
   return (
     <div>
       <button
-        type="button"
-        className="btn"
-        data-bs-toggle="modal"
-        data-bs-target={idProductoEdit}
+        type="button" class="btn" data-bs-toggle="modal" data-bs-target={idProductoEdit}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -41,13 +38,10 @@ const ModalEditar = ({ producto, id }) => {
         </svg>
       </button>
       <div
-        className="modal fade"
-        id={productoIdModalEdit}
-        aria-labelledby="exampleModalLabel"
-        aria-hidden="true"
+        class="modal fade" id={productoIdModalEdit} tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
       >
         <div className="modal-dialog">
-          <div className="modal-content fondo-modal-editar">
+          <div className="modal-content fondo-modal-editar" >
             <div className="modal-header">
               <h5 className="modal-title text-light" id="exampleModalLabel1">
                 Editar
@@ -82,7 +76,7 @@ const ModalEditar = ({ producto, id }) => {
                     id="disabledTextInput"
                     className="form-control input-nombreproducto"
                     maxLength="40"
-                    placeholder="ingresá tipo + nombre"
+                    defaultValue={producto.nombre}
                     {...register("nombre", { required: true })}
                     required
                   />
@@ -91,6 +85,7 @@ const ModalEditar = ({ producto, id }) => {
                   <select
                     className="form-select"
                     aria-label="Default select example"
+                    defaultValue={producto.categoria}
                     {...register("categoria", { required: true })}
                     required
                   >
@@ -122,7 +117,7 @@ const ModalEditar = ({ producto, id }) => {
                     id="disabledTextInput"
                     className="form-control"
                     maxLength="100"
-                    placeholder="agregá tipo + propiedades brevemente"
+                    defaultValue={producto.descripcion}
                     rows="3"
                     {...register("descripcion", { required: true })}
                     required
@@ -143,23 +138,12 @@ const ModalEditar = ({ producto, id }) => {
                         id="disabledTextInput"
                         className="form-control input-nombreproducto"
                         maxLength="10"
-                        placeholder="ingresá el precio"
+                        defaultValue={producto.precio}
                         {...register("precio", { required: true })}
                         required
                       />
                     </div>
                   </div>
-                </div>
-                <div className="mb-3">
-                  <label className="fs-5 mb-1 text-light">
-                    Subir foto (debe ser cuadrada)
-                  </label>
-                  <input
-                    type="file"
-                    className="btn p-1 d-block rounded-3 w-100"
-                    {...register("image", { required: true })}
-                    required
-                  />
                 </div>
                 <div className="modal-footer">
                   <button type="submit" className="btn text-light">

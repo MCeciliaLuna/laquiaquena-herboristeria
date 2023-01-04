@@ -1,3 +1,7 @@
+.card-producto{
+  box-shadow: -1px 3px 6px 0px rgba(0,0,0,0.75);
+}
+
 .cardventa-titulo{
   font-size: 3.3vh;
   word-wrap: break-word;

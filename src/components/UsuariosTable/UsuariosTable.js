@@ -50,7 +50,7 @@ const UsuariosTable = () => {
     <p className="card-text text-muted"></p>
     <h6 className="mb-2">{usuario.email}</h6> <hr />
     <p className="card-link m-0 p-0">📍 {usuario.direccion}</p> <br />
-    <a href="https://api.whatsapp.com/send?phone=543816427068" target="new" className="card-link m-0 p-0">📱 {usuario.telefono}</a>
+    <a href={`https://api.whatsapp.com/send?phone=${usuario.telefono}`} target="new" className="card-link m-0 p-0">📱 {usuario.telefono}</a>
   </div>
     <button className="btn text-light d-block mx-5 mt-1 mb-3" onClick={(_id) => eliminarUsuario(usuario._id)}>Eliminar</button>
 </div>))}
