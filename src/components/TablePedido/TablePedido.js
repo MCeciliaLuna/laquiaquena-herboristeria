@@ -8,6 +8,16 @@ const TablePedido = () => {
   );
   const usuarioDireccion = JSON.stringify(`${usuario.direccion}`).replace(/['"]+/g, "");
   const usuarioTelefono = JSON.stringify(`${usuario.telefono}`).replace(/['"]+/g, "");
+
+  const copiarCbu = (copycbu) => {
+    var aux = document.createElement("input");
+    aux.setAttribute("value", document.getElementById(copycbu).innerHTML);
+    document.body.appendChild(aux);
+    aux.select();
+    document.exeCommand("copy");
+    document.body.removeChild(aux)
+  }
+
   return (
     <div className="m-5">
       <table className="table table-striped bg-light rounded-3 border-0">
@@ -39,7 +49,19 @@ const TablePedido = () => {
   <option value="Retiro del local">Retiro del local</option>
   <option value="Envío">Envío</option>
 </select>
-<div className="w-100 text-center">
+<div className="d-flex justify-content-center align-items-center d-block my-2">
+  <div className="d-flex">
+<input type="text" className="form-control text-center w-75 p-0" value="21938729084940013" id="copycbu"/>
+<button onclick={copiarCbu} className="ms-1 btn text-light">Copiar</button>
+</div>
+<div class="form-check text-center text-light d-block ms-3 ps-0">
+  <input className="me-2" type="checkbox" value="pagado por transferencia" id="flexCheckDefault" />
+  <label className="mb-0 fs-5" for="flexCheckDefault">
+    Pagado
+  </label>
+</div>
+</div>
+<div className="w-100 text-center mt-4">
 <button className="btn text-light">Enviar</button>
 </div>
 </form>

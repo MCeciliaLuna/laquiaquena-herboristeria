@@ -7,6 +7,7 @@ import ButtonPedidos from "../../components/ButtonPedidos/ButtonPedidos";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
 import SelectCategorias from "../../components/SelectCategorias/SelectCategorias";
+import ButtonUserVolver from "../../components/ButtonUserVolver/ButtonUserVolver";
 
 const Productos = () => {
   const localStorageRole = localStorage.getItem("role");
@@ -31,6 +32,7 @@ const Productos = () => {
     <div>
       <Navbar />
       <div className="div-productos-page d-flex flex-wrap align-items-center justify-content-center">
+        <ButtonUserVolver />
       <SelectCategorias/>
       <ButtonPedidos />
     <div className="productos-page d-flex">

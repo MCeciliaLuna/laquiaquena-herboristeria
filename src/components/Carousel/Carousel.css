@@ -5,8 +5,15 @@ height: 93vh;
 .banner-carousel{
     position: absolute;
     z-index: 1;
-    top: 25%;
+    top: 20%;
     left: 10%;
+  }
+
+  .banner-button{
+    position: absolute;
+    z-index: 1;
+    top: 80%;
+    left: 55%;
   }
 
   .carousel{
