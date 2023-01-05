@@ -2,7 +2,7 @@ import React from 'react';
 
 const TablePedidosAdmin = () => {
   return (
-    <div className="my-5 col d-flex justify-content-around">
+    <div className="my-4 col d-flex justify-content-around">
       <div className="card col-3 text-center p-2">
   <div className="card-body">
     <h4 className="card-title">Apellido y Nombre</h4>

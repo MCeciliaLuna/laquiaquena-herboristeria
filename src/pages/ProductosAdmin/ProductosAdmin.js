@@ -4,6 +4,8 @@ import ButtonAgregarProducto from '../../components/ButtonAgregarProducto/Button
 import CardProductoVenta from '../../components/CardProductoVenta/CardProductoVenta';
 import Navbar from '../../components/Navbar/Navbar';
 import Footer from '../../components/Footer/Footer';
+import ButtonAdminVolver from '../../components/ButtonAdminVolver/ButtonAdminVolver';
+import SelectCategoriasAdmin from '../../components/SelectCategoriasAdmin/SelectCategoriasAdmin';
 
 const ProductosAdmin = () => {
   const localStorageRole = localStorage.getItem("role");
@@ -45,7 +47,14 @@ const ProductosAdmin = () => {
   return (
     <>
     <Navbar />
+    <div className="d-flex justify-content-evenly align-items-center">
+    <ButtonAdminVolver />
+    <h2 className="text-light mb-0 pb-0">Productos</h2>
+    </div>
+    <div className="d-flex justify-content-center align-items-center">
      <ButtonAgregarProducto />
+     <SelectCategoriasAdmin />
+     </div>
       <div className="d-flex justify-content-center">
         <div className="div-productos-page d-flex flex-wrap align-items-center justify-content-center">
         {productosOrdenados.map((producto, index) => (

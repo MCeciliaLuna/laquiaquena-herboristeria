@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.1fbda978.css",
-    "main.js": "/static/js/main.463e87d5.js",
+    "main.js": "/static/js/main.5d02c1a6.js",
     "static/js/787.06220f0f.chunk.js": "/static/js/787.06220f0f.chunk.js",
     "static/media/naturalmedix.jpg": "/static/media/naturalmedix.d40b4cfd2266092dff01.jpg",
     "static/media/carousel.jpg": "/static/media/carousel.e1a5af107b1807841657.jpg",
@@ -16,11 +16,11 @@
     "static/media/PatuaOne-Regular.ttf": "/static/media/PatuaOne-Regular.a9f01afefe6f58c9aeb2.ttf",
     "index.html": "/index.html",
     "main.1fbda978.css.map": "/static/css/main.1fbda978.css.map",
-    "main.463e87d5.js.map": "/static/js/main.463e87d5.js.map",
+    "main.5d02c1a6.js.map": "/static/js/main.5d02c1a6.js.map",
     "787.06220f0f.chunk.js.map": "/static/js/787.06220f0f.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.1fbda978.css",
-    "static/js/main.463e87d5.js"
+    "static/js/main.5d02c1a6.js"
   ]
 }
