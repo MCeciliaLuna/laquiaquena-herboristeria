@@ -2,6 +2,9 @@ import React from 'react';
 
 const TablePedido = () => {
   const usuario = JSON.parse(localStorage.getItem("usuario"));
+
+  const producto = JSON.parse(localStorage.getItem("producto"));
+
   const usuarioNombre = JSON.stringify(`${usuario.nombre} ${usuario.apellido}`).replace(
     /['"]+/g,
     ""
@@ -18,6 +21,11 @@ const TablePedido = () => {
     document.body.removeChild(aux)
   }
 
+  const removeItem = () =>{
+    localStorage.removeItem('producto')
+    window.location.reload()
+  }
+
   return (
     <div className="m-5">
       <table className="table table-striped bg-light rounded-3 border-0">
@@ -30,10 +38,10 @@ const TablePedido = () => {
   </thead>
   <tbody>
     <tr>
-      <td>Producto</td>
-      <td>$123</td>
+      <td className="fs-4">{producto.nombre}</td>
+      <td className="fs-4">${producto.precio}</td>
       <td>
-        <button className="btn">X</button>
+        <button className="btn" key={producto._id} onClick={removeItem}>X</button>
       </td>
     </tr>
   </tbody>

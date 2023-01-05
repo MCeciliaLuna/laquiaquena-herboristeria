@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import '../CardProductoPublico/CardProductoPublico.css'
 
-const CardProductoPublico = ({productos = []}) => {
+const CardProductoPublico = ({productos}) => {
   
   const aux = productos.sort((a,b) =>{
     
@@ -18,7 +18,6 @@ const CardProductoPublico = ({productos = []}) => {
   useEffect(() => {
     setProductosOrdenados(aux)
   }, [aux])
-
   
   return (
     <div className="d-flex flex-wrap align-items-center justify-content-center">
@@ -41,6 +40,7 @@ const CardProductoPublico = ({productos = []}) => {
                 <button
                   type="button"
                   className="btn button-destacados-comprar text-light mt-3 align-items-end"
+                  onClick={(_id)=>localStorage.setItem("producto", JSON.stringify(producto))}
                 > 
                   Comprar
                 </button>
