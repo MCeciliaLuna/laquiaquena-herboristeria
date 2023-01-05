@@ -19,6 +19,7 @@ const Login = () => {
       if (json.usuario.role === "ADMIN") {
         localStorage.setItem("access-token", json.token);
         localStorage.setItem("role", json.usuario.role);
+        localStorage.setItem("usuario", JSON.stringify(json.usuario));
         window.location.href = "/adminpage";
       } else if (json.usuario.role === "USER") {
         localStorage.setItem("access-token", json.token);

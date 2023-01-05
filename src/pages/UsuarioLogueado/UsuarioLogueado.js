@@ -14,7 +14,6 @@ const UsuarioLogueado = () => {
     <Navbar />
     <div className="page-usuariologueado mb-5 mt-4 mx-5">
       <div className="mb-4 text-center text-light">
-      <h2>¡Bienvenid@!</h2>
       <h4>En esta sección podrás administrar:</h4>
       </div>
       <Link to="/pedidosadmin">

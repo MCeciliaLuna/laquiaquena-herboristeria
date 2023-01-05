@@ -3,11 +3,7 @@
 }
 
 a{
-  text-decoration: none;
-}
-
-.linklogueo{
-  color: #e5383b;
+  text-decoration: none !important;
 }
 
 @media (min-width: 768px) and (max-width: 991.98px){

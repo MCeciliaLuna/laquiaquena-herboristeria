@@ -1,6 +1,5 @@
 import React from 'react';
 import './Navbar.css';
-import { Link } from 'react-router-dom';
 import logo from '../assets/images/logo.png';
 
 const Navbar = () => {
@@ -10,11 +9,18 @@ const Navbar = () => {
     ) {
       window.location.href = "/";
     }
-  };
+  }
+
+  const usuario = JSON.parse(localStorage.getItem("usuario"));
+  const usuarioNombre = JSON.stringify(`${usuario.nombre} ${usuario.apellido}`).replace(
+    /['"]+/g,
+    ""
+  );
+
   return (
       <div className="navbar-completo d-block text-center">
     <nav className="navbar navbar-expand-lg">
-      <div className="container-fluid d-flex justify-content-around">
+      <div className="container-fluid d-flex align-items-center justify-content-around">
     <div className="d-flex align-items-center link-navbar" href="#"
           onClick={volverLoginInicial}>
       <img src={logo} className="logo-navbar me-2" alt="logo" />
@@ -23,7 +29,7 @@ const Navbar = () => {
 </svg>
       </div>
       <div className="d-flex" id="navbarSupportedContent">
-            <Link className="link-navbar nav-link text-light fs-5" to="/productos" >Productos</Link>
+            <p className="nombre-navbar nav-link text-light fs-5 mb-0 pb-0">Bienvenid@ {usuarioNombre} 👋</p>
       </div>
       </div>
   </nav>
