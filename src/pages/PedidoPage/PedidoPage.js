@@ -5,6 +5,12 @@ import Navbar from '../../components/Navbar/Navbar';
 import TablePedido from '../../components/TablePedido/TablePedido';
 
 const PedidoPage = () => {
+  
+  if (!localStorage.getItem("pedido")) {
+      alert('No tenés seleccionado ningún producto para comprar')
+      window.location = "/productos"
+    }
+
   const localStorageRole = localStorage.getItem("role");
   if (localStorageRole === "ADMIN" || !localStorage.getItem("role") || !localStorage.getItem("access-token")) {
     alert("No tenés autorización para ingresar a esta página");

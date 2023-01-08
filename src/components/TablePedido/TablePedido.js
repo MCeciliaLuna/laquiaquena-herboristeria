@@ -3,7 +3,7 @@ import React from 'react';
 const TablePedido = () => {
   const usuario = JSON.parse(localStorage.getItem("usuario"));
 
-  const producto = JSON.parse(localStorage.getItem("producto"));
+  const producto = JSON.parse(localStorage.getItem("pedido"));
 
   const usuarioNombre = JSON.stringify(`${usuario.nombre} ${usuario.apellido}`).replace(
     /['"]+/g,

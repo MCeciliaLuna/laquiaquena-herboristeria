@@ -18,7 +18,7 @@ const CardProductoPublico = ({productos}) => {
   useEffect(() => {
     setProductosOrdenados(aux)
   }, [aux])
-  
+
   return (
     <div className="d-flex flex-wrap align-items-center justify-content-center">
       {
@@ -40,7 +40,7 @@ const CardProductoPublico = ({productos}) => {
                 <button
                   type="button"
                   className="btn button-destacados-comprar text-light mt-3 align-items-end"
-                  onClick={(_id)=>localStorage.setItem("producto", JSON.stringify(producto))}
+                  onClick={(_id) => localStorage.setItem('pedido', JSON.stringify(producto))}
                 > 
                   Comprar
                 </button>
