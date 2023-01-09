@@ -19,6 +19,8 @@ const CardProductoPublico = ({productos}) => {
     setProductosOrdenados(aux)
   }, [aux])
 
+  
+
   return (
     <div className="d-flex flex-wrap align-items-center justify-content-center">
       {
@@ -40,7 +42,8 @@ const CardProductoPublico = ({productos}) => {
                 <button
                   type="button"
                   className="btn button-destacados-comprar text-light mt-3 align-items-end"
-                  onClick={(_id) => localStorage.setItem('pedido', JSON.stringify(producto))}
+                  id="producto"
+                  onClick={(_id) => localStorage.setItem("pedido", JSON.stringify(producto))}
                 > 
                   Comprar
                 </button>

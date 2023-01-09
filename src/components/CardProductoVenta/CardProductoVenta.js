@@ -8,7 +8,7 @@ const CardProductoVenta = ({producto, index}) => {
       if (window.confirm(`¿Estás seguro que querés eliminar ${producto.nombre}?`)) {
       await axios.delete(`http://localhost:8000/eliminarproducto/${_id}`)
       alert('Producto eliminado exitosamente')
-      window.location.replace('/adminpage')
+      window.location.replace('/productosadmin')
     }
     }
 
