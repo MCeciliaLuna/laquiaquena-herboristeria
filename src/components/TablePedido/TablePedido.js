@@ -1,4 +1,5 @@
-import React from 'react';
+import { useState } from 'react';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
 
 const TablePedido = () => {
   const usuario = JSON.parse(localStorage.getItem("usuario"));
@@ -12,19 +13,17 @@ const TablePedido = () => {
   const usuarioDireccion = JSON.stringify(`${usuario.direccion}`).replace(/['"]+/g, "");
   const usuarioTelefono = JSON.stringify(`${usuario.telefono}`).replace(/['"]+/g, "");
 
-  const copiarCbu = (copycbu) => {
-    var aux = document.createElement("input");
-    aux.setAttribute("value", document.getElementById(copycbu).innerHTML);
-    document.body.appendChild(aux);
-    aux.select();
-    document.exeCommand("copy");
-    document.body.removeChild(aux)
-  }
-
   const removeItem = () =>{
     localStorage.removeItem('producto')
     window.location.reload()
   }
+
+  const [copied, setCopied] = useState(false)
+  const copiedCbu = (event) => {
+    setCopied(true)
+    event.preventDefault()
+  }
+  
 
   return (
     <div className="m-5">
@@ -58,16 +57,29 @@ const TablePedido = () => {
   <option value="Envío">Envío</option>
 </select>
 <div className="d-flex justify-content-center align-items-center d-block my-2">
-  <div className="d-flex">
-<input type="text" className="form-control text-center w-75 p-0" value="21938729084940013" id="copycbu"/>
-<button onclick={copiarCbu} className="ms-1 btn text-light">Copiar</button>
+    <CopyToClipboard text="21938729084940013">
+  <div className="d-flex align-items-center">
+<button className="m-1 btn text-light d-flex align-items-center" onClick={copiedCbu}>
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-credit-card-fill me-2" viewBox="0 0 16 16">
+  <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v1H0V4zm0 3v5a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7H0zm3 2h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-1a1 1 0 0 1 1-1z"/>
+</svg>
+  Pagá transfiriendo a nuestro CBU
+  </button>
 </div>
-<div class="form-check text-center text-light d-block ms-3 ps-0">
+</CopyToClipboard>
+<p className="mb-0">{copied && <span className="text-light text-center fs-6 px-1 d-flex align-items-center">
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-clipboard-check-fill mx-2" viewBox="0 0 16 16">
+  <path d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3Zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3Z"/>
+  <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5v-1Zm6.854 7.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708Z"/>
+</svg>
+  CBU copiado al portapapeles
+  </span>}</p>
+</div>
+<div className="form-check text-center text-light d-block ms-3 ps-0">
   <input className="me-2" type="checkbox" value="pagado por transferencia" id="flexCheckDefault" />
   <label className="mb-0 fs-5" for="flexCheckDefault">
     Pagado
   </label>
-</div>
 </div>
 <div className="w-100 text-center mt-4">
 <button className="btn text-light">Enviar</button>
