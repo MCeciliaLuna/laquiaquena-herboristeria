@@ -12,18 +12,18 @@ const UsuarioLogueado = () => {
   return (
     <>
     <Navbar />
-    <div className="page-usuariologueado mb-5 mt-4 mx-5">
+    <div className="page-usuariologueado mb-5 mt-5 mx-5">
       <div className="mb-4 text-center text-light">
       <h4>En esta sección podrás administrar:</h4>
       </div>
       <Link to="/pedidosadmin">
-      <button className="btn w-100 mb-4 p-5 text-light fs-4">Pedidos</button>
+      <button className="buttons-movile btn w-100 mb-4 p-5 text-light fs-4">PEDIDOS</button>
       </Link>
       <Link to="/productosadmin">
-      <button className="btn w-100 mb-4 p-5 text-light fs-4">Productos</button>
+      <button className="buttons-movile btn w-100 mb-4 p-5 text-light fs-4">PRODUCTOS</button>
       </Link>
       <Link to="/usuariosadmin">
-      <button className="btn w-100 mb-4 p-5 text-light fs-4">Usuarios registrados</button>
+      <button className="buttons-movile btn w-100 mb-4 p-5 text-light fs-4">USUARIOS</button>
       </Link>
     </div>
     <Footer />

@@ -5,7 +5,6 @@ import { useState, useEffect } from "react";
 import CardProductoPublico from "../../components/CardProductoPublico/CardProductoPublico";
 import ButtonPedidos from "../../components/ButtonPedidos/ButtonPedidos";
 import Navbar from "../../components/Navbar/Navbar";
-import Footer from "../../components/Footer/Footer";
 import SelectCategorias from "../../components/SelectCategorias/SelectCategorias";
 import ButtonUserVolver from "../../components/ButtonUserVolver/ButtonUserVolver";
 
@@ -39,7 +38,6 @@ const Productos = () => {
         <CardProductoPublico productos={productos} />
         </div>
     </div>
-    <Footer />
     </div>
   );
 };

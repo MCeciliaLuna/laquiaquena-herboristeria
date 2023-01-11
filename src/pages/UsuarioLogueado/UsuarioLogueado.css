@@ -1,5 +1,5 @@
 .page-usuariologueado{
-  height: auto;
+  height: 100%;
 }
 
 .fondo-modal-logueado{
@@ -50,7 +50,11 @@
 
 @media (min-width: 768px) and (max-width: 991.98px){
   .page-usuariologueado{
-    height: auto;
+    height: 85vh;
+  }
+  .buttons-movile{
+    margin-top: 5%;
+    
   }
 }
 

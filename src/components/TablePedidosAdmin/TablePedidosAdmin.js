@@ -1,9 +1,10 @@
 import React from 'react';
+import './TablePedidosAdmin.css'
 
 const TablePedidosAdmin = () => {
   return (
-    <div className="my-4 col d-flex justify-content-around">
-      <div className="card col-3 text-center p-2">
+    <div className="my-4 col d-flex justify-content-around flex-wrap">
+      <div className="card col-3 text-center p-2 card-pedido-admin mx-1 mb-3">
   <div className="card-body">
     <h4 className="card-title">Apellido y Nombre</h4>
     <p className="card-text text-muted">Producto y precio</p>
@@ -15,7 +16,7 @@ const TablePedidosAdmin = () => {
   </div>
     <button className="btn text-light d-block mx-5 mt-1 mb-3">Entregado/Enviado</button>
 </div>
-<div className="card col-3 text-center p-2">
+<div className="card col-3 text-center p-2 card-pedido-admin mx-1 mb-3">
   <div className="card-body">
     <h4 className="card-title">Apellido y Nombre</h4>
     <p className="card-text text-muted">Producto y precio</p>
@@ -27,7 +28,7 @@ const TablePedidosAdmin = () => {
   </div>
   <button className="btn text-light d-block mx-5 mt-1 mb-3">Entregado/Enviado</button>
 </div>
-<div className="card col-3 text-center p-2">
+<div className="card col-3 text-center p-2 card-pedido-admin mx-1 mb-3">
   <div className="card-body">
     <h4 className="card-title">Apellido y Nombre</h4>
     <p className="card-text text-muted">Producto y precio</p>

@@ -10,6 +10,7 @@ const Usuarios = () => {
     alert("No tenés autorización para ingresar a esta página");
     window.location.href = "/";
   }
+  
   return (
     <>
     <Navbar />

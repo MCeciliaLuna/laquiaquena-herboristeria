@@ -1,6 +1,7 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import ModalRegistro from '../ModalRegistro/ModalRegistro';
+import './Login.css'
 
 const Login = () => {
   const { register, handleSubmit } = useForm();
@@ -42,10 +43,10 @@ const Login = () => {
     <h4 className="text-light">Registrate para continuar</h4>
     </div>
   <div className="mb-3 w-100">
-    <input type="email" className="form-control text-center" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="EMAIL" {...register("email", { require: true })} required />
+    <input type="email" className="form-control text-center input-login" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="EMAIL" {...register("email", { require: true })} required />
   </div>
   <div className="mb-2 w-100">
-    <input type="password" className="form-control text-center" id="exampleInputEmail2" aria-describedby="emailHelp" placeholder="CONTRASEÑA" {...register("contraseña", { require: true })} required />
+    <input type="password" className="form-control text-center input-login" id="exampleInputEmail2" aria-describedby="emailHelp" placeholder="CONTRASEÑA" {...register("contraseña", { require: true })} required />
   </div>
   <button type="submit" className="btn border-0 text-light m-0">INGRESAR</button>
 </form>
