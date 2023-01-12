@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import './UsuariosTable.css'
 
 const UsuariosTable = () => {
   const eliminarUsuario = async (_id) => {
@@ -42,9 +43,9 @@ const UsuariosTable = () => {
   }, [aux]);
   
   return (
-    <div className="my-5 col d-flex flex-wrap justify-content-around">
+    <div className="col d-flex flex-wrap justify-content-around">
       {usuariosOrganizados.map((usuario) => (
-      <div className="card col-3 text-center p-2 m-1">
+      <div className="card col-3 text-center mx-1 mb-3 card-usuarios">
   <div className="card-body">
     <h4 className="card-title">{usuario.apellido} {usuario.nombre}</h4>
     <p className="card-text text-muted"></p>

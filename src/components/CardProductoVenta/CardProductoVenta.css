@@ -28,7 +28,9 @@
    }
    .card-productoventa{
     height: auto;
-    padding: 0.5px!important;
+  }
+  .card-producto{
+    width: 75% !important;
   }
 }
 
@@ -44,4 +46,7 @@
  .card-productoventa{
   height: 53vh;
 }
+.card-producto{
+  width: 40% !important;
    }
+  }

@@ -1,6 +1,5 @@
 import React from 'react';
 import Navbar from '../../components/Navbar/Navbar';
-import Footer from '../../components/Footer/Footer';
 import UsuariosTable from '../../components/UsuariosTable/UsuariosTable';
 import ButtonAdminVolver from '../../components/ButtonAdminVolver/ButtonAdminVolver';
 
@@ -10,6 +9,7 @@ const Usuarios = () => {
     alert("No tenés autorización para ingresar a esta página");
     window.location.href = "/";
   }
+  alert('🚨🚨🚨 Usá toda esta información RESPONSABLEMENTE, dado que está para cualquier inconveniente que resulte con los usuarios registrados en la página 🚨🚨🚨')
   
   return (
     <>
@@ -19,7 +19,6 @@ const Usuarios = () => {
     <h2 className="text-light mb-0 pb-0">Usuarios Registrados</h2>
     </div>
     <UsuariosTable />
-<Footer />
 </>
   );
 };

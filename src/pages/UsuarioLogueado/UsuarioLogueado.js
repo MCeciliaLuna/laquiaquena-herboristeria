@@ -12,7 +12,7 @@ const UsuarioLogueado = () => {
   return (
     <>
     <Navbar />
-    <div className="page-usuariologueado mb-5 mt-5 mx-5">
+    <div className="page-usuariologueado mb-5 mt-3 mx-5">
       <div className="mb-4 text-center text-light">
       <h4>En esta sección podrás administrar:</h4>
       </div>

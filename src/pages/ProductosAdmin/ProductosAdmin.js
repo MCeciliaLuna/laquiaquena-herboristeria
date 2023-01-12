@@ -56,7 +56,7 @@ const ProductosAdmin = () => {
      <SelectCategoriasAdmin />
      </div>
       <div className="d-flex justify-content-center">
-        <div className="div-productos-page d-flex flex-wrap align-items-center justify-content-center">
+        <div className="div-productos-page d-flex flex-wrap align-items-center justify-content-evenly">
         {productosOrdenados.map((producto, index) => (
           <CardProductoVenta 
           producto={producto} index={index}

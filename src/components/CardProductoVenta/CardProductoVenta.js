@@ -14,14 +14,14 @@ const CardProductoVenta = ({producto, index}) => {
 
   
   return (
-              <div className="card-producto d-flex justify-content-center col-2 align-items-around m-3 rounded-3">
+              <div className="card-producto d-flex justify-content-center col-2 align-items-around mx-1 mb-3 mt-3 rounded-3">
               <div className="bg-light text-center card-productoventa h-auto p-2 rounded-3">
               <img
                 src={producto.image.secure_url}
                 className="card-img-top"
                 alt="nombre"
               />
-              <div className="card-body p-2">
+              <div className="card-body">
                 <h4 className="cardventa-titulo d-flex justify-content-center align-items-center card-title">{producto.nombre}</h4>
                 <p><i>{producto.categoria}</i></p>
                 <p className="cardventa-descripcion fs-6 d-flex justify-content-center align-items-center card-text">{producto.descripcion}</p>

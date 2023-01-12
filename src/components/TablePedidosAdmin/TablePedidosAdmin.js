@@ -3,7 +3,7 @@ import './TablePedidosAdmin.css'
 
 const TablePedidosAdmin = () => {
   return (
-    <div className="my-4 col d-flex justify-content-around flex-wrap">
+    <div className="col d-flex justify-content-around flex-wrap">
       <div className="card col-3 text-center p-2 card-pedido-admin mx-1 mb-3">
   <div className="card-body">
     <h4 className="card-title">Apellido y Nombre</h4>

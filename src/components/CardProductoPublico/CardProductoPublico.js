@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import ButtonAgregarAlPedido from '../ButtonAgregarAlPedido/ButtonAgregarAlPedido';
 import '../CardProductoPublico/CardProductoPublico.css'
 
 const CardProductoPublico = ({productos}) => {
@@ -38,7 +37,13 @@ const CardProductoPublico = ({productos}) => {
               <p><i>{producto.categoria}</i></p>
               <p className="descripcion-destacados card-text d-flex justify-content-center align-items-center">{producto.descripcion}</p>
               <p id="precio">${producto.precio}</p>
-                <ButtonAgregarAlPedido _id={producto._id} producto={producto._id} />
+              <button
+                  type="button"
+                  className="btn button-destacados-comprar text-light mt-3 align-items-end"
+                  onClick={(_id)=> localStorage.setItem('pedido', JSON.stringify(producto))}
+                > 
+                  Comprar
+                </button>
             </div>
           </div>
         </div>

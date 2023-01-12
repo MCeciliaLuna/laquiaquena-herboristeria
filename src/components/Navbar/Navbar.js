@@ -18,9 +18,9 @@ const Navbar = () => {
   );
 
   return (
-      <div className="navbar-completo d-block text-center">
+      <div className="navbar-completo d-block text-center pb-2">
     <nav className="navbar navbar-expand-lg">
-      <div className="container-fluid d-flex align-items-center justify-content-around">
+      <div className="container-fluid d-flex align-items-center justify-content-between navbar-ipad">
     <div className="d-flex align-items-center link-navbar" href="#"
           onClick={volverLoginInicial}>
       <img src={logo} className="logo-navbar me-2" alt="logo" />

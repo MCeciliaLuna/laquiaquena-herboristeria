@@ -7,9 +7,8 @@ a{
 }
 
 @media (min-width: 768px) and (max-width: 991.98px){
-  .footer{
-    margin-top: 8vh !important;
-  }
+  /* .footer{
+  } */
 }
 
 @media (max-width: 767.98px){

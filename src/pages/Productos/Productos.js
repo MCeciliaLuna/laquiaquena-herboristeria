@@ -7,6 +7,7 @@ import ButtonPedidos from "../../components/ButtonPedidos/ButtonPedidos";
 import Navbar from "../../components/Navbar/Navbar";
 import SelectCategorias from "../../components/SelectCategorias/SelectCategorias";
 import ButtonUserVolver from "../../components/ButtonUserVolver/ButtonUserVolver";
+import Footer from "../../components/Footer/Footer";
 
 const Productos = () => {
   const localStorageRole = localStorage.getItem("role");
@@ -38,6 +39,7 @@ const Productos = () => {
         <CardProductoPublico productos={productos} />
         </div>
     </div>
+        <Footer />
     </div>
   );
 };
