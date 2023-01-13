@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
+import './TablePedido.css'
 
 const TablePedido = () => {
   const usuario = JSON.parse(localStorage.getItem("usuario"));
@@ -26,7 +27,7 @@ const TablePedido = () => {
   
 
   return (
-    <div className="m-5">
+    <div className="m-3">
       <table className="table table-striped bg-light rounded-3 border-0">
   <thead>
     <tr>
@@ -45,9 +46,10 @@ const TablePedido = () => {
     </tr>
   </tbody>
 </table>
+<div className="height-pedidos">
 <h4 className="text-center text-light mb-4">Total:$1234</h4>
 <div className="d-flex justify-content-center">
-<form className="w-50">
+<form className="w-50 form-width">
 
   <input type="text" className="text-center form-control d-block mb-1" defaultValue={usuarioNombre} required />
   <input type="text" className="text-center form-control d-block mb-1" defaultValue={usuarioDireccion} required />
@@ -86,6 +88,7 @@ const TablePedido = () => {
 </div>
 </form>
 </div>
+    </div>
     </div>
   );
 };

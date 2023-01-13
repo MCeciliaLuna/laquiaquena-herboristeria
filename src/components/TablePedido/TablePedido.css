@@ -1,0 +1,9 @@
+.height-pedidos{
+    height: 60vh;
+  }
+
+@media (max-width: 767.98px) {
+  .form-width{
+    width: 70vh !important;  
+  }
+}

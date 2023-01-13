@@ -5,14 +5,11 @@
 .cardventa-titulo{
   font-size: 3.3vh;
   word-wrap: break-word;
-}
-
-.cardventa-titulo{
   height: 10vh;
 }
 
 .cardventa-descripcion{
-  height: 15vh;
+  height: 25vh;
   word-wrap: break-word;
 }
 @media (max-width: 767.98px) {
@@ -26,9 +23,6 @@
   word-wrap: break-word;
   height: 45%;
    }
-   .card-productoventa{
-    height: auto;
-  }
   .card-producto{
     width: 75% !important;
   }

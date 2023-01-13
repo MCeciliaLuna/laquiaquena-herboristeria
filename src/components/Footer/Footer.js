@@ -3,7 +3,7 @@ import './Footer.css';
 
 const Footer = () => {
   return (
-    <div className="footer d-block p-3">
+    <div className="footer-background d-block p-3">
     <p className="text-center text-light fs-5 mb-0">Todos los derechos reservados a La Quiaqueña Herboristería | 2023</p>
     <hr className="text-light my-2 mx-5 px-5" />
     <div className="d-flex align-items-center justify-content-center mb-1 w-100">

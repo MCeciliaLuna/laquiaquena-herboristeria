@@ -28,6 +28,22 @@ const Productos = () => {
    getProductos()
   }, []);
 
+  const aux = productos.sort((a,b) =>{
+    
+    if (a.nombre > b.nombre) {
+    return 1;
+  }
+  if (a.nombre < b.nombre) {
+    return -1;
+  }
+  return 0 })
+
+  const [productosOrdenados, setProductosOrdenados] = useState([])
+
+  useEffect(() => {
+    setProductosOrdenados(aux)
+  }, [aux])
+
   return (
     <div>
       <Navbar />
@@ -35,9 +51,15 @@ const Productos = () => {
         <ButtonUserVolver />
       <SelectCategorias/>
       <ButtonPedidos />
-    <div className="productos-page d-flex">
-        <CardProductoPublico productos={productos} />
-        </div>
+      <div className="d-flex justify-content-center">
+        <div className="div-productos-page d-flex flex-wrap align-items-center justify-content-evenly">
+        {productosOrdenados.map((producto) => (
+          <CardProductoPublico
+          producto={producto}
+          />
+        ))}
+      </div>
+      </div>
     </div>
         <Footer />
     </div>
