@@ -1,11 +1,30 @@
 import { useState } from 'react';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
-import './TablePedido.css'
+import './TablePedido.css';
+import { useForm } from 'react-hook-form';
+import axios from 'axios';
 
 const TablePedido = () => {
   const usuario = JSON.parse(localStorage.getItem("usuario"));
 
   const producto = JSON.parse(localStorage.getItem("pedido"));
+
+  const {
+    register,
+    handleSubmit,
+    //formState: { errors },
+  } = useForm();
+  const [sendPedido, setSendPedido] = useState();
+
+  const enviarPedido = async (data) => {
+    await axios
+      .post("http://localhost:8000/crearpedido", data)
+      .then((resp) => {
+        setSendPedido(resp.data);
+      });
+    alert("El pedido ha sido enviado exitosamente. Si pagaste, envianos el comrpobante vía whatsapp");
+    window.location.href = "/home";
+  };
 
   const usuarioNombre = JSON.stringify(`${usuario.nombre} ${usuario.apellido}`).replace(
     /['"]+/g,
@@ -13,6 +32,8 @@ const TablePedido = () => {
   );
   const usuarioDireccion = JSON.stringify(`${usuario.direccion}`).replace(/['"]+/g, "");
   const usuarioTelefono = JSON.stringify(`${usuario.telefono}`).replace(/['"]+/g, "");
+  const pedido = JSON.stringify(`${producto.nombre}, $${producto.precio}`).replace(/['"]+/g, "");
+  const precioTotal = JSON.stringify(producto.precio).replace(/['"]+/g, "");
 
   const removeItem = () =>{
     localStorage.removeItem('producto')
@@ -27,34 +48,21 @@ const TablePedido = () => {
   
 
   return (
+    <form onSubmit={handleSubmit(enviarPedido)}>
     <div className="m-3">
-      <table className="table table-striped bg-light rounded-3 border-0">
-  <thead>
-    <tr>
-      <th scope="col">Producto</th>
-      <th scope="col">Precio</th>
-      <th scope="col"></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td className="fs-4">{producto.nombre}</td>
-      <td className="fs-4">${producto.precio}</td>
-      <td>
-        <button className="btn" key={producto._id} onClick={removeItem}>X</button>
-      </td>
-    </tr>
-  </tbody>
-</table>
 <div className="height-pedidos">
-<h4 className="text-center text-light mb-4">Total:$1234</h4>
 <div className="d-flex justify-content-center">
-<form className="w-50 form-width">
+<div className="w-50 form-width">
 
-  <input type="text" className="text-center form-control d-block mb-1" defaultValue={usuarioNombre} required />
-  <input type="text" className="text-center form-control d-block mb-1" defaultValue={usuarioDireccion} required />
-  <input type="number" className="text-center form-control d-block mb-1" defaultValue={usuarioTelefono} required />
-  <select className="form-select text-center mb-1" aria-label="Default select example" required>
+  <input type="text" className="text-center form-control d-block mb-1" {...register("pedido", {required: true})} value={pedido} />
+  {/* <button className="btn" key={producto._id} onClick={removeItem}>X</button> */}
+  <label className="text-center w-100 text-light mt-3">Total:</label>
+  <input type="text" className="text-center form-control mb-4" {...register("precio", {required: true})} value={precioTotal} />
+
+  <input type="text" className="text-center form-control d-block mb-1" defaultValue={usuarioNombre} {...register("nombre", {required: true})} required />
+  <input type="text" className="text-center form-control d-block mb-1" defaultValue={usuarioDireccion} {...register("direccion", {required: true})} required />
+  <input type="number" className="text-center form-control d-block mb-1" defaultValue={usuarioTelefono} {...register("telefono", {required: true})} required />
+  <select className="form-select text-center mb-1" aria-label="Default select example" {...register("entrega", {required: true})} required>
   <option value="Retiro del local">Retiro del local</option>
   <option value="Envío">Envío</option>
 </select>
@@ -77,19 +85,20 @@ const TablePedido = () => {
   CBU copiado al portapapeles
   </span>}</p>
 </div>
-<div className="form-check text-center text-light d-block ms-3 ps-0">
-  <input className="me-2" type="checkbox" value="pagado por transferencia" id="flexCheckDefault" />
-  <label className="mb-0 fs-5" for="flexCheckDefault">
-    Pagado
-  </label>
+<div className="d-flex justify-content-center">
+<select className="form-select text-center p-0 mb-0 w-75" aria-label="Default select example" {...register("pago", {required: true})} required>
+  <option className="p-0" value="NO PAGADO">No pagado</option>
+  <option className="p-0" value="PAGADO">Pagado por transferencia</option>
+</select>
 </div>
-<div className="w-100 text-center mt-4">
-<button className="btn text-light">Enviar</button>
+<div className="w-100 text-center mt-3">
+<button type="submit" className="btn text-light">Enviar</button>
 </div>
-</form>
+</div>
 </div>
     </div>
     </div>
+    </form>
   );
 };
 

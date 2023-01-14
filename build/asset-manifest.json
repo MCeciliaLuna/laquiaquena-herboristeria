@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.3d39facc.css",
-    "main.js": "/static/js/main.9e19b8be.js",
+    "main.css": "/static/css/main.0de22aaf.css",
+    "main.js": "/static/js/main.bae89380.js",
     "static/js/787.06220f0f.chunk.js": "/static/js/787.06220f0f.chunk.js",
     "static/media/naturalmedix.jpg": "/static/media/naturalmedix.d40b4cfd2266092dff01.jpg",
     "static/media/carousel.jpg": "/static/media/carousel.e1a5af107b1807841657.jpg",
@@ -15,12 +15,12 @@
     "static/media/Chalfont W00 Extra Bold.ttf": "/static/media/Chalfont W00 Extra Bold.15a7a86599ad05b13706.ttf",
     "static/media/PatuaOne-Regular.ttf": "/static/media/PatuaOne-Regular.a9f01afefe6f58c9aeb2.ttf",
     "index.html": "/index.html",
-    "main.3d39facc.css.map": "/static/css/main.3d39facc.css.map",
-    "main.9e19b8be.js.map": "/static/js/main.9e19b8be.js.map",
+    "main.0de22aaf.css.map": "/static/css/main.0de22aaf.css.map",
+    "main.bae89380.js.map": "/static/js/main.bae89380.js.map",
     "787.06220f0f.chunk.js.map": "/static/js/787.06220f0f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.3d39facc.css",
-    "static/js/main.9e19b8be.js"
+    "static/css/main.0de22aaf.css",
+    "static/js/main.bae89380.js"
   ]
 }
