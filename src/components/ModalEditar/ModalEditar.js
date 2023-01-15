@@ -14,7 +14,7 @@ const ModalEditar = ({ producto, id }) => {
     if (
       window.confirm(`¿Estás seguro de la modificación de ${producto.nombre}?`)
     ) {
-      await axios.put("http://localhost:8000/modificarproducto", data);
+      await axios.put("https://laquiaquenaherboristeriabe.onrender.com/modificarproducto", data);
       setEditarProducto(data);
       alert(`Menú ${producto.nombre} modificado exitosamente`);
       window.location.reload();

@@ -13,7 +13,7 @@ const ModalRegistro = () => {
 
   const onSubmit = async (data) => {
     await axios
-      .post("http://localhost:8000/crearusuario", data)
+      .post("https://laquiaquenaherboristeriabe.onrender.com/crearusuario", data)
       .then((resp) => {
         setAgregarUsuario(resp.data);
       });

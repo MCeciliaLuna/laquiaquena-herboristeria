@@ -18,7 +18,7 @@ const TablePedido = () => {
 
   const enviarPedido = async (data) => {
     await axios
-      .post("http://localhost:8000/crearpedido", data)
+      .post("https://laquiaquenaherboristeriabe.onrender.com/crearpedido", data)
       .then((resp) => {
         setSendPedido(resp.data);
       });
@@ -48,7 +48,6 @@ const TablePedido = () => {
     setCopied(true)
     event.preventDefault()
   }
-  
 
   return (
     <form onSubmit={handleSubmit(enviarPedido)}>

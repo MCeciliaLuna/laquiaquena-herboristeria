@@ -6,7 +6,7 @@ const UsuariosTable = () => {
   const eliminarUsuario = async (_id) => {
     if (window.confirm("¿Estás seguro que deseás eliminar este usuario?")) {
       await axios.delete(
-        `http://localhost:8000/eliminarusuario/${_id}`
+        `https://laquiaquenaherboristeriabe.onrender.com/eliminarusuario/${_id}`
       );
       alert("Usuario eliminado correctamente");
       window.location.reload();
@@ -16,7 +16,7 @@ const UsuariosTable = () => {
   const [usuarios, setUsuarios] = useState([]);
   const traerUsuarios = async () => {
     try {
-      const info = await axios.get("http://localhost:8000/traerusuarios");
+      const info = await axios.get("https://laquiaquenaherboristeriabe.onrender.com/traerusuarios");
       setUsuarios((info.data))
     } catch (error) {
       console.log(error);

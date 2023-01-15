@@ -6,7 +6,7 @@ const TablePedidosAdmin = () => {
   const [pedidos, setPedidos] = useState([]);
   const traerUsuarios = async () => {
     try {
-      const info = await axios.get("http://localhost:8000/traerpedidos");
+      const info = await axios.get("https://laquiaquenaherboristeriabe.onrender.com/traerpedidos");
       setPedidos((info.data))
     } catch (error) {
       console.log(error);
@@ -19,7 +19,7 @@ const TablePedidosAdmin = () => {
   const pedidoEnviado = async (_id) => {
     if (window.confirm("¿Estás seguro que se ha enviado/entregado este pedido?")) {
       await axios.delete(
-        `http://localhost:8000/eliminarpedido/${_id}`
+        `https://laquiaquenaherboristeriabe.onrender.com/eliminarpedido/${_id}`
       );
       alert("¡Pedido entregado/enviado!");
       window.location.reload();

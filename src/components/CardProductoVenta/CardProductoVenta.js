@@ -6,7 +6,7 @@ const CardProductoVenta = ({producto, index}) => {
 
     const eliminarProducto = async (_id) => {
       if (window.confirm(`¿Estás seguro que querés eliminar ${producto.nombre}?`)) {
-      await axios.delete(`http://localhost:8000/eliminarproducto/${_id}`)
+      await axios.delete(`https://laquiaquenaherboristeriabe.onrender.com/eliminarproducto/${_id}`)
       alert('Producto eliminado exitosamente')
       window.location.replace('/productosadmin')
     }
