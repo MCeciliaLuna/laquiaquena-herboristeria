@@ -47,7 +47,7 @@ const Productos = () => {
   return (
     <div>
       <Navbar />
-      <div className="div-productos-page d-flex flex-wrap align-items-center justify-content-center">
+      <div className="div-productos-page h-auto d-flex flex-wrap align-items-center justify-content-center">
         <ButtonUserVolver />
       <SelectCategorias/>
       <ButtonPedidos />

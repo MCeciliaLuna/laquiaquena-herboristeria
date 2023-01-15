@@ -34,6 +34,9 @@ const TablePedido = () => {
   const usuarioTelefono = JSON.stringify(`${usuario.telefono}`).replace(/['"]+/g, "");
   const pedido = JSON.stringify(`${producto.nombre}, $${producto.precio}`).replace(/['"]+/g, "");
   const precioTotal = JSON.stringify(producto.precio).replace(/['"]+/g, "");
+  const horaJs  = new Date()
+  const horaString = horaJs.toString()
+  const hora = horaString.substr(4,17)
 
   const removeItem = () =>{
     localStorage.removeItem('producto')
@@ -59,6 +62,7 @@ const TablePedido = () => {
   <label className="text-center w-100 text-light mt-3">Total:</label>
   <input type="text" className="text-center form-control mb-4" {...register("precio", {required: true})} value={precioTotal} />
 
+  <input type="text" className="text-center form-control d-block mb-1" value={hora} {...register("datetime", {required: true})} />
   <input type="text" className="text-center form-control d-block mb-1" defaultValue={usuarioNombre} {...register("nombre", {required: true})} required />
   <input type="text" className="text-center form-control d-block mb-1" defaultValue={usuarioDireccion} {...register("direccion", {required: true})} required />
   <input type="number" className="text-center form-control d-block mb-1" defaultValue={usuarioTelefono} {...register("telefono", {required: true})} required />

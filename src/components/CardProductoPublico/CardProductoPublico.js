@@ -3,8 +3,8 @@ import '../CardProductoPublico/CardProductoPublico.css'
 const CardProductoPublico = ({producto}) => {
 
   return (
-          <div className="card-producto d-flex justify-content-center col-2 mx-1 mb-3 mt-3 rounded-3">
-          <div className="card h-auto text-center">
+          <div className="card-productopublico d-flex justify-content-center col-2 mx-1 mb-3 mt-3 rounded-3">
+          <div className="card text-center">
             <div className="card-image-producto">
             <img
               src={producto.image.secure_url}
