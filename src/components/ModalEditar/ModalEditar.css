@@ -1,5 +1,3 @@
 .fondo-modal-editar{
-  background-image: url(/src/assets/images/cover2.png);
-  background-repeat: repeat;
-  background-size: cover;
+  background-color: #7fab1f;
 }

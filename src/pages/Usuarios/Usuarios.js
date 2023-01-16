@@ -9,7 +9,7 @@ const Usuarios = () => {
     alert("No tenés autorización para ingresar a esta página");
     window.location.href = "/";
   }
-  alert('🚨🚨🚨 Usá toda esta información RESPONSABLEMENTE, dado que está para cualquier inconveniente que resulte con los usuarios registrados en la página 🚨🚨🚨')
+  // alert('🚨🚨🚨 Usá toda esta información RESPONSABLEMENTE, dado que está para cualquier inconveniente que resulte con los usuarios registrados en la página 🚨🚨🚨')
   
   return (
     <>

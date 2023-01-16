@@ -17,13 +17,13 @@ const UsuarioLogueado = () => {
       <h4>En esta sección podrás administrar:</h4>
       </div>
       <Link to="/pedidosadmin">
-      <button className="buttons-movile btn w-100 mb-4 p-5 text-light fs-4">PEDIDOS</button>
+      <button className="buttons-movile btn w-100 mb-4 p-5 text-light fs-4">PEDIDOS ✅</button>
       </Link>
       <Link to="/productosadmin">
-      <button className="buttons-movile btn w-100 mb-4 p-5 text-light fs-4">PRODUCTOS</button>
+      <button className="buttons-movile btn w-100 mb-4 p-5 text-light fs-4">PRODUCTOS 🌿</button>
       </Link>
       <Link to="/usuariosadmin">
-      <button className="buttons-movile btn w-100 mb-4 p-5 text-light fs-4">USUARIOS</button>
+      <button className="buttons-movile btn w-100 mb-4 p-5 text-light fs-4">USUARIOS 👥</button>
       </Link>
     </div>
     <Footer />

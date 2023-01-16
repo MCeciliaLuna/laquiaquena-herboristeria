@@ -3,9 +3,7 @@
 }
 
 .fondo-modal-logueado{
-  background-image: url(/src/assets/images/cover3.png);
-  background-repeat: repeat;
-  background-size: cover;
+  background-color: #f89d13;
 }
 
 .text-light{

@@ -12,11 +12,11 @@ const ModalEditar = ({ producto, id }) => {
 
   const editProducto = async (data) => {
     if (
-      window.confirm(`¿Estás seguro de la modificación de ${producto.nombre}?`)
+      window.confirm(`📣 ¿𝗠𝗢𝗗𝗜𝗙𝗜𝗖𝗔𝗠𝗢𝗦 a ${producto.nombre}? 🤔`)
     ) {
       await axios.put("https://laquiaquenaherboristeriabe.onrender.com/modificarproducto", data);
       setEditarProducto(data);
-      alert(`Menú ${producto.nombre} modificado exitosamente`);
+      alert(`${producto.nombre} 𝗠𝗢𝗗𝗜𝗙𝗜𝗖𝗔𝗗𝗢 𝗘𝗫𝗜𝗧𝗢𝗦𝗔𝗠𝗘𝗡𝗧𝗘 ✅😉`);
       window.location.reload();
     }
   };
@@ -43,9 +43,9 @@ const ModalEditar = ({ producto, id }) => {
         <div className="modal-dialog">
           <div className="modal-content fondo-modal-editar" >
             <div className="modal-header">
-              <h5 className="modal-title text-light" id="exampleModalLabel1">
-                Editar
-              </h5>
+              <h4 className="modal-title text-light" id="exampleModalLabel1">
+                EDITAR PRODUCTO 📝
+              </h4>
               <button
                 type="button"
                 className="btn-close"
@@ -55,35 +55,23 @@ const ModalEditar = ({ producto, id }) => {
             </div>
             <div className="modal-body">
               <form id="form" onSubmit={handleSubmit(editProducto)}>
-                <div className="d-flex justify-content-end">
-                  <label className="form-label m-0 fs-6 text-dark">ID:</label>
                   <input
                     type="text"
                     value={producto._id}
                     {...register("_id", { required: true })}
-                    className="w-50 ps-2 text-start bg-success border-0 rounded-0 fs-6"
+                    className="d-none"
                   />
-                </div>
-                <div className="mb-3">
-                  <label
-                    for="disabledTextInput"
-                    className="fs-5 form-label text-light"
-                  >
-                    Nombre
-                  </label>
                   <input
                     type="text"
                     id="disabledTextInput"
-                    className="form-control input-nombreproducto"
+                    className="form-control input-nombreproducto mb-3"
                     maxLength="40"
                     defaultValue={producto.nombre}
                     {...register("nombre", { required: true })}
                     required
                   />
-                </div>
-                <div className="mt-4 mb-3">
                   <select
-                    className="form-select"
+                    className="form-select mb-3"
                     aria-label="Default select example"
                     defaultValue={producto.categoria}
                     {...register("categoria", { required: true })}
@@ -104,34 +92,18 @@ const ModalEditar = ({ producto, id }) => {
                     <option value="Sahumerios">Sahumerios</option>
                     <option value="Otros">Otros</option>
                   </select>
-                </div>
-                <div className="mb-3">
-                  <label
-                    for="disabledTextInput"
-                    className="fs-5 form-label text-light"
-                  >
-                    Descripción
-                  </label>
                   <textarea
                     type="text"
                     id="disabledTextInput"
-                    className="form-control"
+                    className="form-control mb-3"
                     maxLength="100"
                     defaultValue={producto.descripcion}
                     rows="3"
                     {...register("descripcion", { required: true })}
                     required
                   />
-                </div>
-                <div className="mb-3">
-                  <label
-                    for="disabledTextInput"
-                    className="fs-5 form-label text-light"
-                  >
-                    Precio
-                  </label>
-                  <div className="d-flex">
-                    <div className="d-flex align-items-center">
+                  <div className="d-flex mb-3">
+                    <div className="d-flex align-items-center input-center">
                       <p className="text-light fs-5 m-2">$</p>
                       <input
                         type="number"
@@ -144,12 +116,13 @@ const ModalEditar = ({ producto, id }) => {
                       />
                     </div>
                   </div>
-                </div>
-                <div className="modal-footer">
-                  <button type="submit" className="btn text-light">
-                    Modificar producto
-                  </button>
-                </div>
+                  <div className="modal-footer">
+            <button type="submit" className="btn rounded-circle m-0 p-2 bg-light">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16">
+  <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/>
+</svg>
+            </button>
+          </div>
               </form>
             </div>
           </div>

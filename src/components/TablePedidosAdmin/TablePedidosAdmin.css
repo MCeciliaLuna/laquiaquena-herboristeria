@@ -1,3 +1,20 @@
+.text-pedido{
+  color: #f89d13;
+}
+
+.title-pedido{
+  color: #b00215 ;
+}
+
+.whatsapp-pedido{
+  color: #7fab1f;
+}
+
+.whatsapp-pedido:hover{
+  transition: all .2s;
+  transform: scale(1.05);
+}
+
 @media (min-width: 768px) and (max-width: 991.98px){
   .card-pedido-admin{
     width: 40%;
