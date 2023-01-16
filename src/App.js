@@ -9,6 +9,7 @@ import PedidoPage from './pages/PedidoPage/PedidoPage';
 import Usuarios from './pages/Usuarios/Usuarios';
 import ProductosAdmin from './pages/ProductosAdmin/ProductosAdmin';
 import Pedidos from './pages/Pedidos/Pedidos';
+import PostPedido from './pages/PostPedido/PostPedido';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/productos" element={<Productos />} />
         <Route path="/mipedido" element={<PedidoPage />} />
+        <Route path="/postpedido" element={<PostPedido />} />
         <Route path="*" element={<Error />} />
         <Route path="/adminpage" element={<UsuarioLogueado />} />
         <Route path="/usuariosadmin" element={<Usuarios />} />

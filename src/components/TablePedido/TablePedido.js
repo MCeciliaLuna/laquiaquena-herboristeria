@@ -58,10 +58,15 @@ const TablePedido = () => {
 
   <input type="text" className="text-center form-control d-block mb-1" {...register("pedido", {required: true})} value={pedido} />
   {/* <button className="btn" key={producto._id} onClick={removeItem}>X</button> */}
-  <label className="text-center w-100 text-light mt-3">Total:</label>
-  <input type="text" className="text-center form-control mb-4" {...register("precio", {required: true})} value={precioTotal} />
+  <label className="text-center w-100 text-light mt-1">Total:</label>
+  <div className="d-flex justify-content-center align-items-center">
+  <p className="d-flex text-light mb-0 me-2 fs-4">$</p>
+  <input type="text" className="text-center form-control w-25" {...register("precio", {required: true})} value={precioTotal} />
+  </div>
+  <hr className="text-light" />
 
-  <input type="text" className="text-center form-control d-block mb-1" value={hora} {...register("datetime", {required: true})} />
+  <input type="text" className="d-none" value={hora} {...register("datetime", {required: true})} />
+  <label className="text-center w-100 text-light mb-2">Revisá si tus datos están correctos. Podés modoficarlos si es necesario</label>
   <input type="text" className="text-center form-control d-block mb-1" defaultValue={usuarioNombre} {...register("nombre", {required: true})} required />
   <input type="text" className="text-center form-control d-block mb-1" defaultValue={usuarioDireccion} {...register("direccion", {required: true})} required />
   <input type="number" className="text-center form-control d-block mb-1" defaultValue={usuarioTelefono} {...register("telefono", {required: true})} required />
@@ -89,7 +94,7 @@ const TablePedido = () => {
   </span>}</p>
 </div>
 <div className="d-flex justify-content-center">
-<select className="form-select text-center p-0 mb-0 w-75" aria-label="Default select example" {...register("pago", {required: true})} required>
+<select className="form-select text-center p-0 mb-0 w-50 input-center" aria-label="Default select example" {...register("pago", {required: true})} required>
   <option className="p-0" value="NO PAGADO">No pagado</option>
   <option className="p-0" value="PAGADO">Pagado por transferencia</option>
 </select>
