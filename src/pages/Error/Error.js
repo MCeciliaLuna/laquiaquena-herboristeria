@@ -1,9 +1,10 @@
 import React from 'react';
 import '../Error/Error.css';
-import { Link } from 'react-router-dom';
 
 const Error = () => {
-  localStorage.removeItem('access-token')
+  const volverAtras = () => {
+    window.history.back()
+  }
   return (
     <div className="errorpage d-flex justify-content-center align-items-center container text-light p-5">
     <div>
@@ -11,9 +12,7 @@ const Error = () => {
       <h1 className="text-center">Ups! No encontramos lo que estabas buscando</h1>
       </div>
       <div className="d-flex justify-content-center">
-        <Link to="/">
-      <button className="btn text-light text-center m-3 w-auto">Volver a página principal</button>
-      </Link>
+      <button className="btn text-light text-center m-3 w-auto" onClick={volverAtras} >Volver</button>
     </div>
     </div>
     </div>

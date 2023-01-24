@@ -22,7 +22,7 @@ const ButtonAgregarProducto = () => {
       )
       const json = await resp.json();
         alert('El producto FUE 𝗖𝗥𝗘𝗔𝗗𝗢 𝗘𝗫𝗜𝗧𝗢𝗦𝗔𝗠𝗘𝗡𝗧𝗘 ✅😉')
-        window.location.href = '/productosadmin'
+        window.location.reload()
     }
       
     }

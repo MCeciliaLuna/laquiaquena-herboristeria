@@ -7,7 +7,8 @@ import Footer from '../../components/Footer/Footer';
 import ButtonAdminVolver from '../../components/ButtonAdminVolver/ButtonAdminVolver';
 import SelectCategoriasAdmin from '../../components/SelectCategoriasAdmin/SelectCategoriasAdmin';
 
-const ProductosAdmin = () => {
+const AdminEnSobre = () => {
+
   const localStorageRole = localStorage.getItem("role");
   if (localStorageRole === "USER" || !localStorage.getItem("role") || !localStorage.getItem("access-token")) {
     alert("No tenés autorización para ingresar a esta página");
@@ -44,6 +45,9 @@ const ProductosAdmin = () => {
     setProductosOrdenados(aux)
   }, [aux])
 
+  const filtro = productosOrdenados.filter(producto => producto.categoria === 'En sobre')
+
+
   return (
     <>
     <Navbar />
@@ -54,10 +58,10 @@ const ProductosAdmin = () => {
     <div className="d-flex justify-content-center align-items-center">
      <ButtonAgregarProducto />
      </div>
-          <SelectCategoriasAdmin categoria={productosOrdenados}/>
+     <SelectCategoriasAdmin />
       <div className="d-flex justify-content-center">
         <div className="div-productos-page d-flex flex-wrap align-items-center justify-content-evenly">
-        {productosOrdenados.map((producto, index) => (
+        {filtro.map((producto, index) => (
           <CardProductoVenta 
           producto={producto} index={index}
           />
@@ -65,8 +69,8 @@ const ProductosAdmin = () => {
       </div>
       </div>
       <Footer />
-    </>
+      </>
   );
 };
 
-export default ProductosAdmin;
+export default AdminEnSobre;

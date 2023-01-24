@@ -1,25 +1,25 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const SelectCategoriasAdmin = () => {
   return (
-    <div>
-      <select className="form-select ms-3 px-5" aria-label="Default select example" >
-  <option selected>Todos los productos</option>
-  <option value="Stevia">Stevia</option>
-  <option value="Hierbas">Hierbas</option>
-  <option value="Maca">Maca</option>
-  <option value="Cápsulas">Cápsulas</option>
-  <option value="Frascos de vidrio">Frascos de vidrio</option>
-  <option value="Nuez de la india">Nuez de la india</option>
-  <option value="En sobre">En sobre</option>
-  <option value="Pomadas">Pomadas</option>
-  <option value="Jarabe">Jarabe</option>
-  <option value="Jabones">Jabones</option>
-  <option value="Té">Té</option>
-  <option value="Aceites">Aceites</option>
-  <option value="Sahumerios">Sahumerios</option>
-  <option value="Otros">Otros</option>
-</select>
+    <div className="d-flex justify-content-center align-items-center mt-3">
+  <Link className="text-light mx-2" to="/productosadmin">Todos los productos</Link>
+  <Link className="text-light mx-2" to="/adminaceites">Aceites</Link>
+  <Link className="text-light mx-2" to="/admincapsulas">Cápsulas</Link>
+  <Link className="text-light mx-2" to="/adminensobre">En sobre</Link>
+  <Link className="text-light mx-2" to="/adminfrascos">Frascos de vidrio</Link>
+  <Link className="text-light mx-2" to="/adminhierbas">Hierbas</Link>
+  <Link className="text-light mx-2" to="/adminjabones">Jabones</Link>
+  <Link className="text-light mx-2" to="/adminjarabe">Jarabe</Link>
+  <Link className="text-light mx-2" to="/adminmaca">Maca</Link>
+  <Link className="text-light mx-2" to="/adminnuezdelaindia">Nuez de la India</Link>
+  <Link className="text-light mx-2" to="/adminpomadas">Pomadas</Link>
+  <Link className="text-light mx-2" to="/adminsahumerios">Sahumerios</Link>
+  <Link className="text-light mx-2" to="/adminstevia">Stevia</Link>
+  <Link className="text-light mx-2" to="/adminte">Té</Link>
+  <Link className="text-light mx-2" to="/adminyerbas">Yerbas</Link>
+  <Link className="text-light mx-2" to="/adminotros">Otros</Link>
     </div>
   );
 };

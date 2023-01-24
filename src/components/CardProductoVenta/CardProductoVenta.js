@@ -8,7 +8,7 @@ const CardProductoVenta = ({producto, index}) => {
       if (window.confirm(`📣 ¿Estás segur@ que querés 𝗘𝗟𝗜𝗠𝗜𝗡𝗔𝗥 ${producto.nombre}? 😮`)) {
       await axios.delete(`https://laquiaquenaherboristeriabe.onrender.com/eliminarproducto/${_id}`)
       alert('Producto 𝗘𝗟𝗜𝗠𝗜𝗡𝗔𝗗𝗢 𝗘𝗫𝗜𝗧𝗢𝗦𝗔𝗠𝗘𝗡𝗧𝗘 ✅😉')
-      window.location.replace('/productosadmin')
+      window.location.reload()
     }
     }
 
