@@ -4,7 +4,7 @@ import Home from './pages/Home/Home';
 import Error from './pages/Error/Error';
 import Productos from './pages/Productos/Productos';
 import UsuarioLogueado from './pages/UsuarioLogueado/UsuarioLogueado';
-import LoginInicial from './pages/LoginInicial/LoginInicial';
+import Login from './pages/Login/Login';
 import PedidoPage from './pages/PedidoPage/PedidoPage';
 import Usuarios from './pages/Usuarios/Usuarios';
 import ProductosAdmin from './pages/ProductosAdmin/ProductosAdmin';
@@ -30,7 +30,7 @@ function App() {
   return (
       <BrowserRouter>
     <Routes>
-        <Route path="/" element={<LoginInicial />} />
+        <Route path="/" element={<Login />} />
         <Route path="/home" element={<Home />} />
         <Route path="/productos" element={<Productos />} />
         <Route path="/mipedido" element={<PedidoPage />} />
