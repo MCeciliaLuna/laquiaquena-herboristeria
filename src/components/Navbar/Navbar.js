@@ -5,7 +5,7 @@ import logo from '../assets/images/logo.png';
 const Navbar = () => {
   const volverLoginInicial = () => {
     if (
-      window.confirm("¿Estás segur@ que querés volver a la página inicial?")
+      window.confirm("¿Volvemos a la página inicial? 🤔😮")
     ) {
       window.location.href = "/";
     }

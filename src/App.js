@@ -1,9 +1,8 @@
 import './App.css';
 import { Routes, Route, BrowserRouter } from "react-router-dom";
-import Home from './pages/Home/Home';
 import Error from './pages/Error/Error';
-import Productos from './pages/Productos/Productos';
-import UsuarioLogueado from './pages/UsuarioLogueado/UsuarioLogueado';
+import ProductosUser from './pages/ProductosUser/ProductosUser';
+import Administrador from './pages/Administrador/Administrador';
 import Login from './pages/Login/Login';
 import PedidoPage from './pages/PedidoPage/PedidoPage';
 import Usuarios from './pages/Usuarios/Usuarios';
@@ -31,12 +30,12 @@ function App() {
       <BrowserRouter>
     <Routes>
         <Route path="/" element={<Login />} />
-        <Route path="/home" element={<Home />} />
-        <Route path="/productos" element={<Productos />} />
+
+        <Route path="/productos" element={<ProductosUser />} />
         <Route path="/mipedido" element={<PedidoPage />} />
         <Route path="/postpedido" element={<PostPedido />} />
-        <Route path="*" element={<Error />} />
-        <Route path="/adminpage" element={<UsuarioLogueado />} />
+
+        <Route path="/administrador" element={<Administrador />} />
         <Route path="/usuariosadmin" element={<Usuarios />} />
         <Route path="/pedidosadmin" element={<Pedidos />} />
         <Route path="/productosadmin" element={<ProductosAdmin />} />
@@ -55,6 +54,8 @@ function App() {
         <Route path="/adminte" element={<AdminTe />} />
         <Route path="/adminyerbas" element={<AdminYerbas />} />
         <Route path="/adminotros" element={<AdminOtros />} />
+
+      <Route path="*" element={<Error />} />
       </Routes>
       </BrowserRouter>
   );
