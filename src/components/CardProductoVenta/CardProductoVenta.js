@@ -23,7 +23,7 @@ const CardProductoVenta = ({producto, index}) => {
               />
               <div className="card-body">
                 <h4 className="cardventa-titulo d-flex justify-content-center align-items-center card-title">{producto.nombre}</h4>
-                <p><i>{producto.categoria}</i></p>
+                <p className="text-muted"><i>{producto.categoria}</i></p>
                 <p className="cardventa-descripcion fs-6 d-flex justify-content-center align-items-center card-text">{producto.descripcion}</p>
                 <h5>$ {producto.precio}</h5>
                 <div className="d-flex align-items-center justify-content-around">

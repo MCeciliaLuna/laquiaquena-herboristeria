@@ -92,6 +92,7 @@ const ButtonAgregarProducto = () => {
   <option value="Té">Té</option>
   <option value="Aceites">Aceites</option>
   <option value="Sahumerios">Sahumerios</option>
+  <option value="Yerbas">Yerbas</option>
   <option value="Otros">Otros</option>
 </select>
 </div>

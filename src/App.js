@@ -22,6 +22,9 @@ import AdminNuez from './pages/AdminNuez/AdminNuez';
 import AdminPomadas from './pages/AdminPomadas/AdminPomadas';
 import AdminSahumerios from './pages/AdminSahumerios/AdminSahumerios';
 import AdminSytevia from './pages/AdminStevia/AdminStevia';
+import AdminTe from './pages/AdminTe/AdminTe';
+import AdminYerbas from './pages/AdminYerbas/AdminYerbas';
+import AdminOtros from './pages/AdminOtros/AdminOtros';
 
 function App() {
   return (
@@ -35,9 +38,10 @@ function App() {
         <Route path="*" element={<Error />} />
         <Route path="/adminpage" element={<UsuarioLogueado />} />
         <Route path="/usuariosadmin" element={<Usuarios />} />
-        <Route path="/productosadmin" element={<ProductosAdmin />} />
         <Route path="/pedidosadmin" element={<Pedidos />} />
+        <Route path="/productosadmin" element={<ProductosAdmin />} />
         <Route path="/adminaceites" element={<AdminAceites />} />
+        <Route path="/admincapsulas" element={<AdminCapsulas />} />
         <Route path="/adminensobre" element={<AdminEnSobre />} />
         <Route path="/adminfrascos" element={<AdminFrascos />} />
         <Route path="/adminhierbas" element={<AdminHierbas />} />
@@ -48,9 +52,9 @@ function App() {
         <Route path="/adminpomadas" element={<AdminPomadas />} />
         <Route path="/adminsahumerios" element={<AdminSahumerios />} />
         <Route path="/adminstevia" element={<AdminSytevia />} />
-        <Route path="/admincapsulas" element={<AdminCapsulas />} />
-        <Route path="/admincapsulas" element={<AdminCapsulas />} />
-        <Route path="/admincapsulas" element={<AdminCapsulas />} />
+        <Route path="/adminte" element={<AdminTe />} />
+        <Route path="/adminyerbas" element={<AdminYerbas />} />
+        <Route path="/adminotros" element={<AdminOtros />} />
       </Routes>
       </BrowserRouter>
   );

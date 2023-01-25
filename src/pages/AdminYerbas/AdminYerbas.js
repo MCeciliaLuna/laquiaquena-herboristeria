@@ -7,7 +7,7 @@ import Footer from '../../components/Footer/Footer';
 import ButtonAdminVolver from '../../components/ButtonAdminVolver/ButtonAdminVolver';
 import SelectCategoriasAdmin from '../../components/SelectCategoriasAdmin/SelectCategoriasAdmin';
 
-const AdminAceites = () => {
+const AdminYerbas = () => {
 
   const localStorageRole = localStorage.getItem("role");
   if (localStorageRole === "USER" || !localStorage.getItem("role") || !localStorage.getItem("access-token")) {
@@ -45,7 +45,7 @@ const AdminAceites = () => {
     setProductosOrdenados(aux)
   }, [aux])
 
-  const filtro = productosOrdenados.filter(producto => producto.categoria === 'Aceites')
+  const filtro = productosOrdenados.filter(producto => producto.categoria === 'Yerbas')
 
 
   return (
@@ -73,4 +73,4 @@ const AdminAceites = () => {
   );
 };
 
-export default AdminAceites;
+export default AdminYerbas;
