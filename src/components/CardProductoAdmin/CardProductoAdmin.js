@@ -1,8 +1,8 @@
 import axios from "axios";
 import ModalEditar from "../ModalEditar/ModalEditar";
-import '../CardProductoVenta/CardProductoVenta.css';
+import './CardProductoAdmin.css';
 
-const CardProductoVenta = ({producto, index}) => {
+const CardProductoAdmin = ({producto, index}) => {
 
     const eliminarProducto = async (_id) => {
       if (window.confirm(`📣 ¿Estás segur@ que querés 𝗘𝗟𝗜𝗠𝗜𝗡𝗔𝗥 ${producto.nombre}? 😮`)) {
@@ -24,7 +24,6 @@ const CardProductoVenta = ({producto, index}) => {
               <div className="card-body">
                 <h4 className="cardventa-titulo d-flex justify-content-center align-items-center card-title">{producto.nombre}</h4>
                 <p className="text-muted"><i>{producto.categoria}</i></p>
-                <p className="cardventa-descripcion fs-6 d-flex justify-content-center align-items-center card-text">{producto.descripcion}</p>
                 <h5>$ {producto.precio}</h5>
                 <div className="d-flex align-items-center justify-content-around">
                   <button
@@ -44,4 +43,4 @@ const CardProductoVenta = ({producto, index}) => {
   );
 };
 
-export default CardProductoVenta;
+export default CardProductoAdmin;

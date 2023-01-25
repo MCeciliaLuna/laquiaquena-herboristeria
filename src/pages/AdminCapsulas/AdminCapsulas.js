@@ -1,11 +1,11 @@
 import {useState, useEffect} from 'react';
 import axios from 'axios';
 import ButtonAgregarProducto from '../../components/ButtonAgregarProducto/ButtonAgregarProducto';
-import CardProductoVenta from '../../components/CardProductoVenta/CardProductoVenta';
+import CardProductoVenta from '../../components/CardProductoAdmin/CardProductoAdmin';
 import Navbar from '../../components/Navbar/Navbar';
 import Footer from '../../components/Footer/Footer';
-import ButtonAdminVolver from '../../components/ButtonAdminVolver/ButtonAdminVolver';
-import SelectCategoriasAdmin from '../../components/SelectCategoriasAdmin/SelectCategoriasAdmin';
+import ButtonAdminVolverProductos from '../../components/ButtonAdminVolverProductos/ButtonAdminVolverProductos';
+import LinksCategoriasAdmin from '../../components/LinksCategoriasAdmin/LinksCategoriasAdmin';
 
 const AdminCapsulas = () => {
 
@@ -52,13 +52,13 @@ const AdminCapsulas = () => {
     <>
     <Navbar />
     <div className="d-flex justify-content-evenly align-items-center">
-    <ButtonAdminVolver />
+    <ButtonAdminVolverProductos />
     <h2 className="text-light mb-0 pb-0">Productos</h2>
     </div>
     <div className="d-flex justify-content-center align-items-center">
      <ButtonAgregarProducto />
      </div>
-     <SelectCategoriasAdmin />
+     <LinksCategoriasAdmin />
       <div className="d-flex justify-content-center">
         <div className="div-productos-page d-flex flex-wrap align-items-center justify-content-evenly">
         {filtro.map((producto, index) => (

@@ -12,6 +12,11 @@
   height: 25vh;
   word-wrap: break-word;
 }
+
+.card-productoventa{
+  width: 100%;
+}
+
 @media (max-width: 767.98px) {
   .cardventa-titulo{
     margin: 1px !important;

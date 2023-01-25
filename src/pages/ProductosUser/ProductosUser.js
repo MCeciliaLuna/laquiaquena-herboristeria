@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import CardProductoPublico from "../../components/CardProductoPublico/CardProductoPublico";
 import ButtonPedidos from "../../components/ButtonPedidos/ButtonPedidos";
 import Navbar from "../../components/Navbar/Navbar";
-import SelectCategorias from "../../components/SelectCategorias/SelectCategorias";
+import SelectCategorias from "../../components/LinksCategoriasAdmin/LinksCategoriasAdmin";
 import ButtonUserVolver from "../../components/ButtonUserVolver/ButtonUserVolver";
 import Footer from "../../components/Footer/Footer";
 import Carousel from "../../components/Carousel/Carousel";

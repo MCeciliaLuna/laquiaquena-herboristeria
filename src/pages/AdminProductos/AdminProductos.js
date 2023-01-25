@@ -1,13 +1,14 @@
 import {useState, useEffect} from 'react';
 import axios from 'axios';
 import ButtonAgregarProducto from '../../components/ButtonAgregarProducto/ButtonAgregarProducto';
-import CardProductoVenta from '../../components/CardProductoVenta/CardProductoVenta';
+import CardProductoAdmin from '../../components/CardProductoAdmin/CardProductoAdmin';
 import Navbar from '../../components/Navbar/Navbar';
 import Footer from '../../components/Footer/Footer';
-import ButtonAdminVolver from '../../components/ButtonAdminVolver/ButtonAdminVolver';
-import SelectCategoriasAdmin from '../../components/SelectCategoriasAdmin/SelectCategoriasAdmin';
+import LinksCategoriasAdmin from '../../components/LinksCategoriasAdmin/LinksCategoriasAdmin';
+import './AdminProductos.css'
+import ButtonAdminVolverProductos from '../../components/ButtonAdminVolverProductos/ButtonAdminVolverProductos';
 
-const ProductosAdmin = () => {
+const AdminProductos = () => {
   const localStorageRole = localStorage.getItem("role");
   if (localStorageRole === "USER" || !localStorage.getItem("role") || !localStorage.getItem("access-token")) {
     alert("No tenés autorización para ingresar a esta página");
@@ -39,7 +40,6 @@ const ProductosAdmin = () => {
   return 0 })
 
   const [productosOrdenados, setProductosOrdenados] = useState([])
-
   useEffect(() => {
     setProductosOrdenados(aux)
   }, [aux])
@@ -48,17 +48,17 @@ const ProductosAdmin = () => {
     <>
     <Navbar />
     <div className="d-flex justify-content-evenly align-items-center">
-    <ButtonAdminVolver />
-    <h2 className="text-light mb-0 pb-0">Productos</h2>
+    <ButtonAdminVolverProductos />
+    <h1 className="text-light mb-0 pb-0">Productos</h1>
     </div>
     <div className="d-flex justify-content-center align-items-center">
      <ButtonAgregarProducto />
      </div>
-          <SelectCategoriasAdmin categoria={productosOrdenados}/>
+          <LinksCategoriasAdmin categoria={productosOrdenados}/>
       <div className="d-flex justify-content-center">
-        <div className="div-productos-page d-flex flex-wrap align-items-center justify-content-evenly">
+        <div className="d-flex flex-wrap align-items-center justify-content-evenly">
         {productosOrdenados.map((producto, index) => (
-          <CardProductoVenta 
+          <CardProductoAdmin 
           producto={producto} index={index}
           />
         ))}
@@ -69,4 +69,4 @@ const ProductosAdmin = () => {
   );
 };
 
-export default ProductosAdmin;
+export default AdminProductos;
