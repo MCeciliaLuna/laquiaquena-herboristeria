@@ -40,7 +40,7 @@ const ModalEditar = ({ producto, id }) => {
       <div
         class="modal fade" id={productoIdModalEdit} tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
       >
-        <div className="modal-dialog">
+        <div className="modal-dialog modal-dialog-centered">
           <div className="modal-content fondo-modal-editar" >
             <div className="modal-header">
               <h4 className="modal-title text-light" id="exampleModalLabel1">
@@ -64,14 +64,14 @@ const ModalEditar = ({ producto, id }) => {
                   <input
                     type="text"
                     id="disabledTextInput"
-                    className="form-control input-nombreproducto mb-3"
+                    className="form-control text-input-editar mb-3"
                     maxLength="40"
                     defaultValue={producto.nombre}
                     {...register("nombre", { required: true })}
                     required
                   />
                   <select
-                    className="form-select mb-3"
+                    className="form-select mb-3 text-input-editar"
                     aria-label="Default select example"
                     defaultValue={producto.categoria}
                     {...register("categoria", { required: true })}
@@ -96,7 +96,7 @@ const ModalEditar = ({ producto, id }) => {
                   <textarea
                     type="text"
                     id="disabledTextInput"
-                    className="form-control mb-3"
+                    className="form-control mb-3 text-input-editar"
                     maxLength="100"
                     defaultValue={producto.descripcion}
                     rows="3"
@@ -109,7 +109,7 @@ const ModalEditar = ({ producto, id }) => {
                       <input
                         type="number"
                         id="disabledTextInput"
-                        className="form-control input-nombreproducto"
+                        className="form-control text-input-editar"
                         maxLength="10"
                         defaultValue={producto.precio}
                         {...register("precio", { required: true })}
