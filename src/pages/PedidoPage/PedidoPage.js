@@ -1,5 +1,5 @@
 import React from 'react';
-import ButtonUserVolver from '../../components/ButtonUserVolver/ButtonUserVolver';
+import ButtonUserVolverPedido from '../../components/ButtonUserVolverPedido/ButtonUserVolverPedido';
 import Footer from '../../components/Footer/Footer';
 import Navbar from '../../components/Navbar/Navbar';
 import TablePedido from '../../components/TablePedido/TablePedido';
@@ -21,7 +21,7 @@ const PedidoPage = () => {
     <>
     <Navbar />
     <div className="d-flex justify-content-evenly align-items-center">
-    <ButtonUserVolver />
+    <ButtonUserVolverPedido />
     <h2 className="mb-0 text-light">Mi Pedido</h2>
     </div>
       <TablePedido />

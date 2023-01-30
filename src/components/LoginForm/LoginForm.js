@@ -28,7 +28,7 @@ const LoginForm = () => {
         localStorage.setItem("access-token", json.token);
         localStorage.setItem("role", json.usuario.role);
         localStorage.setItem("usuario", JSON.stringify(json.usuario));
-        window.location.href = "/productos";
+        window.location.href = "/home";
       }
     } catch (error) {
       alert("El usuario o la contraseña que ingresaste no es correcto");

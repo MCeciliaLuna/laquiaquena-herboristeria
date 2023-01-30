@@ -1,6 +1,6 @@
-import '../CardProductoPublico/CardProductoPublico.css'
+import '../CardProductoUser/CardProductoUser.css'
 
-const CardProductoPublico = ({producto}) => {
+const CardProductoUser = ({producto}) => {
 
   return (
           <div className="card-productopublico d-flex justify-content-center col-2 mx-1 mb-3 mt-3 rounded-3">
@@ -15,7 +15,6 @@ const CardProductoPublico = ({producto}) => {
             <div className="card-body card-height">
               <h4 id="nombre" className="d-flex justify-content-center align-items-around card-title">{producto.nombre}</h4>
               <p><i>{producto.categoria}</i></p>
-              <p className="cardpublico-descripcion d-flex justify-content-center align-items-center card-text">{producto.descripcion}</p>
               <p id="precio"><b>${producto.precio}</b></p>
               <button
                   type="button"
@@ -30,4 +29,4 @@ const CardProductoPublico = ({producto}) => {
   );
 };
 
-export default CardProductoPublico;
+export default CardProductoUser;

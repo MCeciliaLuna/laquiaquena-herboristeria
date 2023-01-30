@@ -1,7 +1,7 @@
 import './App.css';
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import Error from './pages/Error/Error';
-import ProductosUser from './pages/ProductosUser/ProductosUser';
+import UserProductos from './pages/UserProductos/UserProductos';
 import Administrador from './pages/Administrador/Administrador';
 import Login from './pages/Login/Login';
 import PedidoPage from './pages/PedidoPage/PedidoPage';
@@ -24,6 +24,23 @@ import AdminSytevia from './pages/AdminStevia/AdminStevia';
 import AdminTe from './pages/AdminTe/AdminTe';
 import AdminYerbas from './pages/AdminYerbas/AdminYerbas';
 import AdminOtros from './pages/AdminOtros/AdminOtros';
+import Home from './pages/Home/Home';
+import UserAceites from './pages/UserAceites/UserAceites';
+import UserCapsulas from './pages/UserCapsulas/UserCapsulas';
+import UserEnSobre from './pages/UserEnSobre/UserEnSobre';
+import UserFrascos from './pages/UserFrascos/UserFrascos';
+import UserHierbas from './pages/UserHierbas/UserHierbas';
+import UserJabones from './pages/UserJabones/UserJabones';
+import UserJarabes from './pages/UserJarabes/UserJarabes';
+import UserMaca from './pages/UserMaca/UserMaca';
+import UserNuez from './pages/UserNuez/UserNuez';
+import UserPomadas from './pages/UserPomadas/UserPomadas';
+import UserSahumerios from './pages/UserSahumerios/UserSahumerios';
+import UserStevia from './pages/UserStevia/UserStevia';
+import UserTe from './pages/UserTe/UserTe';
+import UserYerbas from './pages/UserYerbas/UserYerbas';
+import UserOtros from './pages/UserOtros/UserOtros';
+
 
 function App() {
   return (
@@ -31,29 +48,46 @@ function App() {
     <Routes>
         <Route path="/" element={<Login />} />
 
-        <Route path="/productos" element={<ProductosUser />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/productos" element={<UserProductos />} />
+          <Route path="/productos/aceites" element={<UserAceites />} />
+          <Route path="/productos/capsulas" element={<UserCapsulas />} />
+          <Route path="/productos/ensobre" element={<UserEnSobre />} />
+          <Route path="/productos/frascos" element={<UserFrascos />} />
+          <Route path="/productos/hierbas" element={<UserHierbas />} />
+          <Route path="/productos/jabones" element={<UserJabones />} />
+          <Route path="/productos/jarabe" element={<UserJarabes />} />
+          <Route path="/productos/maca" element={<UserMaca />} />
+          <Route path="/productos/nuezdelaindia" element={<UserNuez />} />
+          <Route path="/productos/pomadas" element={<UserPomadas />} />
+          <Route path="/productos/sahumerios" element={<UserSahumerios />} />
+          <Route path="/productos/stevia" element={<UserStevia />} />
+          <Route path="/productos/te" element={<UserTe />} />
+          <Route path="/productos/yerbas" element={<UserYerbas />} />
+          <Route path="/productos/otros" element={<UserOtros />} />
+        
         <Route path="/mipedido" element={<PedidoPage />} />
         <Route path="/postpedido" element={<PostPedido />} />
 
         <Route path="/administrador" element={<Administrador />} />
         <Route path="/administrador/pedidos" element={<AdminPedidos />} />
         <Route path="/administrador/productos" element={<AdminProductos />} />
-        <Route path="/usuariosadmin" element={<Usuarios />} />
-        <Route path="/administrador/productos/aceites" element={<AdminAceites />} />
-        <Route path="/administrador/productos/capsulas" element={<AdminCapsulas />} />
-        <Route path="/administrador/productos/ensobre" element={<AdminEnSobre />} />
-        <Route path="/administrador/productos/frascos" element={<AdminFrascos />} />
-        <Route path="/administrador/productos/hierbas" element={<AdminHierbas />} />
-        <Route path="/administrador/productos/jabones" element={<AdminJabones />} />
-        <Route path="/administrador/productos/jarabe" element={<AdminJarabes />} />
-        <Route path="/administrador/productos/maca" element={<AdminMaca />} />
-        <Route path="/administrador/productos/nuezdelaindia" element={<AdminNuez />} />
-        <Route path="/administrador/productos/pomadas" element={<AdminPomadas />} />
-        <Route path="/administrador/productos/sahumerios" element={<AdminSahumerios />} />
-        <Route path="/administrador/productos/stevia" element={<AdminSytevia />} />
-        <Route path="/administrador/productos/te" element={<AdminTe />} />
-        <Route path="/administrador/productos/yerbas" element={<AdminYerbas />} />
-        <Route path="/administrador/productos/otros" element={<AdminOtros />} />
+          <Route path="/administrador/productos/aceites" element={<AdminAceites />} />
+          <Route path="/administrador/productos/capsulas" element={<AdminCapsulas />} />
+          <Route path="/administrador/productos/ensobre" element={<AdminEnSobre />} />
+          <Route path="/administrador/productos/frascos" element={<AdminFrascos />} />
+          <Route path="/administrador/productos/hierbas" element={<AdminHierbas />} />
+          <Route path="/administrador/productos/jabones" element={<AdminJabones />} />
+          <Route path="/administrador/productos/jarabe" element={<AdminJarabes />} />
+          <Route path="/administrador/productos/maca" element={<AdminMaca />} />
+          <Route path="/administrador/productos/nuezdelaindia" element={<AdminNuez />} />
+          <Route path="/administrador/productos/pomadas" element={<AdminPomadas />} />
+          <Route path="/administrador/productos/sahumerios" element={<AdminSahumerios />} />
+          <Route path="/administrador/productos/stevia" element={<AdminSytevia />} />
+          <Route path="/administrador/productos/te" element={<AdminTe />} />
+          <Route path="/administrador/productos/yerbas" element={<AdminYerbas />} />
+          <Route path="/administrador/productos/otros" element={<AdminOtros />} />
+        <Route path="/administrador/usuarios" element={<Usuarios />} />
 
       <Route path="*" element={<Error />} />
       </Routes>
