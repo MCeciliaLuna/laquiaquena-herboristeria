@@ -15,6 +15,9 @@ const ProductosUser = () => {
     alert("No tenés autorización para ingresar a esta página");
     window.location.href = "/";
   }
+
+  alert('💡 𝗣𝗥𝗘𝗦𝗜𝗢𝗡𝗔́ en la 𝗙𝗢𝗧𝗢 de cada producto para conocer sus 𝙋𝙍𝙊𝙋𝙄𝙀𝘿𝘼𝘿𝙀𝙎 𝙔 𝘾𝘼𝙍𝘼𝘾𝙏𝙀𝙍𝙄́𝙎𝙏𝙄𝘾𝘼𝙎 💡')
+
   const [productos, setProductos] = useState([]);
   const getProductos = async () => {
     try {
@@ -53,7 +56,7 @@ const ProductosUser = () => {
       <LinksCategoriasUser/>
       <ButtonPedidos />
       <div className="d-flex justify-content-center">
-        <div className="div-productos-page d-flex flex-wrap align-items-center justify-content-evenly">
+        <div className="d-flex flex-wrap align-items-center justify-content-evenly">
         {productosOrdenados.map((producto) => (
           <CardProductoUser
           producto={producto}

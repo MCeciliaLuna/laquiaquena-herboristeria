@@ -30,8 +30,8 @@
    .text-precio{
     font-size: 4vh;
    }
-  .card-producto{
-    width: 75% !important;
+   .card-producto{
+    width: 300px !important;
   }
 }
 
@@ -51,6 +51,6 @@
   height: 53vh;
 }
 .card-producto{
-  width: 30% !important;
+  width: 275px !important;
 }
   }

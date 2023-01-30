@@ -4,7 +4,7 @@ import Error from './pages/Error/Error';
 import UserProductos from './pages/UserProductos/UserProductos';
 import Administrador from './pages/Administrador/Administrador';
 import Login from './pages/Login/Login';
-import PedidoPage from './pages/PedidoPage/PedidoPage';
+import MiPedido from './pages/MiPedido/MiPedido';
 import Usuarios from './pages/Usuarios/Usuarios';
 import AdminProductos from './pages/AdminProductos/AdminProductos';
 import AdminPedidos from './pages/AdminPedidos/AdminPedidos';
@@ -66,7 +66,7 @@ function App() {
           <Route path="/productos/yerbas" element={<UserYerbas />} />
           <Route path="/productos/otros" element={<UserOtros />} />
         
-        <Route path="/mipedido" element={<PedidoPage />} />
+        <Route path="/mipedido" element={<MiPedido />} />
         <Route path="/postpedido" element={<PostPedido />} />
 
         <Route path="/administrador" element={<Administrador />} />

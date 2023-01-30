@@ -1,44 +1,56 @@
-.cardpublico-titulo{
+.card-producto{
+  box-shadow: -1px 3px 6px 0px rgba(0,0,0,0.75);
+  width: 200px;
+}
+
+.cardventa-titulo{
   font-size: 3.3vh;
   word-wrap: break-word;
   height: 10vh;
 }
 
-.cardpublico-descripcion{
+.cardventa-descripcion{
   height: 25vh;
   word-wrap: break-word;
 }
 
+.card-productoventa{
+  width: 100%;
+}
+
 @media (max-width: 767.98px) {
-   .cardpublico-titulo{
+  .cardventa-titulo{
     margin: 1px !important;
-    font-size: 2.2vh;
+    font-size: 4vh;
     margin: 1px 0px !important;
-  }
-  .cardpublico-descripcion{
-    font-size: 1.8vh;
-  word-wrap: break-word;
-  height: 45%;
-  }
-  .card-productopublico{
-    width: 75% !important;
-    height: 40%;
+   }
+   .text-categoria{
+    font-size: 3vh;
+   }
+   .text-precio{
+    font-size: 4vh;
+   }
+   .card-producto{
+    width: 200px !important;
   }
 }
 
 @media (min-width: 768px) and (max-width: 991.98px){
-  .cardpublico-titulo{
-    font-size: 2.4vh;
-    height: 4vh;
+ .cardventa-titulo{
+  font-size:3.2vh;
+ }
+ .text-categoria{
+  font-size: 2.5vh;
+  height: 3.5vh;
+ }
+ .text-precio{
+  font-size: 3.2vh;
+  font-size: 3.5vh;
+ }
+ .card-productoventa{
+  height: 53vh;
+}
+.card-producto{
+  width: 275px !important;
+}
   }
-  .cardpublico-descripcion{
-    font-size: 2vh;
-    height: 12vh;
-  }
-  .card-productopublico{
-    height: 53vh;
-  }
-  .card-height{
-    height: auto !important;
-  }
-    }

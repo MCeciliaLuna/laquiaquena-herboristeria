@@ -2,13 +2,13 @@ import React from 'react';
 import ButtonUserVolverPedido from '../../components/ButtonUserVolverPedido/ButtonUserVolverPedido';
 import Footer from '../../components/Footer/Footer';
 import Navbar from '../../components/Navbar/Navbar';
-import TablePedido from '../../components/TablePedido/TablePedido';
-import './PedidoPage.css'
+import FormPedido from '../../components/FormPedido/FormPedido';
+import './MiPedido.css'
 
-const PedidoPage = () => {
-  
+const MiPedido = () => {
+  const usuario = JSON.parse(localStorage.getItem("usuario"));
   if (!localStorage.getItem("pedido")) {
-      alert('No tenés seleccionado ningún producto para comprar')
+      alert(`${usuario.nombre} ☺, todavía 𝗡𝗢 𝗦𝗘𝗟𝗘𝗖𝗖𝗜𝗢𝗡𝗔𝗦𝗧𝗘 𝗡𝗜𝗡𝗚𝗨́𝗡 𝗣𝗥𝗢𝗗𝗨𝗖𝗧𝗢 𝗣𝗔𝗥𝗔 𝗖𝗢𝗠𝗣𝗥𝗔𝗥 👀 `)
       window.location = "/productos"
     }
 
@@ -22,12 +22,12 @@ const PedidoPage = () => {
     <Navbar />
     <div className="d-flex justify-content-evenly align-items-center">
     <ButtonUserVolverPedido />
-    <h2 className="mb-0 text-light">Mi Pedido</h2>
+    <h1 className="mb-0 text-light">Mi Pedido</h1>
     </div>
-      <TablePedido />
+      <FormPedido />
       <Footer />
     </>
   );
 };
 
-export default PedidoPage;
+export default MiPedido;

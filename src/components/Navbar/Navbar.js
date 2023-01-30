@@ -3,15 +3,15 @@ import './Navbar.css';
 import logo from '../assets/images/logo.png';
 
 const Navbar = () => {
+  const usuario = JSON.parse(localStorage.getItem("usuario"));
   const volverLoginInicial = () => {
     if (
-      window.confirm("¿Volvemos a la página inicial? 🤔😮")
+      window.confirm(`${usuario.nombre} ☺, ¿Volvemos a la 𝗣𝗔́𝗚𝗜𝗡𝗔 𝗜𝗡𝗜𝗖𝗜𝗔𝗟 🤔?`)
     ) {
       window.location.href = "/";
     }
   }
 
-  const usuario = JSON.parse(localStorage.getItem("usuario"));
   const usuarioNombre = JSON.stringify(`${usuario.nombre} ${usuario.apellido}`).replace(
     /['"]+/g,
     ""
