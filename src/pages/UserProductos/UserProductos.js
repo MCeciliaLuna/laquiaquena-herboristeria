@@ -16,7 +16,7 @@ const ProductosUser = () => {
     window.location.href = "/";
   }
 
-  alert('💡 𝗣𝗥𝗘𝗦𝗜𝗢𝗡𝗔́ en la 𝗙𝗢𝗧𝗢 de cada producto para conocer sus 𝙋𝙍𝙊𝙋𝙄𝙀𝘿𝘼𝘿𝙀𝙎 𝙔 𝘾𝘼𝙍𝘼𝘾𝙏𝙀𝙍𝙄́𝙎𝙏𝙄𝘾𝘼𝙎 💡')
+  //alert('💡 𝗣𝗥𝗘𝗦𝗜𝗢𝗡𝗔́ en la 𝗙𝗢𝗧𝗢 de cada producto para conocer sus 𝙋𝙍𝙊𝙋𝙄𝙀𝘿𝘼𝘿𝙀𝙎 𝙔 𝘾𝘼𝙍𝘼𝘾𝙏𝙀𝙍𝙄́𝙎𝙏𝙄𝘾𝘼𝙎 💡')
 
   const [productos, setProductos] = useState([]);
   const getProductos = async () => {
@@ -57,9 +57,9 @@ const ProductosUser = () => {
       <ButtonPedidos />
       <div className="d-flex justify-content-center">
         <div className="d-flex flex-wrap align-items-center justify-content-evenly">
-        {productosOrdenados.map((producto) => (
+        {productosOrdenados.map((producto, index) => (
           <CardProductoUser
-          producto={producto}
+          producto={producto} index={index}
           />
         ))}
       </div>

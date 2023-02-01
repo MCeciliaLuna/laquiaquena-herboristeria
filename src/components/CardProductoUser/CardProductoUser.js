@@ -1,13 +1,21 @@
 import '../CardProductoUser/CardProductoUser.css'
 
-const CardProductoUser = ({producto}) => {
+const CardProductoUser = ({producto, index}) => {
+
+  const idProductoEdit = `#producto${index}`;
+  const productoIdModalEdit = `producto${index}`;
+
+  const productoPedido = JSON.stringify(producto)
+
 
   return (
+    <>
     <div className="card-producto d-flex justify-content-center align-items-around mx-2 mb-3 mt-3 rounded-3">
     <div className="bg-light text-center card-productoventa h-auto p-2 rounded-3">
     <img
       src={producto.image.secure_url}
       className="card-img-top"
+      data-bs-toggle="modal" data-bs-target={idProductoEdit}
       alt="nombre"
     />
     <div className="card-body">
@@ -16,9 +24,11 @@ const CardProductoUser = ({producto}) => {
       <h5 className="text-precio">$ {producto.precio}</h5>
       <div className="d-flex align-items-center justify-content-around">
               <button
+                  value={producto._id}
+                  id="producto"
                   type="button"
                   className="btn button-destacados-comprar text-light mt-3 align-items-end"
-                  onClick={(_id)=> localStorage.setItem('pedido', JSON.stringify(producto))}
+                  onClick={(_id)=> localStorage.setItem('pedido', productoPedido) }
                 > 
                   Comprar
                 </button>
@@ -26,6 +36,19 @@ const CardProductoUser = ({producto}) => {
           </div>
         </div>
         </div>
+        
+        <div className="modal fade" id={productoIdModalEdit} tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div className="modal-dialog modal-dialog-centered">
+    <div className="modal-content modal-descripcion border-0">
+        <h1 className="modal-title fs-5 text-light mt-3 mb-2 mx-3 text-center fs-4" id="exampleModalLabel">{producto.nombre}</h1>
+        <p className="text-light mx-4 mb-1 text-center fs-5">{producto.descripcion}</p>
+      <div className="modal-footer border-0">
+        <button type="button" className="btn text-light btn-modal-descripcion" data-bs-dismiss="modal">Volver</button>
+      </div>
+    </div>
+  </div>
+</div>
+        </>
   );
 };
 

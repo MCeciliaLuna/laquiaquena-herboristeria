@@ -1,3 +1,11 @@
+.modal-descripcion{
+  background-color: #7fab1f;
+}
+
+.btn-modal-descripcion{
+  background-color: #b00215 !important;
+}
+
 .card-producto{
   box-shadow: -1px 3px 6px 0px rgba(0,0,0,0.75);
   width: 200px;
