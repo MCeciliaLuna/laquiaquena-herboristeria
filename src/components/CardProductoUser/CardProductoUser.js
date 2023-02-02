@@ -1,16 +1,25 @@
-import '../CardProductoUser/CardProductoUser.css'
+import '../CardProductoUser/CardProductoUser.css';
+import { useForm } from "react-hook-form";
 
 const CardProductoUser = ({producto, index}) => {
 
   const idProductoEdit = `#producto${index}`;
   const productoIdModalEdit = `producto${index}`;
 
-  const productoPedido = JSON.stringify(producto)
+  const { register, handleSubmit } = useForm();
+  
+  const onSubmit = (data) => {
+    console.log(JSON.stringify(data))
+  }
 
+  // let arrayPedido = [];
+  // function agregar() {
+  //   arrayPedido.push(nuevoProducto)
+  // }
 
   return (
     <>
-    <div className="card-producto d-flex justify-content-center align-items-around mx-2 mb-3 mt-3 rounded-3">
+    <form onSubmit={handleSubmit(onSubmit)} className="card-producto d-flex justify-content-center align-items-around mx-2 mb-3 mt-3 rounded-3">
     <div className="bg-light text-center card-productoventa h-auto p-2 rounded-3">
     <img
       src={producto.image.secure_url}
@@ -24,18 +33,18 @@ const CardProductoUser = ({producto, index}) => {
       <h5 className="text-precio">$ {producto.precio}</h5>
       <div className="d-flex align-items-center justify-content-around">
               <button
-                  value={producto._id}
+              value={producto._id}
+              {...register("producto", { required: true})}
                   id="producto"
-                  type="button"
+                  type="submit"
                   className="btn button-destacados-comprar text-light mt-3 align-items-end"
-                  onClick={(_id)=> localStorage.setItem('pedido', productoPedido) }
                 > 
                   Comprar
                 </button>
             </div>
           </div>
         </div>
-        </div>
+        </form>
         
         <div className="modal fade" id={productoIdModalEdit} tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div className="modal-dialog modal-dialog-centered">
