@@ -39,10 +39,8 @@ const FormPedido = () => {
     /['"]+/g,
     ""
   );
-  const pedido = JSON.stringify(
-    `${producto.nombre}, $${producto.precio}`
-  ).replace(/['"]+/g, "");
-  const precioTotal = JSON.stringify(producto.precio).replace(/['"]+/g, "");
+  const pedido = JSON.stringify(producto).replace(/['"]+/g, "");
+  const precioTotal = JSON.stringify(producto).replace(/[^0-9\\.]+/g, "");
   const horaJs = new Date();
   const horaString = horaJs.toString();
   const hora = horaString.substr(4, 17);

@@ -8,14 +8,13 @@ const CardProductoUser = ({producto, index}) => {
 
   const { register, handleSubmit } = useForm();
   
-  const onSubmit = (data) => {
-    console.log(JSON.stringify(data))
-  }
+  const arrayPedido = [];
 
-  // let arrayPedido = [];
-  // function agregar() {
-  //   arrayPedido.push(nuevoProducto)
-  // }
+  const onSubmit = (data) => {
+    arrayPedido.push(data)
+    console.log(arrayPedido)
+    localStorage.setItem("pedido", JSON.stringify(arrayPedido));
+  }
 
   return (
     <>
@@ -33,8 +32,13 @@ const CardProductoUser = ({producto, index}) => {
       <h5 className="text-precio">$ {producto.precio}</h5>
       <div className="d-flex align-items-center justify-content-around">
               <button
-              value={producto._id}
-              {...register("producto", { required: true})}
+              value={(`${producto.nombre}, $${producto.precio}`)
+              .replace(
+                /['"]+/g,
+                ""
+              )
+            }
+              {...register("pedido", { required: true})}
                   id="producto"
                   type="submit"
                   className="btn button-destacados-comprar text-light mt-3 align-items-end"
