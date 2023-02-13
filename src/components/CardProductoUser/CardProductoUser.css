@@ -26,6 +26,11 @@
   width: 100%;
 }
 
+.text-precio{
+  box-shadow: none !important;
+  background-color: none !important;
+}
+
 @media (max-width: 767.98px) {
   .cardventa-titulo{
     margin: 1px !important;

@@ -23,7 +23,7 @@ const FormPedido = () => {
         setSendPedido(resp.data);
       });
     alert(
-      "El pedido ha sido enviado exitosamente. Si pagaste, envianos el comrpobante vía whatsapp"
+      "El pedido ha sido enviado exitosamente. Si pagaste, envianos el comprobante vía whatsapp"
     );
     window.location.href = "/home";
   };
@@ -62,12 +62,13 @@ const FormPedido = () => {
         <div className="height-pedidos">
           <div className="d-flex justify-content-center">
             <div className="w-50 form-width">
+              {producto.map((producto) => (
               <input
                 type="text"
                 className="text-mipedido text-center form-control d-block mb-1"
                 {...register("pedido", { required: true })}
                 value={pedido}
-              />
+              />))}
               {/* <button className="btn" key={producto._id} onClick={removeItem}>X</button> */}
               <label className="text-center w-100 text-light mt-1">
                 Total:
