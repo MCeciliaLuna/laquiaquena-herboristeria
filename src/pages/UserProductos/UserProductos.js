@@ -9,7 +9,7 @@ import Footer from "../../components/Footer/Footer";
 import ButtonUserVolver from "../../components/ButtonUserVolver/ButtonUserVolver";
 import LinksCategoriasUser from "../../components/LinksCategoriasUser/LinksCategoriasUser";
 
-const ProductosUser = () => {
+const ProductosUser = ({setPedido, pedido}) => {
   const localStorageRole = localStorage.getItem("role");
   if (localStorageRole === "ADMIN" || !localStorage.getItem("role") || !localStorage.getItem("access-token")) {
     alert("No tenés autorización para ingresar a esta página");
@@ -59,7 +59,10 @@ const ProductosUser = () => {
         <div className="d-flex flex-wrap align-items-center justify-content-evenly">
         {productosOrdenados.map((producto, index) => (
           <CardProductoUser
-          producto={producto} index={index}
+          index={index}
+          producto={producto}
+          setPedido={setPedido}
+          pedido={pedido}
           />
         ))}
       </div>

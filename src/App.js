@@ -40,31 +40,34 @@ import UserStevia from './pages/UserStevia/UserStevia';
 import UserTe from './pages/UserTe/UserTe';
 import UserYerbas from './pages/UserYerbas/UserYerbas';
 import UserOtros from './pages/UserOtros/UserOtros';
+import { useState } from 'react';
 
 
 function App() {
+  const [pedido, setPedido] = useState([])
+
   return (
       <BrowserRouter>
     <Routes>
         <Route path="/" element={<Login />} />
 
         <Route path="/home" element={<Home />} />
-        <Route path="/productos" element={<UserProductos />} />
-          <Route path="/productos/aceites" element={<UserAceites />} />
-          <Route path="/productos/capsulas" element={<UserCapsulas />} />
-          <Route path="/productos/ensobre" element={<UserEnSobre />} />
-          <Route path="/productos/frascos" element={<UserFrascos />} />
-          <Route path="/productos/hierbas" element={<UserHierbas />} />
-          <Route path="/productos/jabones" element={<UserJabones />} />
-          <Route path="/productos/jarabe" element={<UserJarabes />} />
-          <Route path="/productos/maca" element={<UserMaca />} />
-          <Route path="/productos/nuezdelaindia" element={<UserNuez />} />
-          <Route path="/productos/pomadas" element={<UserPomadas />} />
-          <Route path="/productos/sahumerios" element={<UserSahumerios />} />
-          <Route path="/productos/stevia" element={<UserStevia />} />
-          <Route path="/productos/te" element={<UserTe />} />
-          <Route path="/productos/yerbas" element={<UserYerbas />} />
-          <Route path="/productos/otros" element={<UserOtros />} />
+        <Route path="/productos" element={<UserProductos setPedido={setPedido} pedido={pedido} />} />
+          <Route path="/productos/aceites" element={<UserAceites setPedido={setPedido} pedido={pedido} />} />
+          <Route path="/productos/capsulas" element={<UserCapsulas setPedido={setPedido} pedido={pedido} />} />
+          <Route path="/productos/ensobre" element={<UserEnSobre setPedido={setPedido} pedido={pedido} />} />
+          <Route path="/productos/frascos" element={<UserFrascos setPedido={setPedido} pedido={pedido} />} />
+          <Route path="/productos/hierbas" element={<UserHierbas setPedido={setPedido} pedido={pedido} />} />
+          <Route path="/productos/jabones" element={<UserJabones setPedido={setPedido} pedido={pedido} />} />
+          <Route path="/productos/jarabe" element={<UserJarabes setPedido={setPedido} pedido={pedido} />} />
+          <Route path="/productos/maca" element={<UserMaca setPedido={setPedido} pedido={pedido} />} />
+          <Route path="/productos/nuezdelaindia" element={<UserNuez setPedido={setPedido} pedido={pedido} />} />
+          <Route path="/productos/pomadas" element={<UserPomadas setPedido={setPedido} pedido={pedido} />} />
+          <Route path="/productos/sahumerios" element={<UserSahumerios setPedido={setPedido} pedido={pedido} />} />
+          <Route path="/productos/stevia" element={<UserStevia setPedido={setPedido} pedido={pedido} />} />
+          <Route path="/productos/te" element={<UserTe setPedido={setPedido} pedido={pedido} />} />
+          <Route path="/productos/yerbas" element={<UserYerbas setPedido={setPedido} pedido={pedido} />} />
+          <Route path="/productos/otros" element={<UserOtros setPedido={setPedido} pedido={pedido} />} />
         
         <Route path="/mipedido" element={<MiPedido />} />
         <Route path="/postpedido" element={<PostPedido />} />

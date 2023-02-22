@@ -1,16 +1,13 @@
 import '../CardProductoUser/CardProductoUser.css';
-import { useState, useEffect } from 'react';
 
-const CardProductoUser = ({producto, index}) => {
+const CardProductoUser = ({producto, setPedido, pedido, index}) => {
 
   const idProductoEdit = `#producto${index}`;
   const productoIdModalEdit = `producto${index}`;
   
-
-  const [pedido, setPedido] = useState([])
   
   const pedidoArray = () => {
-    setPedido(producto);
+    setPedido([...pedido, producto]);
     console.log(pedido)
   }
   
