@@ -1,5 +1,5 @@
 import '../CardProductoUser/CardProductoUser.css';
-import { useForm } from "react-hook-form";
+import { useState, useEffect } from 'react';
 
 const CardProductoUser = ({producto, index}) => {
 
@@ -7,21 +7,25 @@ const CardProductoUser = ({producto, index}) => {
   const productoIdModalEdit = `producto${index}`;
   
 
-
-  const { register, handleSubmit } = useForm();
-
-  const arrayPedido = [];
-
-  const onSubmit = (data) => {
-    arrayPedido.push(data)
-  console.log(arrayPedido)
+  const [pedido, setPedido] = useState([])
+  
+  const pedidoArray = () => {
+    setPedido(producto);
+    console.log(pedido)
   }
-
+  
+  //  useEffect(()=>{
+  //    if(pedido!==[]){
+  //      console.log('pedido',[pedido])
+  //    }
+  //  },[pedido])
+  
+  
   //localStorage.setItem("pedido", JSON.stringify(arrayPedido))
 
   return (
     <>
-    <form onSubmit={handleSubmit(onSubmit)} className="card-producto d-flex justify-content-center align-items-around mx-2 mb-3 mt-3 rounded-3">
+    <form className="card-producto d-flex justify-content-center align-items-around mx-2 mb-3 mt-3 rounded-3">
     <div className="bg-light text-center card-productoventa h-auto p-2 rounded-3">
     <img
       src={producto.image.secure_url}
@@ -35,10 +39,10 @@ const CardProductoUser = ({producto, index}) => {
       <h5 className="text-precio bg-light p-1 m-0 rounded-0 border-0 fs-5 text-center">{producto.precio}</h5>
       <div className="d-flex align-items-center justify-content-around">
               <button
-              value={producto._id}
-              {...register(`${producto.nombre}`, { required: true})}
+              value={[producto]}
+              onClick={pedidoArray}
                   id="producto"
-                  type="submit"
+                  type='button'
                   className="btn button-destacados-comprar text-light mt-3 align-items-end"
                 > 
                   Comprar
