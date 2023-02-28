@@ -45,7 +45,6 @@ import { useState } from 'react';
 
 function App() {
   const [pedido, setPedido] = useState([])
-
   return (
       <BrowserRouter>
     <Routes>

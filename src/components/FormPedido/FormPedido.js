@@ -6,49 +6,55 @@ import axios from "axios";
 
 const FormPedido = () => {
   const usuario = JSON.parse(localStorage.getItem("usuario"));
-
   const producto = JSON.parse(localStorage.getItem("pedido"));
 
+  
+  
+  
+  
   const {
     register,
     handleSubmit,
-    //formState: { errors },
   } = useForm();
   const [sendPedido, setSendPedido] = useState();
-
+  
   const enviarPedido = async (data) => {
     await axios
       .post("https://laquiaquenaherboristeriabe.onrender.com/crearpedido", data)
       .then((resp) => {
         setSendPedido(resp.data);
       });
-    alert(
-      "El pedido ha sido enviado exitosamente. Si pagaste, envianos el comprobante vía whatsapp"
-    );
-    window.location.href = "/home";
-  };
+      alert(
+        "El pedido ha sido enviado exitosamente. Si pagaste, envianos el comprobante vía whatsapp"
+        );
+        window.location.href = "/home";
+      };
+      
+      const usuarioNombre = JSON.stringify(
+        `${usuario.nombre} ${usuario.apellido}`
+        ).replace(/['"]+/g, "");
+        const usuarioDireccion = JSON.stringify(`${usuario.direccion}`).replace(
+          /['"]+/g,
+          ""
+          );
+          const usuarioTelefono = JSON.stringify(`${usuario.telefono}`).replace(
+            /['"]+/g,
+            ""
+            );
 
-  const usuarioNombre = JSON.stringify(
-    `${usuario.nombre} ${usuario.apellido}`
-  ).replace(/['"]+/g, "");
-  const usuarioDireccion = JSON.stringify(`${usuario.direccion}`).replace(
-    /['"]+/g,
-    ""
-  );
-  const usuarioTelefono = JSON.stringify(`${usuario.telefono}`).replace(
-    /['"]+/g,
-    ""
-  );
-  const pedido = JSON.stringify(producto).replace(/['"]+/g, "");
-  const precioTotal = JSON.stringify(producto).replace(/[^0-9\\.]+/g, "");
+  const pedidoString = JSON.stringify(producto).replace(/[[\]'"]+/g, "", / /g, ",\n")
+  const pedido = pedidoString.replace(/,/g, "\n")
+  const precioTotal = JSON.stringify(producto).replace(/[^0-9\\.]+/g, "")
   const horaJs = new Date();
   const horaString = horaJs.toString();
   const hora = horaString.substr(4, 17);
 
-  const removeItem = () => {
-    localStorage.removeItem("producto");
-    window.location.reload();
-  };
+  console.log(producto)
+
+  // const removeItem = () => {
+  //   localStorage.removeItem("producto");
+  //   window.location.reload();
+  // };
 
   const [copied, setCopied] = useState(false);
   const copiedCbu = (event) => {
@@ -62,14 +68,12 @@ const FormPedido = () => {
         <div className="height-pedidos">
           <div className="d-flex justify-content-center">
             <div className="w-50 form-width">
-              {producto.map((producto) => (
-              <input
-                type="text"
+              <textarea
                 className="text-mipedido text-center form-control d-block mb-1"
                 {...register("pedido", { required: true })}
                 value={pedido}
-              />))}
-              {/* <button className="btn" key={producto._id} onClick={removeItem}>X</button> */}
+                rows="7"
+              />
               <label className="text-center w-100 text-light mt-1">
                 Total:
               </label>

@@ -7,18 +7,15 @@ const CardProductoUser = ({producto, setPedido, pedido, index}) => {
   
   
   const pedidoArray = () => {
-    setPedido([...pedido, producto]);
-    console.log(pedido)
+    const productoPedido = `${producto.nombre} $${producto.precio}`
+  if (window.confirm(`¿Segur@ que querés agregar al pedido ${producto.nombre}?`)) {
+      setPedido([...pedido, productoPedido]);
+      console.log(pedido)
+      localStorage.setItem("pedido", JSON.stringify(pedido))
+    }
   }
   
-  //  useEffect(()=>{
-  //    if(pedido!==[]){
-  //      console.log('pedido',[pedido])
-  //    }
-  //  },[pedido])
   
-  
-  //localStorage.setItem("pedido", JSON.stringify(arrayPedido))
 
   return (
     <>
@@ -36,7 +33,7 @@ const CardProductoUser = ({producto, setPedido, pedido, index}) => {
       <h5 className="text-precio bg-light p-1 m-0 rounded-0 border-0 fs-5 text-center">{producto.precio}</h5>
       <div className="d-flex align-items-center justify-content-around">
               <button
-              value={[producto]}
+              value={producto}
               onClick={pedidoArray}
                   id="producto"
                   type='button'
