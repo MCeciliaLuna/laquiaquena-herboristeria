@@ -7,7 +7,11 @@ const CardProductoUser = ({producto, setPedido, pedido, index}) => {
   
   
   const pedidoArray = () => {
-    const productoPedido = `${producto.nombre} $${producto.precio}`
+    const productoPedido = { 
+      nombre: producto.nombre,
+      precio: producto.precio
+    }
+
   if (window.confirm(`¿Segur@ que querés agregar al pedido ${producto.nombre}?`)) {
       setPedido([...pedido, productoPedido]);
       console.log(pedido)
@@ -15,8 +19,8 @@ const CardProductoUser = ({producto, setPedido, pedido, index}) => {
     }
   }
   
-  
 
+  
   return (
     <>
     <form className="card-producto d-flex justify-content-center align-items-around mx-2 mb-3 mt-3 rounded-3">

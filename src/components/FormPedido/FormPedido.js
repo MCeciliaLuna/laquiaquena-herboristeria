@@ -9,8 +9,11 @@ const FormPedido = () => {
   const producto = JSON.parse(localStorage.getItem("pedido"));
 
   
-  
-  
+  for (let i = 0; i < producto.length; i++) {
+    if (producto[i].precio) {
+      console.log(producto[i].precio);
+    }
+  }
   
   const {
     register,
@@ -42,14 +45,18 @@ const FormPedido = () => {
             ""
             );
 
-  const pedidoString = JSON.stringify(producto).replace(/[[\]'"]+/g, "", / /g, ",\n")
-  const pedido = pedidoString.replace(/,/g, "\n")
-  const precioTotal = JSON.stringify(producto).replace(/[^0-9\\.]+/g, "")
+  const pedidoString = JSON.stringify(producto).replace(/[[\]'"{}nombre:precio0-9/n]+/g, "", ",\n")
+  const pedido = pedidoString.replace(/,/g," - ",)
+
+  console.log(producto.precio)
+
+
+
+
   const horaJs = new Date();
   const horaString = horaJs.toString();
   const hora = horaString.substr(4, 17);
 
-  console.log(producto)
 
   // const removeItem = () => {
   //   localStorage.removeItem("producto");
@@ -72,7 +79,7 @@ const FormPedido = () => {
                 className="text-mipedido text-center form-control d-block mb-1"
                 {...register("pedido", { required: true })}
                 value={pedido}
-                rows="7"
+                rows="5"
               />
               <label className="text-center w-100 text-light mt-1">
                 Total:
@@ -83,7 +90,7 @@ const FormPedido = () => {
                   type="text"
                   className="text-mipedido text-center form-control w-25"
                   {...register("precio", { required: true })}
-                  value={precioTotal}
+                  value={producto}
                 />
               </div>
               <hr className="text-light" />

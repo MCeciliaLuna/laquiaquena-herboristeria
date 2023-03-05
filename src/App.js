@@ -68,7 +68,7 @@ function App() {
           <Route path="/productos/yerbas" element={<UserYerbas setPedido={setPedido} pedido={pedido} />} />
           <Route path="/productos/otros" element={<UserOtros setPedido={setPedido} pedido={pedido} />} />
         
-        <Route path="/mipedido" element={<MiPedido />} />
+        <Route path="/mipedido" element={<MiPedido setPedido={setPedido} pedido={pedido} />} />
         <Route path="/postpedido" element={<PostPedido />} />
 
         <Route path="/administrador" element={<Administrador />} />
