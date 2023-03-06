@@ -36,18 +36,3 @@ Este proyecto se encuentra **deployado en [NETLIFY](https://laquiaquenaherborist
 ## Autora 🎨
 
 Hola! Soy **[María Cecilia Luna](https://github.com/MCeciliaLuna)** y este proyecto fue ideado y realizado por mí. Sin embargo, **muchos amigos me auxiliaron con algunas cositas que estaba aprendiendo**. ¡Agradecida con ellos!
-
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
