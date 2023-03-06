@@ -10,7 +10,7 @@ const CardProductoAdmin = ({producto, index}) => {
       alert('Producto 𝗘𝗟𝗜𝗠𝗜𝗡𝗔𝗗𝗢 𝗘𝗫𝗜𝗧𝗢𝗦𝗔𝗠𝗘𝗡𝗧𝗘 ✅😉')
       window.location.reload()
     }
-    }
+  }
 
   
   return (

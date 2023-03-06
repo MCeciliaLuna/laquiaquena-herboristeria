@@ -26,7 +26,6 @@ const CardsPedidosAdmin = () => {
       window.location.reload();
     }
   };
-
   return (
     <div className="col d-flex justify-content-around flex-wrap mt-3">
       {pedidos.map((pedido) => (

@@ -9,11 +9,24 @@ const FormPedido = () => {
   const producto = JSON.parse(localStorage.getItem("pedido"));
 
   
+  
   for (let i = 0; i < producto.length; i++) {
     if (producto[i].precio) {
       console.log(producto[i].precio);
     }
   }
+
+  for (let i = 0; i < producto.length; i++) {
+    if (producto[i].nombre) {
+      console.log(producto[i].nombre);
+    }
+  }
+  
+  let total = 0;
+
+   const precios = producto.forEach((p) => total += p.precio)
+
+
   
   const {
     register,
@@ -28,9 +41,9 @@ const FormPedido = () => {
         setSendPedido(resp.data);
       });
       alert(
-        "El pedido ha sido enviado exitosamente. Si pagaste, envianos el comprobante vía whatsapp"
+        "El pedido ha sido 𝗘𝗡𝗩𝗜𝗔𝗗𝗢 𝗘𝗫𝗜𝗧𝗢𝗦𝗔𝗠𝗘𝗡𝗧𝗘 🤩💚. Si pagaste, informanos y 𝗲𝗻𝘃𝗶𝗮𝗻𝗼𝘀 𝗲𝗹 𝗰𝗼𝗺𝗽𝗿𝗼𝗯𝗮𝗻𝘁𝗲 vía 𝗪𝗛𝗔𝗧𝗦𝗔𝗣𝗣 💵"
         );
-        window.location.href = "/home";
+        window.location.href = `https://api.whatsapp.com/send?phone=5493812183467&text=Hola,%20mi%20nombre%20es%20*${data.nombre}*%20y%20acabo%20de%20hacer%20un%20pedido%20desde%20la%20p%C3%A1gina%20web!%20%C2%BFPod%C3%A9s%20chequearlo?`
       };
       
       const usuarioNombre = JSON.stringify(
@@ -45,12 +58,10 @@ const FormPedido = () => {
             ""
             );
 
-  const pedidoString = JSON.stringify(producto).replace(/[[\]'"{}nombre:precio0-9/n]+/g, "", ",\n")
-  const pedido = pedidoString.replace(/,/g," - ",)
-
-  console.log(producto.precio)
-
-
+  const pedidoString = JSON.stringify(producto).replace(/[[\]'"{}nombre:precio ]+/g, "")
+  const pedido = pedidoString.replace(/, /g,"",)
+  const pedidoReplace = pedido.replace(/(\w+),(\d+)/g," $1 $ $2\n");
+  const pedidoSinComas = pedidoReplace.replace(/,/g, "");
 
 
   const horaJs = new Date();
@@ -78,7 +89,7 @@ const FormPedido = () => {
               <textarea
                 className="text-mipedido text-center form-control d-block mb-1"
                 {...register("pedido", { required: true })}
-                value={pedido}
+                value={pedidoSinComas}
                 rows="5"
               />
               <label className="text-center w-100 text-light mt-1">
@@ -90,7 +101,7 @@ const FormPedido = () => {
                   type="text"
                   className="text-mipedido text-center form-control w-25"
                   {...register("precio", { required: true })}
-                  value={producto}
+                  value={total}
                 />
               </div>
               <hr className="text-light" />

@@ -12,7 +12,7 @@ const CardProductoUser = ({producto, setPedido, pedido, index}) => {
       precio: producto.precio
     }
 
-  if (window.confirm(`¿Segur@ que querés agregar al pedido ${producto.nombre}?`)) {
+  if (window.confirm(`¿Segur@ que 𝗔𝗚𝗥𝗘𝗚𝗔𝗥 𝗔𝗟 𝗣𝗘𝗗𝗜𝗗𝗢 ${producto.nombre}? 🤔🌿`)) {
       setPedido([...pedido, productoPedido]);
       console.log(pedido)
       localStorage.setItem("pedido", JSON.stringify(pedido))
