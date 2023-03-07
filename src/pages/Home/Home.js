@@ -5,6 +5,11 @@ import ButtonPedidos from "../../components/ButtonPedidos/ButtonPedidos";
 import './Home.css'
 
 const Home = () => {
+  const localStorageRole = localStorage.getItem("role");
+  if (localStorageRole === "USER" || !localStorage.getItem("role") || !localStorage.getItem("access-token")) {
+    alert("No tenés autorización para ingresar a esta página");
+    window.location.href = "/";
+  }
   return (
     <div>
         <Navbar />

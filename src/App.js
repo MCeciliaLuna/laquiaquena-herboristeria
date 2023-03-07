@@ -8,7 +8,6 @@ import MiPedido from './pages/MiPedido/MiPedido';
 import Usuarios from './pages/Usuarios/Usuarios';
 import AdminProductos from './pages/AdminProductos/AdminProductos';
 import AdminPedidos from './pages/AdminPedidos/AdminPedidos';
-import PostPedido from './pages/PostPedido/PostPedido';
 import AdminAceites from './pages/AdminAceites/AdminAceites';
 import AdminCapsulas from './pages/AdminCapsulas/AdminCapsulas';
 import AdminEnSobre from './pages/AdminEnSobre/AdminEnSobre';
@@ -69,7 +68,6 @@ function App() {
           <Route path="/productos/otros" element={<UserOtros setPedido={setPedido} pedido={pedido} />} />
         
         <Route path="/mipedido" element={<MiPedido setPedido={setPedido} pedido={pedido} />} />
-        <Route path="/postpedido" element={<PostPedido />} />
 
         <Route path="/administrador" element={<Administrador />} />
         <Route path="/administrador/pedidos" element={<AdminPedidos />} />
