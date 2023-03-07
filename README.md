@@ -22,7 +22,7 @@ La instalación de las dependencias de este proyecto comienza con
   npm i
 ```
 
-Si queremos correrlo en el puerto local,
+Si queremos correrlo en el puerto local 3000,
 
 ```bash
   npm start
