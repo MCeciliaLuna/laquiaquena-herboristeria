@@ -98,10 +98,10 @@ const ModalRegistro = () => {
                   <input
                     type="number"
                     className="input-registro form-control mt-3"
-                    placeholder="TELÉFONO"
+                    placeholder="ej: 381 5111222"
                     {...register("telefono", {
                       required: true,
-                      maxLength: 20,
+                      maxLength: 10,
                       minLength: 9,
                     })}
                     required
