@@ -6,7 +6,7 @@ import CardProductoUser from "../../components/CardProductoUser/CardProductoUser
 import ButtonPedidos from "../../components/ButtonPedidos/ButtonPedidos";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
-import ButtonUserVolver from "../../components/ButtonUserVolver/ButtonUserVolver";
+import ButtonAdminVolver from "../../components/ButtonAdminVolver/ButtonAdminVolver";
 import LinksCategoriasUser from "../../components/LinksCategoriasUser/LinksCategoriasUser";
 
 const ProductosUser = ({setPedido, pedido}) => {
@@ -44,7 +44,7 @@ const ProductosUser = ({setPedido, pedido}) => {
     <>
       <Navbar />
       <div className="d-flex justify-content-evenly align-items-center">
-    <ButtonUserVolver />
+    <ButtonAdminVolver />
     <h1 className="mb-0 text-light">Productos</h1>
     </div>
       <div className="div-productos-page h-auto d-flex flex-wrap align-items-center justify-content-center">

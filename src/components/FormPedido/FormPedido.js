@@ -67,7 +67,7 @@ const FormPedido = () => {
     const selectedValue = event.target.value;
 
 
-    if (selectedValue === "Envío") {
+    if (selectedValue === "ENVIO") {
       setShowBlock(true);
     } else {
       setShowBlock(false);
@@ -80,22 +80,22 @@ const FormPedido = () => {
         <div className="height-pedidos">
           <div className="d-flex justify-content-center">
             <div className="w-100 mx-4 form-width">
-              <div className="d-flex">
+              <div className="d-flex justify-content-center">
               <textarea
-                className="text-mipedido text-center form-control d-block mb-1"
+                className="text-mipedido text-center form-control d-block mb-1 w-50"
                 {...register("pedido", { required: true })}
                 value={pedidoSinComas}
                 rows="5"
               />
               <div className="d-block ms-2 align-items-center">
-              <label className="text-center w-100 text-light mt-1">
+              <label className="text-center w-100 text-light mt-1 fs-4">
                 Total:
               </label>
               <div className="d-flex justify-content-center align-items-center">
                 <p className="d-flex text-light mb-0 me-2 fs-4">$</p>
                 <input
                   type="text"
-                  className="text-mipedido text-center form-control w-50"
+                  className="text-mipedido text-center form-control w-50 fs-2"
                   {...register("precio", { required: true })}
                   value={total}
                 />
@@ -110,78 +110,89 @@ const FormPedido = () => {
                 value={hora}
                 {...register("datetime", { required: true })}
               />
-              <div className="d-flex align-items-center justify-content-center">
-              <label className="text-end me-2 w-50 text-light">
+<div className="d-flex justify-content-around align-items-center">
+              <div className="d-flex justify-content-evenly">
+              <div className="d-block">
+                <div className="d-flex align-items-center">
+              <label className="text-end mx-2 text-light w-25">
                 APELLIDO:
               </label>
               <input
                 type="text"
-                className="text-mipedido text-center form-control d-block mb-1"
+                className="text-mipedido form-control mb-1 w-75"
                 paceholder="Nombre y apellido"
                 {...register("apellido", { required: true })}
                 required
               />
-              <label className="text-end w-50 text-light me-2">
+              </div>
+              <div className="d-flex align-items-center mt-1">
+              <label className="text-end text-light mx-2 w-25">
                 NOMBRE:
               </label>
               <input
                 type="text"
-                className="text-mipedido text-center form-control d-block mb-1"
+                className="text-mipedido form-control mb-1 w-75"
                 paceholder="Nombre y apellido"
                 {...register("nombre", { required: true })}
                 required
-              />
-              </div>
-              <div className="d-flex align-items-center mt-3">
-               <label className="text-end me-2 w-75 text-light mt-0 mb-2 p-0">
+              /> </div></div></div>
+
+<div className="d-block justify-content-evenly">
+              <div className="d-flex align-items-center">
+               <label className="text-end me-2 text-light mt-0 mb-2 p-0 w-75">
                 WHATSAPP O TELÉFONO<br />(con código de área sin 0)
               </label>
               <input
                 type="number"
-                className="text-mipedido text-center form-control d-block mb-1"
+                className="text-mipedido form-control d-block mb-1 w-75"
                 paceholder="381 6333444"
                 {...register("telefono", { required: true })}
                 required
-              />
-              <label className="text-end me-2 w-50 text-light">
+              /> </div>
+              <div className="d-flex align-items-center mt-1">
+              <label className="text-end me-2 text-light w-25">
                 ENTREGA:
               </label>
               <select
               onChange={handleSelectChange}
-                className="text-mipedido form-select text-center mb-1"
+                className="form-select text-center mb-1 w-75"
                 aria-label="Default select example"
                 required
               >
-                <option value="Retiro del local">Retiro del local</option>
-                <option value="Envío" {...register("entrega", { required: true })}>Envío</option>
+                <option value="RETIRO DEL LOCAL">Retiro del local</option>
+                <option value="ENVIO" {...register("entrega", { required: true })}>Envío</option>
               </select>
+              </div>
+              </div>
               </div>
 
             {showBlock &&(
-              <>
-           <label className="text-center w-100 text-light mt-3 mb-2">
-                DIRECCIÓN
+              <div className="d-flex justify-content-center mt-5">
+              <div className="w-50">
+           <label className="text-end text-light me-2">
+                DIRECCIÓN:
               </label>
               <input
                 type="text"
-                className="text-mipedido text-center form-control d-block mb-1"
+                className="form-control d-block mb-1 me-2"
                 paceholder="Dirección"
                 {...register("direccion", { required: true })}
                 required
               />
-              <label className="text-center w-100 text-light mt-3 mb-2">
-                Aclaraciones
+              <label className="text-end text-light ms-2 me-2">
+                Indicaciones:
               </label>
               <input
                 type="text"
-                className="text-mipedido text-center form-control d-block mb-1"
-                paceholder="Dirección"
-                {...register("aclaraciones", { required: true })}
+                className="form-control d-block mb-1"
+                paceholder="aclaraciones"
+                {...register("aclaracion", { required: true })}
                 required
               />
-              </>)}
+              </div>
+              </div>)}
               
-              <label className="text-center w-100 text-light mb-0">
+              <label className="text-center w-100 text-light mb-0 mt-3">
                 PAGO:
               </label>
               <div className="d-flex justify-content-center align-items-center d-block mb-2">
@@ -226,7 +237,7 @@ const FormPedido = () => {
               </div>
               <div className="d-flex justify-content-center">
                 <select
-                  className="text-mipedido form-select text-center p-0 mb-0 w-50 input-center"
+                  className="form-select text-center p-0 mb-0 w-25 input-center"
                   aria-label="Default select example"
                   {...register("pago", { required: true })}
                   required
