@@ -1,10 +1,23 @@
 import React from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import './Footer.css';
 
 const Footer = () => {
+  const location = useLocation();
+
+  // Verificar si la ruta actual es la página principal
+  const isHomePage = location.pathname === '/';
+
   return (
     <div className="footer-background d-block p-3">
     <p className="text-center text-light fs-5 mb-0">Todos los derechos reservados a La Quiaqueña Herboristería | 2023</p>
+    {isHomePage && (
+        <Link to="/login" className="d-flex justify-content-center">
+          <h5 className="btn boton-administrador text-light fs-6 my-2">
+            Administrador
+          </h5>
+        </Link>
+      )}
     <hr className="text-light my-2 mx-5 px-5" />
     <div className="d-flex align-items-center justify-content-center mb-1 w-100">
     <div className="d-flex justify-content-around align-items-center text-light">

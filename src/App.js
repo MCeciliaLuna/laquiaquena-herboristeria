@@ -47,9 +47,7 @@ function App() {
   return (
       <BrowserRouter>
     <Routes>
-        <Route path="/" element={<Login />} />
-
-        <Route path="/home" element={<Home />} />
+        <Route path="/" element={<Home />} />
         <Route path="/productos" element={<UserProductos setPedido={setPedido} pedido={pedido} />} />
           <Route path="/productos/aceites" element={<UserAceites setPedido={setPedido} pedido={pedido} />} />
           <Route path="/productos/capsulas" element={<UserCapsulas setPedido={setPedido} pedido={pedido} />} />
@@ -68,6 +66,8 @@ function App() {
           <Route path="/productos/otros" element={<UserOtros setPedido={setPedido} pedido={pedido} />} />
         
         <Route path="/mipedido" element={<MiPedido setPedido={setPedido} pedido={pedido} />} />
+
+      <Route path="/login" element={<Login />} />
 
         <Route path="/administrador" element={<Administrador />} />
         <Route path="/administrador/pedidos" element={<AdminPedidos />} />

@@ -10,11 +10,6 @@ import ButtonUserVolver from "../../components/ButtonUserVolver/ButtonUserVolver
 import LinksCategoriasUser from "../../components/LinksCategoriasUser/LinksCategoriasUser";
 
 const ProductosUser = ({setPedido, pedido}) => {
-  const localStorageRole = localStorage.getItem("role");
-  if (localStorageRole === "ADMIN" || !localStorage.getItem("role") || !localStorage.getItem("access-token")) {
-    alert("No tenés autorización para ingresar a esta página");
-    window.location.href = "/";
-  }
 
   //alert('💡 𝗣𝗥𝗘𝗦𝗜𝗢𝗡𝗔́ en la 𝗙𝗢𝗧𝗢 de cada producto para conocer sus 𝙋𝙍𝙊𝙋𝙄𝙀𝘿𝘼𝘿𝙀𝙎 𝙔 𝘾𝘼𝙍𝘼𝘾𝙏𝙀𝙍𝙄́𝙎𝙏𝙄𝘾𝘼𝙎 💡')
 

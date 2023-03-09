@@ -6,17 +6,6 @@ import FormPedido from '../../components/FormPedido/FormPedido';
 import './MiPedido.css'
 
 const MiPedido = () => {
-  const usuario = JSON.parse(localStorage.getItem("usuario"));
-  if (!localStorage.getItem("pedido")) {
-      alert(`${usuario.nombre} ☺, todavía 𝗡𝗢 𝗦𝗘𝗟𝗘𝗖𝗖𝗜𝗢𝗡𝗔𝗦𝗧𝗘 𝗡𝗜𝗡𝗚𝗨́𝗡 𝗣𝗥𝗢𝗗𝗨𝗖𝗧𝗢 𝗣𝗔𝗥𝗔 𝗖𝗢𝗠𝗣𝗥𝗔𝗥 👀 `)
-      window.location = "/productos"
-    }
-
-  const localStorageRole = localStorage.getItem("role");
-  if (localStorageRole === "ADMIN" || !localStorage.getItem("role") || !localStorage.getItem("access-token")) {
-    alert("No tenés autorización para ingresar a esta página");
-    window.location.href = "/";
-  }
   return (
     <>
     <Navbar />

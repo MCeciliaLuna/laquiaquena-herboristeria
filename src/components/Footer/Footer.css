@@ -2,6 +2,10 @@
   background-color: #b00215;
 }
 
+.boton-administrador{
+  background-color: #b00215 !important;
+}
+
 a{
   text-decoration: none !important;
 }

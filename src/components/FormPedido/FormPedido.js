@@ -5,7 +5,6 @@ import { useForm } from "react-hook-form";
 import axios from "axios";
 
 const FormPedido = () => {
-  const usuario = JSON.parse(localStorage.getItem("usuario"));
   const producto = JSON.parse(localStorage.getItem("pedido"));
 
   
@@ -45,18 +44,6 @@ const FormPedido = () => {
         );
         window.location.href = `https://api.whatsapp.com/send?phone=5493812183467&text=Hola,%20mi%20nombre%20es%20*${data.nombre}*%20y%20acabo%20de%20hacer%20un%20pedido%20desde%20la%20p%C3%A1gina%20web!%20%C2%BFPod%C3%A9s%20chequearlo?`
       };
-      
-      const usuarioNombre = JSON.stringify(
-        `${usuario.nombre} ${usuario.apellido}`
-        ).replace(/['"]+/g, "");
-        const usuarioDireccion = JSON.stringify(`${usuario.direccion}`).replace(
-          /['"]+/g,
-          ""
-          );
-          const usuarioTelefono = JSON.stringify(`${usuario.telefono}`).replace(
-            /['"]+/g,
-            ""
-            );
 
   const pedidoString = JSON.stringify(producto).replace(/[[\]'"{}nombre:precio ]+/g, "")
   const pedido = pedidoString.replace(/, /g,"",)
@@ -68,30 +55,39 @@ const FormPedido = () => {
   const horaString = horaJs.toString();
   const hora = horaString.substr(4, 17);
 
-
-  // const removeItem = () => {
-  //   localStorage.removeItem("producto");
-  //   window.location.reload();
-  // };
-
   const [copied, setCopied] = useState(false);
   const copiedCbu = (event) => {
     setCopied(true);
     event.preventDefault();
   };
 
+  const [showBlock, setShowBlock] = useState(false);
+
+  const handleSelectChange = (event) => {
+    const selectedValue = event.target.value;
+
+
+    if (selectedValue === "Envío") {
+      setShowBlock(true);
+    } else {
+      setShowBlock(false);
+    }
+  }
+
   return (
     <form onSubmit={handleSubmit(enviarPedido)}>
       <div className="m-3">
         <div className="height-pedidos">
           <div className="d-flex justify-content-center">
-            <div className="w-50 form-width">
+            <div className="w-100 mx-4 form-width">
+              <div className="d-flex">
               <textarea
                 className="text-mipedido text-center form-control d-block mb-1"
                 {...register("pedido", { required: true })}
                 value={pedidoSinComas}
                 rows="5"
               />
+              <div className="d-block ms-2 align-items-center">
               <label className="text-center w-100 text-light mt-1">
                 Total:
               </label>
@@ -99,54 +95,96 @@ const FormPedido = () => {
                 <p className="d-flex text-light mb-0 me-2 fs-4">$</p>
                 <input
                   type="text"
-                  className="text-mipedido text-center form-control w-25"
+                  className="text-mipedido text-center form-control w-50"
                   {...register("precio", { required: true })}
                   value={total}
                 />
+                </div>
+                </div>
               </div>
               <hr className="text-light" />
-
+              
               <input
                 type="text"
                 className="d-none"
                 value={hora}
                 {...register("datetime", { required: true })}
               />
-              <label className="text-center w-100 text-light mb-2">
-                Revisá si tus datos están correctos. Podés modoficarlos si es
-                necesario
+              <div className="d-flex align-items-center justify-content-center">
+              <label className="text-end me-2 w-50 text-light">
+                APELLIDO:
               </label>
               <input
                 type="text"
                 className="text-mipedido text-center form-control d-block mb-1"
-                defaultValue={usuarioNombre}
-                {...register("nombre", { required: true })}
+                paceholder="Nombre y apellido"
+                {...register("apellido", { required: true })}
                 required
               />
+              <label className="text-end w-50 text-light me-2">
+                NOMBRE:
+              </label>
               <input
                 type="text"
                 className="text-mipedido text-center form-control d-block mb-1"
-                defaultValue={usuarioDireccion}
-                {...register("direccion", { required: true })}
+                paceholder="Nombre y apellido"
+                {...register("nombre", { required: true })}
                 required
               />
+              </div>
+              <div className="d-flex align-items-center mt-3">
+               <label className="text-end me-2 w-75 text-light mt-0 mb-2 p-0">
+                WHATSAPP O TELÉFONO<br />(con código de área sin 0)
+              </label>
               <input
                 type="number"
                 className="text-mipedido text-center form-control d-block mb-1"
-                defaultValue={usuarioTelefono}
+                paceholder="381 6333444"
                 {...register("telefono", { required: true })}
                 required
               />
+              <label className="text-end me-2 w-50 text-light">
+                ENTREGA:
+              </label>
               <select
+              onChange={handleSelectChange}
                 className="text-mipedido form-select text-center mb-1"
                 aria-label="Default select example"
-                {...register("entrega", { required: true })}
                 required
               >
                 <option value="Retiro del local">Retiro del local</option>
-                <option value="Envío">Envío</option>
+                <option value="Envío" {...register("entrega", { required: true })}>Envío</option>
               </select>
-              <div className="d-flex justify-content-center align-items-center d-block my-2">
+              </div>
+
+            {showBlock &&(
+              <>
+           <label className="text-center w-100 text-light mt-3 mb-2">
+                DIRECCIÓN
+              </label>
+              <input
+                type="text"
+                className="text-mipedido text-center form-control d-block mb-1"
+                paceholder="Dirección"
+                {...register("direccion", { required: true })}
+                required
+              />
+              <label className="text-center w-100 text-light mt-3 mb-2">
+                Aclaraciones
+              </label>
+              <input
+                type="text"
+                className="text-mipedido text-center form-control d-block mb-1"
+                paceholder="Dirección"
+                {...register("aclaraciones", { required: true })}
+                required
+              />
+              </>)}
+              
+              <label className="text-center w-100 text-light mb-0">
+                PAGO:
+              </label>
+              <div className="d-flex justify-content-center align-items-center d-block mb-2">
                 <CopyToClipboard text="21938729084940013">
                   <div className="d-flex align-items-center">
                     <button
