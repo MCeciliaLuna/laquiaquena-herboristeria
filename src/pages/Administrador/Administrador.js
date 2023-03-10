@@ -25,11 +25,6 @@ const Administrador = () => {
             PRODUCTOS 🌿
           </h2>
         </Link>
-        <Link to="/administrador/usuarios">
-          <h2 className="buttons-movile btn mb-4 p-5 text-light">
-            USUARIOS 👥
-          </h2>
-        </Link>
       </div>
       <Footer />
     </>

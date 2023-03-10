@@ -7,8 +7,6 @@ import axios from "axios";
 const FormPedido = () => {
   const producto = JSON.parse(localStorage.getItem("pedido"));
 
-  
-  
   for (let i = 0; i < producto.length; i++) {
     if (producto[i].precio) {
       console.log(producto[i].precio);
@@ -20,36 +18,33 @@ const FormPedido = () => {
       console.log(producto[i].nombre);
     }
   }
-  
+
   let total = 0;
 
-   const precios = producto.forEach((p) => total += p.precio)
+  const precios = producto.forEach((p) => (total += p.precio));
 
-
-  
-  const {
-    register,
-    handleSubmit,
-  } = useForm();
+  const { register, handleSubmit } = useForm();
   const [sendPedido, setSendPedido] = useState();
-  
+
   const enviarPedido = async (data) => {
     await axios
       .post("https://laquiaquenaherboristeriabe.onrender.com/crearpedido", data)
       .then((resp) => {
         setSendPedido(resp.data);
       });
-      alert(
-        "El pedido ha sido 𝗘𝗡𝗩𝗜𝗔𝗗𝗢 𝗘𝗫𝗜𝗧𝗢𝗦𝗔𝗠𝗘𝗡𝗧𝗘 🤩💚. Si pagaste, informanos y 𝗲𝗻𝘃𝗶𝗮𝗻𝗼𝘀 𝗲𝗹 𝗰𝗼𝗺𝗽𝗿𝗼𝗯𝗮𝗻𝘁𝗲 vía 𝗪𝗛𝗔𝗧𝗦𝗔𝗣𝗣 💵"
-        );
-        window.location.href = `https://api.whatsapp.com/send?phone=5493812183467&text=Hola,%20mi%20nombre%20es%20*${data.nombre}*%20y%20acabo%20de%20hacer%20un%20pedido%20desde%20la%20p%C3%A1gina%20web!%20%C2%BFPod%C3%A9s%20chequearlo?`
-      };
+    alert(
+      "El pedido ha sido 𝗘𝗡𝗩𝗜𝗔𝗗𝗢 𝗘𝗫𝗜𝗧𝗢𝗦𝗔𝗠𝗘𝗡𝗧𝗘 🤩💚. Si pagaste, informanos y 𝗲𝗻𝘃𝗶𝗮𝗻𝗼𝘀 𝗲𝗹 𝗰𝗼𝗺𝗽𝗿𝗼𝗯𝗮𝗻𝘁𝗲 vía 𝗪𝗛𝗔𝗧𝗦𝗔𝗣𝗣 💵"
+    );
+    window.location.href = `https://api.whatsapp.com/send?phone=5493812183467&text=Hola,%20mi%20nombre%20es%20*${data.nombre}*%20y%20acabo%20de%20hacer%20un%20pedido%20desde%20la%20p%C3%A1gina%20web!%20%C2%BFPod%C3%A9s%20chequearlo?`;
+  };
 
-  const pedidoString = JSON.stringify(producto).replace(/[[\]'"{}nombre:precio ]+/g, "")
-  const pedido = pedidoString.replace(/, /g,"",)
-  const pedidoReplace = pedido.replace(/(\w+),(\d+)/g," $1 $ $2\n");
+  const pedidoString = JSON.stringify(producto).replace(
+    /[[\]'"{}nombre:precio ]+/g,
+    ""
+  );
+  const pedido = pedidoString.replace(/, /g, "");
+  const pedidoReplace = pedido.replace(/(\w+),(\d+)/g, " $1 $ $2\n");
   const pedidoSinComas = pedidoReplace.replace(/,/g, "");
-
 
   const horaJs = new Date();
   const horaString = horaJs.toString();
@@ -66,13 +61,12 @@ const FormPedido = () => {
   const handleSelectChange = (event) => {
     const selectedValue = event.target.value;
 
-
     if (selectedValue === "ENVIO") {
       setShowBlock(true);
     } else {
       setShowBlock(false);
     }
-  }
+  };
 
   return (
     <form onSubmit={handleSubmit(enviarPedido)}>
@@ -81,117 +75,117 @@ const FormPedido = () => {
           <div className="d-flex justify-content-center">
             <div className="w-100 mx-4 form-width">
               <div className="d-flex justify-content-center">
-              <textarea
-                className="text-mipedido text-center form-control d-block mb-1 w-50"
-                {...register("pedido", { required: true })}
-                value={pedidoSinComas}
-                rows="5"
-              />
-              <div className="d-block ms-2 align-items-center">
-              <label className="text-center w-100 text-light mt-1 fs-4">
-                Total:
-              </label>
-              <div className="d-flex justify-content-center align-items-center">
-                <p className="d-flex text-light mb-0 me-2 fs-4">$</p>
-                <input
-                  type="text"
-                  className="text-mipedido text-center form-control w-50 fs-2"
-                  {...register("precio", { required: true })}
-                  value={total}
+                <textarea
+                  className="text-mipedido text-center form-control d-block mb-1 w-50"
+                  {...register("pedido", { required: true })}
+                  value={pedidoSinComas}
+                  rows="5"
                 />
-                </div>
+                <div className="d-block ms-2 align-items-center">
+                  <label className="text-center w-100 text-light mt-1 fs-4">
+                    Total:
+                  </label>
+                  <div className="d-flex justify-content-center align-items-center">
+                    <p className="d-flex text-light mb-0 me-2 fs-4">$</p>
+                    <input
+                      type="text"
+                      className="text-mipedido text-center form-control w-50 fs-2"
+                      {...register("precio", { required: true })}
+                      value={total}
+                    />
+                  </div>
                 </div>
               </div>
               <hr className="text-light" />
-              
+
               <input
                 type="text"
                 className="d-none"
                 value={hora}
                 {...register("datetime", { required: true })}
               />
-<div className="d-flex justify-content-around align-items-center">
-              <div className="d-flex justify-content-evenly">
-              <div className="d-block">
-                <div className="d-flex align-items-center">
-              <label className="text-end mx-2 text-light w-25">
-                APELLIDO:
-              </label>
-              <input
-                type="text"
-                className="text-mipedido form-control mb-1 w-75"
-                paceholder="Nombre y apellido"
-                {...register("apellido", { required: true })}
-                required
-              />
-              </div>
-              <div className="d-flex align-items-center mt-1">
-              <label className="text-end text-light mx-2 w-25">
-                NOMBRE:
-              </label>
-              <input
-                type="text"
-                className="text-mipedido form-control mb-1 w-75"
-                paceholder="Nombre y apellido"
-                {...register("nombre", { required: true })}
-                required
-              /> </div></div></div>
+              <div className="d-flex justify-content-around align-items-center">
+                <div className="d-flex justify-content-evenly">
+                  <div className="d-block">
+                    <div className="d-flex align-items-center">
+                      <label className="text-end mx-2 text-light w-25">
+                        APELLIDO:
+                      </label>
+                      <input
+                        type="text"
+                        className="text-mipedido form-control mb-1 w-75"
+                        paceholder="Nombre y apellido"
+                        {...register("apellido", { required: true })}
+                        required
+                      />
+                    </div>
+                    <div className="d-flex align-items-center mt-1">
+                      <label className="text-end text-light mx-2 w-25">
+                        NOMBRE:
+                      </label>
+                      <input
+                        type="text"
+                        className="text-mipedido form-control mb-1 w-75"
+                        paceholder="Nombre y apellido"
+                        {...register("nombre", { required: true })}
+                        required
+                      />{" "}
+                    </div>
+                  </div>
+                </div>
 
-<div className="d-block justify-content-evenly">
-              <div className="d-flex align-items-center">
-               <label className="text-end me-2 text-light mt-0 mb-2 p-0 w-75">
-                WHATSAPP O TELÉFONO<br />(con código de área sin 0)
-              </label>
-              <input
-                type="number"
-                className="text-mipedido form-control d-block mb-1 w-75"
-                paceholder="381 6333444"
-                {...register("telefono", { required: true })}
-                required
-              /> </div>
-              <div className="d-flex align-items-center mt-1">
-              <label className="text-end me-2 text-light w-25">
-                ENTREGA:
-              </label>
-              <select
-              onChange={handleSelectChange}
-                className="form-select text-center mb-1 w-75"
-                aria-label="Default select example"
-                required
-              >
-                <option value="RETIRO DEL LOCAL">Retiro del local</option>
-                <option value="ENVIO" {...register("entrega", { required: true })}>Envío</option>
-              </select>
-              </div>
-              </div>
+                <div className="d-block justify-content-evenly">
+                  <div className="d-flex align-items-center">
+                    <label className="text-end me-2 text-light mt-0 mb-2 p-0 w-75">
+                      WHATSAPP O TELÉFONO
+                      <br />
+                      (con código de área sin 0)
+                    </label>
+                    <input
+                      type="number"
+                      className="text-mipedido form-control d-block mb-1 w-75"
+                      paceholder="381 6333444"
+                      {...register("telefono", { required: true })}
+                      required
+                    />
+                  </div>
+                  <div className="d-flex align-items-center mt-1">
+                  <select class="form-select" aria-label="Default select example"  onChange={handleSelectChange}>
+  <option selected>RETIRO DEL LOCAL</option>
+  <option value="ENVIO">ENVÍO</option>
+</select>
+                </div>
+                </div>
               </div>
 
-            {showBlock &&(
-              <div className="d-flex justify-content-center mt-5">
-              <div className="w-50">
-           <label className="text-end text-light me-2">
-                DIRECCIÓN:
-              </label>
-              <input
-                type="text"
-                className="form-control d-block mb-1 me-2"
-                paceholder="Dirección"
-                {...register("direccion", { required: true })}
-                required
-              />
-              <label className="text-end text-light ms-2 me-2">
-                Indicaciones:
-              </label>
-              <input
-                type="text"
-                className="form-control d-block mb-1"
-                paceholder="aclaraciones"
-                {...register("aclaracion", { required: true })}
-                required
-              />
-              </div>
-              </div>)}
-              
+              {showBlock && (
+                <div className="d-flex justify-content-center mt-5">
+                  <input className="d-none" {...register("entrega")} value="ENVIO" />
+                  <div className="w-50">
+                    <label className="text-end text-light me-2">
+                      DIRECCIÓN:
+                    </label>
+                    <input
+                      type="text"
+                      className="form-control d-block mb-1 me-2"
+                      paceholder="Dirección"
+                      {...register("direccion", { required: true })}
+                      required
+                    />
+                    <label className="text-end text-light ms-2 me-2">
+                      Indicaciones:
+                    </label>
+                    <input
+                      type="text"
+                      className="form-control d-block mb-1"
+                      paceholder="aclaraciones"
+                      {...register("aclaracion", { required: true })}
+                      required
+                    />
+                  </div>
+                </div>
+              )}
+
               <label className="text-center w-100 text-light mb-0 mt-3">
                 PAGO:
               </label>

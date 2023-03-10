@@ -5,7 +5,6 @@ import UserProductos from './pages/UserProductos/UserProductos';
 import Administrador from './pages/Administrador/Administrador';
 import Login from './pages/Login/Login';
 import MiPedido from './pages/MiPedido/MiPedido';
-import Usuarios from './pages/Usuarios/Usuarios';
 import AdminProductos from './pages/AdminProductos/AdminProductos';
 import AdminPedidos from './pages/AdminPedidos/AdminPedidos';
 import AdminAceites from './pages/AdminAceites/AdminAceites';
@@ -87,7 +86,6 @@ function App() {
           <Route path="/administrador/productos/te" element={<AdminTe />} />
           <Route path="/administrador/productos/yerbas" element={<AdminYerbas />} />
           <Route path="/administrador/productos/otros" element={<AdminOtros />} />
-        <Route path="/administrador/usuarios" element={<Usuarios />} />
 
       <Route path="*" element={<Error />} />
       </Routes>

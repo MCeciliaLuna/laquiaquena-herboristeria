@@ -38,8 +38,10 @@ const CardsPedidosAdmin = () => {
             <p className="card-text">{pedido.pedido}</p>
             <h4 className="mb-2 fs-3">TOTAL: ${pedido.precio}</h4>
             <h5 className="text-pedido">🟡 {pedido.pago} 🟡</h5>
+            <h5 className="text-pedido">🟡 {pedido.pago} 🟡</h5>
             <h6 className="text-entrega mb-2 fs-5">{pedido.entrega}</h6> <hr />
             <p className="card-link m-0 p-0">📍 {pedido.direccion}</p> <br />
+            <h5 className="text-pedido">🟡 {pedido.aclaracion} 🟡</h5>
             <a
               href={`https://api.whatsapp.com/send?phone=${pedido.telefono}`}
               target="new"
