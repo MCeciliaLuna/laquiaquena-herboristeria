@@ -47,9 +47,14 @@ input, textarea, select{
   text-shadow: 1px 0px 8px #000000;
 }
 
+.salir-icon:hover{
+  transition: all .5s;
+  transform: scale(1.2);
+}
+
 button:hover{
   transition: all .2s;
-  transform: scale(1.03);
+  transform: scale(1);
   background-color: #f89d13;
   color: white;
   text-shadow: 1px 0px 8px #000000;

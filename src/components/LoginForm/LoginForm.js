@@ -1,6 +1,6 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import ModalRegistro from "../ModalRegistro/ModalRegistro";
+import { Link } from "react-router-dom";
 
 const LoginForm = () => {
   const { register, handleSubmit } = useForm();
@@ -71,7 +71,11 @@ const LoginForm = () => {
             INGRESAR
           </button>
         </form>
-        <ModalRegistro />
+          <Link to="/">
+      <button className="btn btn-login text-light mt-3 fs-6">
+        Volver
+      </button>
+      </Link>
       </div>
     </div>
   );

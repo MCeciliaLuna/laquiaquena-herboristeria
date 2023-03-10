@@ -5,8 +5,9 @@ import './Footer.css';
 const Footer = () => {
   const location = useLocation();
 
-  // Verificar si la ruta actual es la página principal
   const isHomePage = location.pathname === '/';
+  
+  
 
   return (
     <div className="footer-background d-block p-3">

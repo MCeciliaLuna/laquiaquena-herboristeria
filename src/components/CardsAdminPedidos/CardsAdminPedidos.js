@@ -14,7 +14,7 @@ const CardsPedidosAdmin = () => {
     }
   };
   useEffect(() => {
-    traerUsuarios();
+  traerUsuarios()
   }, []);
 
   const pedidoEnviado = async (_id) => {
@@ -26,22 +26,28 @@ const CardsPedidosAdmin = () => {
       window.location.reload();
     }
   };
+
   return (
     <div className="col d-flex justify-content-around flex-wrap mt-3">
       {pedidos.map((pedido) => (
-        <div className="card col-3 text-center p-2 card-pedido-admin mx-1 mb-3">
+        <div className={`card col-3 text-center p-2 card-pedido-admin mx-1 mb-3 ${pedido.entrega === "ENVIO" ? 'bg-envio' : ''}`}>
           <div className="card-body">
             <p className="text-muted">
               <i>{pedido.datetime}</i>
             </p>
-            <h3 className="card-title title-pedido">{pedido.nombre}</h3>
-            <p className="card-text">{pedido.pedido}</p>
+            <h3 className="card-title title-pedido">{pedido.apellido} {pedido.nombre}</h3>
+            <p className="card-text">{pedido.pedido.replace(/(\d)\s([a-zA-Z])/g, '$1\n$2')}</p>
             <h4 className="mb-2 fs-3">TOTAL: ${pedido.precio}</h4>
             <h5 className="text-pedido">🟡 {pedido.pago} 🟡</h5>
-            <h5 className="text-pedido">🟡 {pedido.pago} 🟡</h5>
             <h6 className="text-entrega mb-2 fs-5">{pedido.entrega}</h6> <hr />
-            <p className="card-link m-0 p-0">📍 {pedido.direccion}</p> <br />
-            <h5 className="text-pedido">🟡 {pedido.aclaracion} 🟡</h5>
+            {
+              pedido.direccion && pedido.aclaracion &&
+              <>
+            <h5 className="card-link m-0 p-0">📍 {pedido.direccion}</h5> <br />
+            <p className="text-pedido text-muted">{pedido.aclaracion}</p>
+            </> 
+            }
+
             <a
               href={`https://api.whatsapp.com/send?phone=${pedido.telefono}`}
               target="new"

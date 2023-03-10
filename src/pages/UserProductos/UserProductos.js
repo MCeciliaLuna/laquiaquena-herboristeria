@@ -8,6 +8,7 @@ import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
 import ButtonAdminVolver from "../../components/ButtonAdminVolver/ButtonAdminVolver";
 import LinksCategoriasUser from "../../components/LinksCategoriasUser/LinksCategoriasUser";
+import BotonWhatsapp from "../../components/BotonWhatsapp/BotonWhatsapp";
 
 const ProductosUser = ({setPedido, pedido}) => {
 
@@ -43,6 +44,7 @@ const ProductosUser = ({setPedido, pedido}) => {
   return (
     <>
       <Navbar />
+      <BotonWhatsapp />
       <div className="d-flex justify-content-evenly align-items-center">
     <ButtonAdminVolver />
     <h1 className="mb-0 text-light">Productos</h1>
