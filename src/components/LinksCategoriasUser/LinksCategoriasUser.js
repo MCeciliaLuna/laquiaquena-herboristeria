@@ -1,26 +1,26 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import './LinksCategoriasUser.css'
 
-const LinksCategoriasUser = () => {
+const LinksCategoriasUser = ({ setSelectedCategory }) => {
+
   return (
     <div className="d-flex justify-content-center align-items-center mt-4 py-4 flex-wrap links-admin-categoria">
-    <Link className="text-light mx-2 link-admin-categoria" to="/productos">Todos los productos</Link>
-    <Link className="text-light mx-2 link-admin-categoria" to="/productos/aceites">Aceites</Link>
-    <Link className="text-light mx-2 link-admin-categoria" to="/productos/capsulas">Cápsulas</Link>
-    <Link className="text-light mx-2 link-admin-categoria" to="/productos/ensobre">En sobre</Link>
-    <Link className="text-light mx-2 link-admin-categoria" to="/productos/frascos">Frascos de vidrio</Link>
-    <Link className="text-light mx-2 link-admin-categoria" to="/productos/hierbas">Hierbas</Link>
-    <Link className="text-light mx-2 link-admin-categoria" to="/productos/jabones">Jabones</Link>
-    <Link className="text-light mx-2 link-admin-categoria" to="/productos/jarabe">Jarabe</Link>
-    <Link className="text-light mx-2 link-admin-categoria" to="/productos/maca">Maca</Link>
-    <Link className="text-light mx-2 link-admin-categoria" to="/productos/nuezdelaindia">Nuez de la India</Link>
-    <Link className="text-light mx-2 link-admin-categoria" to="/productos/pomadas">Pomadas</Link>
-    <Link className="text-light mx-2 link-admin-categoria" to="/productos/sahumerios">Sahumerios</Link>
-    <Link className="text-light mx-2 link-admin-categoria" to="/productos/stevia">Stevia</Link>
-    <Link className="text-light mx-2 link-admin-categoria" to="/productos/te">Té</Link>
-    <Link className="text-light mx-2 link-admin-categoria" to="/productos/yerbas">Yerbas</Link>
-    <Link className="text-light mx-2 link-admin-categoria" to="/productos/otros">Otros</Link>
+    <button className="text-light mx-2 link-admin-categoria" onClick={() => setSelectedCategory('all')}>Todos los productos</button>
+    <button className="text-light mx-2 link-admin-categoria"  onClick={() => setSelectedCategory('Aceites')} >Aceites</button>
+    <button className="text-light mx-2 link-admin-categoria"  onClick={() => setSelectedCategory('Capsulas')}>Cápsulas</button>
+    <button className="text-light mx-2 link-admin-categoria"  onClick={() => setSelectedCategory('Ensobre')}>En sobre</button>
+    <button className="text-light mx-2 link-admin-categoria"  onClick={() => setSelectedCategory('Frascos')}>Frascos de vidrio</button>
+    <button className="text-light mx-2 link-admin-categoria"  onClick={() => setSelectedCategory('Hierbas')}>Hierbas</button>
+    <button className="text-light mx-2 link-admin-categoria"  onClick={() => setSelectedCategory('Jabones')}>Jabones</button>
+    <button className="text-light mx-2 link-admin-categoria"  onClick={() => setSelectedCategory('Jarabe')}>Jarabe</button>
+    <button className="text-light mx-2 link-admin-categoria"  onClick={() => setSelectedCategory('Maca')}>Maca</button>
+    <button className="text-light mx-2 link-admin-categoria"  onClick={() => setSelectedCategory('Nuezdelaindia')}>Nuez de la India</button>
+    <button className="text-light mx-2 link-admin-categoria"  onClick={() => setSelectedCategory('Pomadas')}>Pomadas</button>
+    <button className="text-light mx-2 link-admin-categoria"  onClick={() => setSelectedCategory('Sahumerios')}>Sahumerios</button>
+    <button className="text-light mx-2 link-admin-categoria"  onClick={() => setSelectedCategory('Stevia')} >Stevia</button>
+    <button className="text-light mx-2 link-admin-categoria"  onClick={() => setSelectedCategory('Te')}>Té</button>
+    <button className="text-light mx-2 link-admin-categoria"  onClick={() => setSelectedCategory('Yerbas')}>Yerbas</button>
+    <button className="text-light mx-2 link-admin-categoria"  onClick={() => setSelectedCategory('Otros')}>Otros</button>
       </div>
   );
 };
