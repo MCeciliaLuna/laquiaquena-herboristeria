@@ -6,7 +6,7 @@ import CardProductoUser from "../../components/CardProductoUser/CardProductoUser
 import ButtonPedidos from "../../components/ButtonPedidos/ButtonPedidos";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
-import ButtonAdminVolver from "../../components/ButtonAdminVolver/ButtonAdminVolver";
+import ButtonUserVolver from "../../components/ButtonUserVolver/ButtonUserVolver";
 import LinksCategoriasUser from "../../components/LinksCategoriasUser/LinksCategoriasUser";
 import BotonWhatsapp from "../../components/BotonWhatsapp/BotonWhatsapp";
 
@@ -47,13 +47,14 @@ const ProductosUser = ({ setPedido, pedido }) => {
   }, [aux])
 
   useEffect(() => {
-    if(selectedCategory !== 'all'){
+    if(selectedCategory !== 'Todos'){
       const productosFiltrados = productosOrdenados.filter(producto => producto.categoria === selectedCategory);
       setProductosFiltrados(productosFiltrados)
     } else {
       setProductosFiltrados(productosOrdenados);
     }
   }, [productosOrdenados, selectedCategory])
+  
 
 
   return (
@@ -61,7 +62,7 @@ const ProductosUser = ({ setPedido, pedido }) => {
       <Navbar />
       <BotonWhatsapp />
       <div className="d-flex justify-content-evenly align-items-center">
-    <ButtonAdminVolver />
+    <ButtonUserVolver />
     <h1 className="mb-0 text-light">Productos</h1>
     </div>
       <div className="div-productos-page h-auto d-flex flex-wrap align-items-center justify-content-center">
@@ -75,6 +76,7 @@ const ProductosUser = ({ setPedido, pedido }) => {
           producto={producto}
           setPedido={setPedido}
           pedido={pedido}
+          setProductos={setProductos}
           />
         ))}
       </div>

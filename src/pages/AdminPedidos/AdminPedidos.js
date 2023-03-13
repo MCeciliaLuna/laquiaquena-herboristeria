@@ -6,6 +6,7 @@ import "./AdminPedidos.css";
 
 const AdminPedidos = () => {
   if (
+    !localStorage.getItem("role") ||
     !localStorage.getItem("access-token")
   ) {
     alert("No tenés autorización para ingresar a esta página");

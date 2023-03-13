@@ -22,7 +22,6 @@ const LoginForm = () => {
       if (json.usuario.role === "ADMIN") {
         localStorage.setItem("access-token", json.token);
         localStorage.setItem("role", json.usuario.role);
-        localStorage.setItem("usuario", JSON.stringify(json.usuario));
         window.location.href = "/administrador";
       }
     } catch (error) {

@@ -4,9 +4,8 @@ import Navbar from "../../components/Navbar/Navbar";
 import "./Administrador.css";
 
 const Administrador = () => {
-  const localStorageRole = localStorage.getItem("role");
+
   if (
-    localStorageRole === "USER" ||
     !localStorage.getItem("role") ||
     !localStorage.getItem("access-token")
   ) {
