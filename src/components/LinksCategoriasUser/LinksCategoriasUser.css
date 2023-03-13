@@ -5,6 +5,7 @@
 .link-admin-categoria{
   width: 20%;
   font-size: 3vh;
+  cursor: pointer;
 }
 
 .link-admin-categoria:hover{
