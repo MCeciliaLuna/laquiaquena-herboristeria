@@ -20,7 +20,7 @@
       width: 100% !important;
     }
     .text-mipedido{
-      font-size: 2.5vh;
+      font-size: 2vh;
     }
     .form-datospersonales{
       display: table !important;
@@ -48,6 +48,7 @@
   }
   .input-pedido{
     width: 100% !important;
+    font-size: 2vh;
   }
   .select-pago{
     width: 60%;
