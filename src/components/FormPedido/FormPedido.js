@@ -68,20 +68,27 @@ const FormPedido = () => {
     }
   };
 
+  const resetearPedido = () => {
+    if (window.confirm('¿Estás segur@ que querés borrar todo tu pedido?')) {
+      localStorage.clear()
+      window.location.href = "/productos"
+    }
+  }
+
   return (
     <form onSubmit={handleSubmit(enviarPedido)}>
       <div className="m-3">
         <div className="height-pedidos">
           <div className="d-flex justify-content-center">
             <div className="w-100 mx-4 form-width">
-              <div className="d-flex justify-content-center">
+              <div className="d-flex justify-content-center celular">
                 <textarea
-                  className="text-mipedido text-center form-control d-block mb-1 w-50"
+                  className="input-pedido text-mipedido text-center form-control mb-1 w-50"
                   {...register("pedido", { required: true })}
                   value={pedidoSinComas}
                   rows="5"
                 />
-                <div className="d-block ms-2 align-items-center">
+                <div className="ms-2 align-items-center">
                   <label className="text-center w-100 text-light mt-1 fs-4">
                     Total:
                   </label>
@@ -96,6 +103,9 @@ const FormPedido = () => {
                   </div>
                 </div>
               </div>
+                  <div className="w-100 d-flex justify-content-center align-items-center">
+                  <button className="btn mt-4 mb-2 text-light" onClick={resetearPedido}>Borrar todo</button>
+                  </div>
               <hr className="text-light" />
 
               <input
@@ -104,8 +114,8 @@ const FormPedido = () => {
                 value={hora}
                 {...register("datetime", { required: true })}
               />
-              <div className="d-flex justify-content-around align-items-center">
-                <div className="d-flex justify-content-evenly">
+              <div className="d-flex justify-content-around align-items-center form-datospersonales">
+                <div className="d-flex justify-content-evenly inputs-datospersonales">
                   <div className="d-block">
                     <div className="d-flex align-items-center">
                       <label className="text-end mx-2 text-light w-25">
@@ -134,7 +144,7 @@ const FormPedido = () => {
                   </div>
                 </div>
 
-                <div className="d-block justify-content-evenly">
+                <div className="d-block justify-content-evenly inputs-datospersonales">
                   <div className="d-flex align-items-center">
                     <label className="text-end me-2 text-light mt-0 mb-2 p-0 w-75">
                       WHATSAPP O TELÉFONO
@@ -231,8 +241,7 @@ const FormPedido = () => {
               </div>
               <div className="d-flex justify-content-center">
                 <select
-                  className="form-select text-center p-0 mb-0 w-25 input-center"
-                  aria-label="Default select example"
+                  class="form-select select-pago" aria-label="Default select example"
                   {...register("pago", { required: true })}
                   required
                 >
