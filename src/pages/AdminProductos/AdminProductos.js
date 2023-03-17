@@ -15,12 +15,6 @@ const AdminProductos = () => {
   const [selectedCategory, setSelectedCategory] = useState('Todos');
 
   
-  if (!localStorage.getItem("role") || !localStorage.getItem("access-token")) {
-    alert("No tenés autorización para ingresar a esta página");
-    window.location.href = "/";
-  }
-
-  
   const getProductos = async () => {
     try {
       const info = await axios.get('https://laquiaquenaherboristeriabe.onrender.com/traerproductos');

@@ -3,13 +3,6 @@ import "./Administrador.css";
 
 const Administrador = () => {
 
-  if (
-    !localStorage.getItem("role") ||
-    !localStorage.getItem("access-token")
-  ) {
-    alert("No tenés autorización para ingresar a esta página");
-    window.location.href = "/";
-  }
   return (
     <>
       <div className="page-administrador d-flex flex-column justify-content-center align-items-center">
