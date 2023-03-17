@@ -4,8 +4,6 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import CardProductoUser from "../../components/CardProductoUser/CardProductoUser";
 import ButtonPedidos from "../../components/ButtonPedidos/ButtonPedidos";
-import Navbar from "../../components/Navbar/Navbar";
-import Footer from "../../components/Footer/Footer";
 import ButtonUserVolver from "../../components/ButtonUserVolver/ButtonUserVolver";
 import LinksCategoriasUser from "../../components/LinksCategoriasUser/LinksCategoriasUser";
 import BotonWhatsapp from "../../components/BotonWhatsapp/BotonWhatsapp";
@@ -59,7 +57,6 @@ const ProductosUser = ({ setPedido, pedido }) => {
 
   return (
     <>
-      <Navbar />
       <BotonWhatsapp />
       <div className="d-flex justify-content-evenly align-items-center">
     <ButtonUserVolver />
@@ -82,7 +79,6 @@ const ProductosUser = ({ setPedido, pedido }) => {
       </div>
       </div>
     </div>
-        <Footer />
     </>
   );
 };

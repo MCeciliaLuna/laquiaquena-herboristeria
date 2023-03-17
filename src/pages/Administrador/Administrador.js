@@ -1,6 +1,4 @@
 import { Link } from "react-router-dom";
-import Footer from "../../components/Footer/Footer";
-import Navbar from "../../components/Navbar/Navbar";
 import "./Administrador.css";
 
 const Administrador = () => {
@@ -14,7 +12,6 @@ const Administrador = () => {
   }
   return (
     <>
-      <Navbar />
       <div className="page-administrador d-flex flex-column justify-content-center align-items-center">
         <Link to="/administrador/pedidos">
           <h2 className="buttons-movile btn mb-4 p-5 text-light">PEDIDOS ✅</h2>
@@ -25,7 +22,6 @@ const Administrador = () => {
           </h2>
         </Link>
       </div>
-      <Footer />
     </>
   );
 };

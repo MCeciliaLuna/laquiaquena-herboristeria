@@ -9,25 +9,26 @@ import AdminProductos from './pages/AdminProductos/AdminProductos';
 import AdminPedidos from './pages/AdminPedidos/AdminPedidos';
 import Home from './pages/Home/Home';
 import { useState } from 'react';
+import Navbar from './components/Navbar/Navbar';
+import Footer from './components/Footer/Footer';
 
 
 function App() {
   const [pedido, setPedido] = useState([])
   return (
       <BrowserRouter>
+        <Navbar />
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route index path="/" element={<Home />} />
           <Route path="/productos" element={<UserProductos setPedido={setPedido} pedido={pedido} />} />
           <Route path="/mipedido" element={<MiPedido setPedido={setPedido} pedido={pedido} />} />
-
-        <Route path="/login" element={<Login />} />
-
+          <Route path="/login" element={<Login />} />
           <Route path="/administrador" element={<Administrador />} />
           <Route path="/administrador/pedidos" element={<AdminPedidos />} />
           <Route path="/administrador/productos" element={<AdminProductos />} />
-
-        <Route path="*" element={<Error />} />
+          <Route path="*" element={<Error />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
   );
 }
