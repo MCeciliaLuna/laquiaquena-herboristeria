@@ -6,7 +6,7 @@ import BotonWhatsapp from "../../components/BotonWhatsapp/BotonWhatsapp";
 const Home = () => {
   return (
     <div>
-        <BotonWhatsapp />
+      <BotonWhatsapp />
       <Carousel />
       <ButtonPedidos />
     </div>
