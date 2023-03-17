@@ -1,8 +1,7 @@
-import { Link } from "react-router-dom";
-import "./Administrador.css";
+import { Link } from 'react-router-dom';
+import './Administrador.css';
 
 const Administrador = () => {
-
   return (
     <>
       <div className="page-administrador d-flex flex-column justify-content-center align-items-center">
