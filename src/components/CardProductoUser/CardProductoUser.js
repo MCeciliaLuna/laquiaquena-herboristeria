@@ -1,6 +1,8 @@
 import './CardProductoUser.css';
 
-const CardProductoUser = ({ producto, setPedido, pedido, index }) => {
+const CardProductoUser = ({
+  producto, setPedido, pedido, index,
+}) => {
   const idProductoEdit = `#producto${index}`;
   const productoIdModalEdit = `producto${index}`;
 

@@ -1,4 +1,3 @@
-/* eslint-disable */
 import { useState } from 'react';
 import './App.css';
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
@@ -16,6 +15,7 @@ import ProtectedRoutes from './routes/ProtectedRoutes';
 
 function App() {
   const [pedido, setPedido] = useState([]);
+
   return (
     <BrowserRouter>
       <Navbar />
