@@ -25,7 +25,6 @@ const Administrador = () => {
           </h2>
         </Link>
       </div>
-      <Footer />
     </>
   );
 };

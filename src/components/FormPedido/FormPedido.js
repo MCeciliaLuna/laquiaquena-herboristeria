@@ -3,6 +3,7 @@ import { CopyToClipboard } from "react-copy-to-clipboard";
 import "./FormPedido.css";
 import { useForm } from "react-hook-form";
 import axios from "axios";
+import jsPDF from 'jspdf';
 
 const FormPedido = () => {
   const producto = JSON.parse(localStorage.getItem("pedido"));
@@ -26,16 +27,26 @@ const FormPedido = () => {
   const { register, handleSubmit } = useForm();
   const [sendPedido, setSendPedido] = useState();
 
+  const generarPDF = (data) => {
+    const pdf = new jsPDF();
+    pdf.text(20, 20, `Nombre: ${data.apellido} ${data.nombre}`);
+    pdf.text(20, 30, `Pedido: ${data.pedido}`);
+    pdf.text(20, 190, `Total: $ ${data.precio}`);
+    pdf.text(20, 220, `Pago: ${data.pago}`);
+    pdf.save('PEDIDO-QUIAQUEÑA.pdf');
+  }
+
   const enviarPedido = async (data) => {
     await axios
       .post("https://laquiaquenaherboristeriabe.onrender.com/crearpedido", data)
       .then((resp) => {
         setSendPedido(resp.data);
+        generarPDF(data);
       });
     alert(
       "El pedido ha sido 𝗘𝗡𝗩𝗜𝗔𝗗𝗢 𝗘𝗫𝗜𝗧𝗢𝗦𝗔𝗠𝗘𝗡𝗧𝗘 🤩💚. Si pagaste, informanos y 𝗲𝗻𝘃𝗶𝗮𝗻𝗼𝘀 𝗲𝗹 𝗰𝗼𝗺𝗽𝗿𝗼𝗯𝗮𝗻𝘁𝗲 vía 𝗪𝗛𝗔𝗧𝗦𝗔𝗣𝗣 💵"
     );
-    window.location.href = `https://api.whatsapp.com/send?phone=5493812183467&text=Hola,%20mi%20nombre%20es%20*${data.nombre}*%20y%20acabo%20de%20hacer%20un%20pedido%20desde%20la%20p%C3%A1gina%20web!%20%C2%BFPod%C3%A9s%20chequearlo?`;
+    window.location.href = "/postpedido";
   };
 
   const pedidoString = JSON.stringify(producto).replace(

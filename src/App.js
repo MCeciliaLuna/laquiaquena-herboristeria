@@ -9,6 +9,7 @@ import AdminProductos from './pages/AdminProductos/AdminProductos';
 import AdminPedidos from './pages/AdminPedidos/AdminPedidos';
 import Home from './pages/Home/Home';
 import { useState } from 'react';
+import PostPedido from './pages/PostPedido/PostPedido';
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/productos" element={<UserProductos setPedido={setPedido} pedido={pedido} />} />
           <Route path="/mipedido" element={<MiPedido setPedido={setPedido} pedido={pedido} />} />
+          <Route path="/postpedido" element={<PostPedido/>} />
 
         <Route path="/login" element={<Login />} />
 

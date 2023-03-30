@@ -16,8 +16,7 @@ const ProductosUser = ({ setPedido, pedido }) => {
   const [productosFiltrados, setProductosFiltrados] = useState([])
   const [selectedCategory, setSelectedCategory] = useState('all');
   
-  //alert('💡 𝗣𝗥𝗘𝗦𝗜𝗢𝗡𝗔́ en la 𝗙𝗢𝗧𝗢 de cada producto para conocer sus 𝙋𝙍𝙊𝙋𝙄𝙀𝘿𝘼𝘿𝙀𝙎 𝙔 𝘾𝘼𝙍𝘼𝘾𝙏𝙀𝙍𝙄́𝙎𝙏𝙄𝘾𝘼𝙎 💡')
-  
+
   useEffect(() => {
     const getProductos = async () => {
       try {

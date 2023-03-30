@@ -3,8 +3,6 @@ import axios from 'axios';
 import ButtonAgregarProducto from '../../components/ButtonAgregarProducto/ButtonAgregarProducto';
 import CardProductoAdmin from '../../components/CardProductoAdmin/CardProductoAdmin';
 import Navbar from '../../components/Navbar/Navbar';
-import Footer from '../../components/Footer/Footer';
-import LinksCategoriasUser from '../../components/LinksCategoriasUser/LinksCategoriasUser';
 import './AdminProductos.css'
 import ButtonAdminVolverProductos from '../../components/ButtonAdminVolverProductos/ButtonAdminVolverProductos';
 
@@ -67,7 +65,6 @@ const AdminProductos = () => {
     <div className="d-flex justify-content-center align-items-center">
      <ButtonAgregarProducto />
      </div>
-          <LinksCategoriasUser setSelectedCategory={setSelectedCategory}/>
       <div className="d-flex justify-content-center">
         <div className="d-flex flex-wrap align-items-center justify-content-evenly">
         {productosFiltrados.map((producto, index) => (
@@ -77,7 +74,6 @@ const AdminProductos = () => {
         ))}
       </div>
       </div>
-      <Footer />
     </>
   );
 };
