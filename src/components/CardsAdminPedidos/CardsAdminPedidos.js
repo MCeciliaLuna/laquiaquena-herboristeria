@@ -25,8 +25,8 @@ const CardsPedidosAdmin = () => {
       showDenyButton: true,
       denyButtonText: "NO",
       confirmButtonText: "SÍ",
-      confirmButtonColor: "#fe0000",
-      denyButtonColor: "#abcc01",
+      confirmButtonColor: "#b00215",
+      denyButtonColor: "#7fab1f",
     }).then((resp) => {
       if (resp.isConfirmed) {
         axios

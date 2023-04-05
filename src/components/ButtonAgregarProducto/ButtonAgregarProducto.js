@@ -30,6 +30,7 @@ const ButtonAgregarProducto = () => {
           body: formData,
         }).then(() => {
           Swal.fire({
+            color: "#161a1d",
             title: "El producto fue creado exitosamente! Espera un momento...",
             showConfirmButton: false,
           });
