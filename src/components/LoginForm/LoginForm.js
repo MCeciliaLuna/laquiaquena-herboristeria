@@ -1,6 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const LoginForm = () => {
   const { register, handleSubmit } = useForm();
@@ -20,12 +21,17 @@ const LoginForm = () => {
 
     try {
       if (json.usuario.role === "ADMIN") {
-        localStorage.setItem("access-token", json.token);
-        localStorage.setItem("role", json.usuario.role);
+        sessionStorage.setItem("access-token", json.token);
+        sessionStorage.setItem("role", json.usuario.role);
         window.location.href = "/administrador";
       }
     } catch (error) {
-      alert("El usuario o la contraseña que ingresaste no es correcto");
+      Swal.fire({
+        color: "#161a1d",
+        title: "Contraseña o usuario incorrectas",
+        timer: 1000,
+        showConfirmButton: false,
+      });
     }
   };
 
@@ -70,11 +76,9 @@ const LoginForm = () => {
             INGRESAR
           </button>
         </form>
-          <Link to="/">
-      <button className="btn btn-login text-light mt-3 fs-6">
-        Volver
-      </button>
-      </Link>
+        <Link to="/">
+          <button className="btn btn-login text-light mt-3 fs-6">Volver</button>
+        </Link>
       </div>
     </div>
   );

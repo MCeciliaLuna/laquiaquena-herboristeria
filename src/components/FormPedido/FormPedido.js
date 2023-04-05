@@ -3,10 +3,10 @@ import { CopyToClipboard } from "react-copy-to-clipboard";
 import "./FormPedido.css";
 import { useForm } from "react-hook-form";
 import axios from "axios";
-import jsPDF from 'jspdf';
+import jsPDF from "jspdf";
 
 const FormPedido = () => {
-  const producto = JSON.parse(localStorage.getItem("pedido"));
+  const producto = JSON.parse(sessionStorage.getItem("pedido"));
 
   for (let i = 0; i < producto.length; i++) {
     if (producto[i].precio) {
@@ -33,8 +33,8 @@ const FormPedido = () => {
     pdf.text(20, 30, `Pedido: ${data.pedido}`);
     pdf.text(20, 190, `Total: $ ${data.precio}`);
     pdf.text(20, 220, `Pago: ${data.pago}`);
-    pdf.save('PEDIDO-QUIAQUEÑA.pdf');
-  }
+    pdf.save("PEDIDO-QUIAQUEÑA.pdf");
+  };
 
   const enviarPedido = async (data) => {
     await axios
@@ -43,9 +43,6 @@ const FormPedido = () => {
         setSendPedido(resp.data);
         generarPDF(data);
       });
-    alert(
-      "El pedido ha sido 𝗘𝗡𝗩𝗜𝗔𝗗𝗢 𝗘𝗫𝗜𝗧𝗢𝗦𝗔𝗠𝗘𝗡𝗧𝗘 🤩💚. Si pagaste, informanos y 𝗲𝗻𝘃𝗶𝗮𝗻𝗼𝘀 𝗲𝗹 𝗰𝗼𝗺𝗽𝗿𝗼𝗯𝗮𝗻𝘁𝗲 vía 𝗪𝗛𝗔𝗧𝗦𝗔𝗣𝗣 💵"
-    );
     window.location.href = "/postpedido";
   };
 
@@ -80,11 +77,9 @@ const FormPedido = () => {
   };
 
   const resetearPedido = () => {
-    if (window.confirm('¿Estás segur@ que querés borrar todo tu pedido?')) {
-      localStorage.clear()
-      window.location.href = "/productos"
-    }
-  }
+    sessionStorage.clear();
+    window.location.href = "/productos";
+  };
 
   return (
     <form onSubmit={handleSubmit(enviarPedido)}>
@@ -114,9 +109,14 @@ const FormPedido = () => {
                   </div>
                 </div>
               </div>
-                  <div className="w-100 d-flex justify-content-center align-items-center">
-                  <button className="btn mt-4 mb-2 text-light" onClick={resetearPedido}>Borrar todo</button>
-                  </div>
+              <div className="w-100 d-flex justify-content-center align-items-center">
+                <button
+                  className="btn mt-4 mb-2 text-light"
+                  onClick={resetearPedido}
+                >
+                  Borrar todo
+                </button>
+              </div>
               <hr className="text-light" />
 
               <input
@@ -171,17 +171,25 @@ const FormPedido = () => {
                     />
                   </div>
                   <div className="d-flex align-items-center mt-1">
-                  <select class="form-select" aria-label="Default select example"  onChange={handleSelectChange}>
-  <option selected>RETIRO DEL LOCAL</option>
-  <option value="ENVIO">ENVÍO</option>
-</select>
-                </div>
+                    <select
+                      class="form-select"
+                      aria-label="Default select example"
+                      onChange={handleSelectChange}
+                    >
+                      <option selected>RETIRO DEL LOCAL</option>
+                      <option value="ENVIO">ENVÍO</option>
+                    </select>
+                  </div>
                 </div>
               </div>
 
               {showBlock && (
                 <div className="d-flex justify-content-center mt-5">
-                  <input className="d-none" {...register("entrega")} value="ENVIO" />
+                  <input
+                    className="d-none"
+                    {...register("entrega")}
+                    value="ENVIO"
+                  />
                   <div className="w-50">
                     <label className="text-end text-light me-2">
                       DIRECCIÓN:
@@ -252,7 +260,8 @@ const FormPedido = () => {
               </div>
               <div className="d-flex justify-content-center">
                 <select
-                  class="form-select select-pago" aria-label="Default select example"
+                  class="form-select select-pago"
+                  aria-label="Default select example"
                   {...register("pago", { required: true })}
                   required
                 >
@@ -265,7 +274,10 @@ const FormPedido = () => {
                 </select>
               </div>
               <div className="w-100 text-center mt-3">
-                <button type="submit" className="btn text-light">
+                <button
+                  type="submit"
+                  className="btn btn-send text-light mb-5 fs-4"
+                >
                   Enviar
                 </button>
               </div>

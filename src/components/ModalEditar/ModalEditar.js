@@ -2,6 +2,7 @@ import { useForm } from "react-hook-form";
 import "./ModalEditar.css";
 import { useState } from "react";
 import axios from "axios";
+import Swal from "sweetalert2";
 
 const ModalEditar = ({ producto, id }) => {
   const { register, handleSubmit } = useForm();
@@ -11,20 +12,44 @@ const ModalEditar = ({ producto, id }) => {
   const productoIdModalEdit = `producto${id}`;
 
   const editProducto = async (data) => {
-    if (
-      window.confirm(`📣 ¿𝗠𝗢𝗗𝗜𝗙𝗜𝗖𝗔𝗠𝗢𝗦 a ${producto.nombre}? 🤔`)
-    ) {
-      await axios.put("https://laquiaquenaherboristeriabe.onrender.com/modificarproducto", data);
-      setEditarProducto(data);
-      alert(`${producto.nombre} 𝗠𝗢𝗗𝗜𝗙𝗜𝗖𝗔𝗗𝗢 𝗘𝗫𝗜𝗧𝗢𝗦𝗔𝗠𝗘𝗡𝗧𝗘 ✅😉`);
-      window.location.reload();
-    }
+    Swal.fire({
+      color: "#161a1d",
+      text: `📣 ¿MODIFICAMOS a ${producto.nombre}? 🤔`,
+      showDenyButton: true,
+      denyButtonText: "NO",
+      confirmButtonText: "SÍ",
+      confirmButtonColor: "#b00215",
+      denyButtonColor: "#7fab1f",
+    }).then((response) => {
+      if (response.isConfirmed) {
+        axios
+          .put(
+            "https://laquiaquenaherboristeriabe.onrender.com/modificarproducto",
+            data
+          )
+          .then(() => {
+            setEditarProducto(data);
+            Swal.fire({
+              color: "#161a1d",
+              title: `${producto.nombre} fue modificado exitosamente! Espera un momento...`,
+              showConfirmButton: false,
+            });
+            setTimeout(() => {
+              Swal.close();
+              window.location.reload();
+            }, 1000);
+          });
+      }
+    });
   };
 
   return (
     <div>
       <button
-        type="button" class="btn" data-bs-toggle="modal" data-bs-target={idProductoEdit}
+        type="button"
+        class="btn"
+        data-bs-toggle="modal"
+        data-bs-target={idProductoEdit}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -38,10 +63,14 @@ const ModalEditar = ({ producto, id }) => {
         </svg>
       </button>
       <div
-        class="modal fade" id={productoIdModalEdit} tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+        class="modal fade"
+        id={productoIdModalEdit}
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
       >
         <div className="modal-dialog modal-dialog-centered">
-          <div className="modal-content fondo-modal-editar" >
+          <div className="modal-content fondo-modal-editar">
             <div className="modal-header">
               <h4 className="modal-title text-light" id="exampleModalLabel1">
                 EDITAR PRODUCTO 📝
@@ -55,75 +84,85 @@ const ModalEditar = ({ producto, id }) => {
             </div>
             <div className="modal-body">
               <form id="form" onSubmit={handleSubmit(editProducto)}>
-                  <input
-                    type="text"
-                    value={producto._id}
-                    {...register("_id", { required: true })}
-                    className="d-none"
-                  />
-                  <input
-                    type="text"
-                    id="disabledTextInput"
-                    className="form-control text-input-editar mb-3"
-                    maxLength="40"
-                    defaultValue={producto.nombre}
-                    {...register("nombre", { required: true })}
-                    required
-                  />
-                  <select
-                    className="form-select mb-3 text-input-editar"
-                    aria-label="Default select example"
-                    defaultValue={producto.categoria}
-                    {...register("categoria", { required: true })}
-                    required
-                  >
-                    <option value="Aceites">Aceites</option>
-                    <option value="Cápsulas">Cápsulas</option>
-                    <option value="En sobre">En sobre</option>
-                    <option value="Frascos de vidrio">Frascos de vidrio</option>
-                    <option value="Hierbas">Hierbas</option>
-                    <option value="Jabones">Jabones</option>
-                    <option value="Jarabe">Jarabe</option>
-                    <option value="Maca">Maca</option>
-                    <option value="Nuez de la india">Nuez de la india</option>
-                    <option value="Pomadas">Pomadas</option>
-                    <option value="Sahumerios">Sahumerios</option>
-                    <option value="Stevia">Stevia</option>
-                    <option value="Té">Té</option>
-                    <option value="Yerbas">Yerbas</option>
-                    <option value="Otros">Otros</option>
-                  </select>
-                  <textarea
-                    type="text"
-                    id="disabledTextInput"
-                    className="form-control mb-3 text-input-editar"
-                    maxLength="100"
-                    defaultValue={producto.descripcion}
-                    rows="3"
-                    {...register("descripcion", { required: true })}
-                    required
-                  />
-                  <div className="d-flex mb-3">
-                    <div className="d-flex align-items-center input-center">
-                      <p className="text-light fs-5 m-2">$</p>
-                      <input
-                        type="number"
-                        id="disabledTextInput"
-                        className="form-control text-input-editar"
-                        maxLength="10"
-                        defaultValue={producto.precio}
-                        {...register("precio", { required: true })}
-                        required
-                      />
-                    </div>
+                <input
+                  type="text"
+                  value={producto._id}
+                  {...register("_id", { required: true })}
+                  className="d-none"
+                />
+                <input
+                  type="text"
+                  id="disabledTextInput"
+                  className="form-control text-input-editar mb-3"
+                  maxLength="40"
+                  defaultValue={producto.nombre}
+                  {...register("nombre", { required: true })}
+                  required
+                />
+                <select
+                  className="form-select mb-3 text-input-editar"
+                  aria-label="Default select example"
+                  defaultValue={producto.categoria}
+                  {...register("categoria", { required: true })}
+                  required
+                >
+                  <option value="Aceites">Aceites</option>
+                  <option value="Cápsulas">Cápsulas</option>
+                  <option value="En sobre">En sobre</option>
+                  <option value="Frascos de vidrio">Frascos de vidrio</option>
+                  <option value="Hierbas">Hierbas</option>
+                  <option value="Jabones">Jabones</option>
+                  <option value="Jarabe">Jarabe</option>
+                  <option value="Maca">Maca</option>
+                  <option value="Nuez de la india">Nuez de la india</option>
+                  <option value="Pomadas">Pomadas</option>
+                  <option value="Sahumerios">Sahumerios</option>
+                  <option value="Stevia">Stevia</option>
+                  <option value="Té">Té</option>
+                  <option value="Yerbas">Yerbas</option>
+                  <option value="Otros">Otros</option>
+                </select>
+                <textarea
+                  type="text"
+                  id="disabledTextInput"
+                  className="form-control mb-3 text-input-editar"
+                  maxLength="100"
+                  defaultValue={producto.descripcion}
+                  rows="3"
+                  {...register("descripcion", { required: true })}
+                  required
+                />
+                <div className="d-flex mb-3">
+                  <div className="d-flex align-items-center input-center">
+                    <p className="text-light fs-5 m-2">$</p>
+                    <input
+                      type="number"
+                      id="disabledTextInput"
+                      className="form-control text-input-editar"
+                      maxLength="10"
+                      defaultValue={producto.precio}
+                      {...register("precio", { required: true })}
+                      required
+                    />
                   </div>
-                  <div className="modal-footer">
-            <button type="submit" className="btn rounded-circle m-0 p-2 bg-light">
-            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16">
-  <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/>
-</svg>
-            </button>
-          </div>
+                </div>
+                <div className="modal-footer">
+                  <button
+                    type="submit"
+                    className="btn rounded-circle m-0 p-2 bg-light"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="30"
+                      height="30"
+                      fill="currentColor"
+                      class="bi bi-check-lg"
+                      viewBox="0 0 16 16"
+                    >
+                      <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z" />
+                    </svg>
+                  </button>
+                </div>
               </form>
             </div>
           </div>

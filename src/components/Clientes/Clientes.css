@@ -1,69 +1,69 @@
-.clientes{
+.clientes {
   height: 90vh;
   background-color: #f2f2f2;
 }
 
-.title-clientes{
+.title-clientes {
   color: #cc0000;
 }
 
-.image-marcas{
+.image-marcas {
   width: 25%;
   height: 25%;
   position: relative;
-  }
+}
 
-.card-testimonio{
+.card-testimonio {
   position: absolute;
-    top: 300%;
-    left: 25%;
-    box-shadow: 1px 2px 10px #000000;
-    word-wrap: normal;
+  top: 300%;
+  left: 25%;
+  box-shadow: 1px 2px 10px #000000;
+  word-wrap: normal;
 }
 
-.card-testimonio:hover{
-    transition: none;
-    transform: none;
+.card-testimonio:hover {
+  transition: none;
+  transform: none;
 }
 
-.nombre-cliente{
+.nombre-cliente {
   font-family: Title;
 }
 
-@media (min-width: 768px) and (max-width: 991.98px){
-  .clientes{
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .clientes {
     height: auto;
   }
-  .card-testimonio{
-      width: 21vh;
-      top: 350%;
-      left: 0%;
+  .card-testimonio {
+    width: 21vh;
+    top: 350%;
+    left: 0%;
   }
-  .title-clientes{
+  .title-clientes {
     padding-bottom: 20px;
   }
 }
 
-@media (max-width: 767.98px){
-  .clientes{
+@media (max-width: 767.98px) {
+  .clientes {
     height: auto;
   }
-  .image-marcas{
+  .image-marcas {
     width: 120px;
     display: grid !important;
   }
-  .card-testimonio{
+  .card-testimonio {
     width: 14vh;
     top: 90%;
-  left: 1%;
-}
-.texto-testimonio{
-  padding: 4px;
-}
-.testimonio{
-  font-size: 2vh;
-}
-.nombre-cliente{
-  font-size: 2.4vh;
-}
+    left: 1%;
+  }
+  .texto-testimonio {
+    padding: 4px;
+  }
+  .testimonio {
+    font-size: 2vh;
+  }
+  .nombre-cliente {
+    font-size: 2.4vh;
+  }
 }

@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import Swal from "sweetalert2";
 
 const CardsPedidosAdmin = () => {
   const [pedidos, setPedidos] = useState([]);
@@ -14,40 +15,59 @@ const CardsPedidosAdmin = () => {
     }
   };
   useEffect(() => {
-  traerUsuarios()
+    traerUsuarios();
   }, []);
 
   const pedidoEnviado = async (_id) => {
-    if (window.confirm("📣 ¿Este pedido ha sido 𝗘𝗡𝗧𝗥𝗘𝗚𝗔𝗗𝗢/𝗘𝗡𝗩𝗜𝗔𝗗𝗢? 🤔")) {
-      await axios.delete(
-        `https://laquiaquenaherboristeriabe.onrender.com/eliminarpedido/${_id}`
-      );
-      alert("𝗧𝗨 𝗣𝗘𝗗𝗜𝗗𝗢 𝗙𝗨𝗘 𝗘𝗡𝗧𝗥𝗘𝗚𝗔𝗗𝗢/𝗘𝗡𝗩𝗜𝗔𝗗𝗢 𝗖𝗢𝗡 𝗘́𝗫𝗜𝗧𝗢 ✅😉");
-      window.location.reload();
-    }
+    Swal.fire({
+      color: "#161a1d",
+      text: "¿Este pedido ha sido entregado?",
+      showDenyButton: true,
+      denyButtonText: "NO",
+      confirmButtonText: "SÍ",
+      confirmButtonColor: "#fe0000",
+      denyButtonColor: "#abcc01",
+    }).then((resp) => {
+      if (resp.isConfirmed) {
+        axios
+          .delete(
+            `https://laquiaquenaherboristeriabe.onrender.com/eliminarpedido/${_id}`
+          )
+          .then(() => {
+            window.location.reload();
+          });
+      }
+    });
   };
 
   return (
     <div className="col d-flex justify-content-around flex-wrap mt-3">
       {pedidos.map((pedido) => (
-        <div className={`card col-3 text-center p-2 card-pedido-admin mx-1 mb-3 ${pedido.entrega === "ENVIO" ? 'bg-envio' : ''}`}>
+        <div
+          className={`card col-3 text-center p-2 card-pedido-admin mx-1 mb-3 ${
+            pedido.entrega === "ENVIO" ? "bg-envio" : ""
+          }`}
+        >
           <div className="card-body">
             <p className="text-muted">
               <i>{pedido.datetime}</i>
             </p>
-            <h3 className="card-title title-pedido">{pedido.apellido} {pedido.nombre}</h3>
-            <p className="card-text">{pedido.pedido.replace(/(\d)\s([a-zA-Z])/g, '$1\n$2')}</p>
+            <h3 className="card-title title-pedido">
+              {pedido.apellido} {pedido.nombre}
+            </h3>
+            <p className="card-text">
+              {pedido.pedido.replace(/(\d)\s([a-zA-Z])/g, "$1\n$2")}
+            </p>
             <h4 className="mb-2 fs-3">TOTAL: ${pedido.precio}</h4>
             <h5 className="text-pedido">🟡 {pedido.pago} 🟡</h5>
             <h6 className="text-entrega mb-2 fs-5">{pedido.entrega}</h6> <hr />
-            {
-              pedido.direccion && pedido.aclaracion &&
+            {pedido.direccion && pedido.aclaracion && (
               <>
-            <h5 className="card-link m-0 p-0">📍 {pedido.direccion}</h5> <br />
-            <p className="text-pedido text-muted">{pedido.aclaracion}</p>
-            </> 
-            }
-
+                <h5 className="card-link m-0 p-0">📍 {pedido.direccion}</h5>{" "}
+                <br />
+                <p className="text-pedido text-muted">{pedido.aclaracion}</p>
+              </>
+            )}
             <a
               href={`https://api.whatsapp.com/send?phone=${pedido.telefono}`}
               target="new"

@@ -1,7 +1,13 @@
-.postpedido-page{
+.postpedido-page {
   height: 100vh;
 }
 
-.btn-pospedido{
+.btn-pospedido {
   background-color: #abcc01;
+}
+
+@media (max-width: 767.98px) {
+  .btn-pospedido {
+    width: 95% !important;
+  }
 }

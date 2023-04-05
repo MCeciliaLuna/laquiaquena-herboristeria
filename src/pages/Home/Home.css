@@ -1,48 +1,48 @@
-.carousel-padre{
+.carousel-padre {
   height: 93vh;
-  }
-  
-  .banner-carousel{
-      position: absolute;
-      z-index: 1;
-      top: 20%;
-      left: 10%;
-    }
-  
-    .button-carousel{
-      position: absolute;
-      z-index: 1;
-      top: 75%;
-      left: 50%;
-    }
-  
-    .carousel{
-      background-image: url(../assets/images/carousel.jpg);
-      background-size: cover;
-      background-position: center;
-    }
-  
-  @media (min-width: 768px) and (max-width: 991.98px){
-  .carousel-padre{
+}
+
+.banner-carousel {
+  position: absolute;
+  z-index: 1;
+  top: 20%;
+  left: 10%;
+}
+
+.button-carousel {
+  position: absolute;
+  z-index: 1;
+  top: 75%;
+  left: 50%;
+}
+
+.carousel {
+  background-image: url(../assets/images/carousel.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .carousel-padre {
     height: 90vh;
   }
-  .banner-carousel{
+  .banner-carousel {
     width: 90%;
     top: 33%;
     left: 5%;
   }
+}
+
+@media (max-width: 767.98px) {
+  .carousel-padre {
+    height: 85vh;
   }
-  
-  @media (max-width: 767.98px) {
-    .carousel-padre{
-      height: 85vh;
-    }
-  .banner-carousel{
+  .banner-carousel {
     width: 90%;
     top: 35%;
     left: 5%;
   }
-  .banner-button{
+  .banner-button {
     left: 45%;
   }
-  }
+}
