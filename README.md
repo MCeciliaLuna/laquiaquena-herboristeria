@@ -29,8 +29,8 @@ Si queremos correrlo en el puerto local 3000,
 ```
 
 ## Paquetes 🚀
-Los paquetes que utilizamos para esta página son:
-• [React](https://react.dev/)
+Los paquetes que utilizamos para esta página son
+[React](https://react.dev/)
 • [React Router Dom](https://reactrouter.com/)
 • [React Hook Form](https://react-hook-form.com/)
 • [Axios](https://axios-http.com/docs/intro)
